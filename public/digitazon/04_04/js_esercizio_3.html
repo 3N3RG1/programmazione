@@ -1,0 +1,92 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #container {
+            display: flex;
+            gap: 10px;
+        }
+
+        #container div {
+            width: 200px; height: 200px;
+            background-color: lightblue;
+            padding: 10px;
+        }
+
+        #add {
+            background-color: lightgray;
+            padding: 10px;
+            display: inline-flex;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="container"><div><b>name</b>: Mario</div><div><b>lastname</b>: Rossi</div><div><b>skills</b>: javascript,java,php</div><div><b>rate</b>: 10</div></div>
+
+<div>
+
+<div id="add">Add to Map</div>
+<input type="text" id="k">
+<input type="text" id="v">
+</div>
+
+<script>
+
+const m1 = new Map()
+
+m1.set('name', 'Mario')
+m1.set('lastname', 'Rossi')
+m1.set('skills', ['javascript', 'java', 'php'])
+m1.set('rate', 10)
+
+// app
+function $(id) {
+    return document.getElementById(id)
+}
+
+const elContainer = $('container')
+const elAdd = $('add')
+const elK = $('k')
+const elV = $('v')
+
+function addElement(k, v) {
+    const box = document.createElement('div')
+    box.innerHTML = '<b>' + k + '</b>: ' + v
+
+    elContainer.appendChild(box)
+}
+
+m1.forEach(function(v, k) {
+    // ...
+    addElement(k, v)
+})
+
+elAdd.addEventListener('click', function() {
+    const key = k.value, val = v.value
+    m1.set(key, val)
+    addElement(key, val)
+})
+
+/*
+function uc(s) {
+    return s.toUpperCase()
+}
+
+const s = 'ciao'
+console.log( s.toUpperCase() );
+console.log( uc(s) );
+*/
+    
+</script>
+    
+</body>
+</html>

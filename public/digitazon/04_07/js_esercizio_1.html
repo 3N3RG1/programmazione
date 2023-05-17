@@ -1,0 +1,46 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_1</title>
+</head>
+<body>
+
+    <div>
+        Benvenuti, oggi è il... <span id="today">7-4-2023</span>
+    </div>
+
+<script>
+
+    // primo constr (str)
+    const d = new Date( "2022-04-25" )
+    console.log( d.getDate() + '-' + (d.getMonth() + 1) + '-' + d.getFullYear() )
+
+    // secondo const (int, int, int)
+    const y = 1987
+    const m = 4
+    const day = 17
+
+    const d2 = new Date( y, m, day )
+    console.log( d2.getFullYear() )
+    console.log( Date.now() )
+    console.log( Date.parse( d2 ) )
+
+    // terzo constr (ms)
+    const d3 = new Date( d2 )
+    const rdStr = d3.getDate() + '-' + (d3.getMonth()+1) + '-' + d3.getFullYear()
+
+    console.log( rdStr )
+
+    // prendo data di oggi
+    const d4 = new Date( Date.now() )
+    const todayStr = d4.getDate() + '-' + (d4.getMonth()+1) + '-' + d4.getFullYear()
+
+    document.getElementById('today').innerHTML = todayStr
+
+    console.log( Date.now() );
+
+</script>
+
+</body>
+</html>

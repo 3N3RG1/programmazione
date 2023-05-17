@@ -1,0 +1,473 @@
+W3C: Sigla di World wide web consortium, comunità internazionale che si occupa della definizione di standard web aperti per promuovere l'accessibilità e la compatibilità delle tecnologie in rete (es: HTML, XHTML, XML, RDF, CSS, PNG, SVG e SOAP)
+SoC: strategia per la separazione dei compiti all'interno del team
+Polyfill (o polyfiller): è del codice scaricabile che fornisce dei servizi che non fanno parte di un browser. Esso implementa tecnologie che uno sviluppatore si aspetta che il browser metta a disposizione nativamente, fornendo un ventaglio più uniforme di API.
+Sono delle tecniche che permettono di convertire attraverso uno strumento il nostro codice in modo che sia leggibile anche per i vecchi browser
+
+alt + z : rientro automatico
+alt + w : per rappare degli elementi dentro un tag appena scritto (questo grazie alla estensione)
+alt + x : per tagliare
+
+performance
+modularità: aspetto stesso del codice (come ripetizioni ecc)
+semantica: (utilizzo efficiente corretto dei tag/elementi)
+solidità: il mio codice non si deve rompere, ovvero quando cambio qualcosa non si deve impappare tutto
+
+nel seo per le parole in grassetto usiamo strong e non bold mentre per il corsivo em invece di i
+
+control + shift + p = per aprire il menu in alto
+
+display: inline block (permette di rendere un link un blocco in modo che quando ci passi sopra con la mano si seleziona anche il resto tipo il padding o border se ce lo aggiungi)
+
+CRS: 
+SCR: server cyber rendering
+
+Quando il prodotto è gratis il servizio sei tu
+
+Gli pseudo elementi sono elementi che non sono scritti in html ma in css e di default sono elementi inline
+
+Pseudo-class:
+- https://css-tricks.com/pseudo-class-selectors/#aa-position-number-based-pseudo-class-selectors
+
+Flexbox:
+- https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+- https://www.w3.org/TR/css-flexbox-1/#auto-margins
+> per esercitarsi:
+  - https://flexboxfroggy.com/#it
+  - https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox_skills
+
+Libri UX: dont make me think (steve Krug)
+Libro di Riccardi: 
+Video UX: https://www.youtube.com/watch?v=8FpigqfcvlM
+
+Studia i selettori:
+- https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors
+- combinatori: https://developer.mozilla.org/en-US/docs/Web/CSS/General_sibling_combinator
+
+Palette dei colori:
+- https://www.canva.com/colors/color-wheel/
+
+Ripassa (GUARDA ANCHE I LA SEZIONE SLIDE DEL DRIVE CHE SI SONO UN SACCO DI INFORMAZIONI IMPORTANTI):
+- :not(..)
+- Query
+- Tailwind (docs: https://tailwindcss.com/)
+- align-items (come funziona col flex per allineare gli elementi verticalmente)
+- differnza tra display none, visibility hidden e opacity 0 e come cambia la disposizione degli altri elementi nella pagina
+- overflow
+- web-kit
+- z-index
+- icon come stilizzarle e come incorporare quelle di google
+- come sistemare i vari video in youtube e come dire ad un elemento x di scalare sotto con il flex grow
+- flex baseline, flex grow e in generale flex
+- transition
+- form e input
+- le varie position
+- la roba dei tre punti quando le parole non ci stanno più
+- lo scorrimento delle parole da destra a sinistra ad esempio per la barra sopra gialla dei simpsons
+- psudo classi e le parentesi quadre
+- clearfix : capisci come usarlo
+- la modale
+- SASS
+- variabili (--var)
+- UX e UI 
+- nth-child e first/last-child
+- Git e GitHub
+- box-sizing: border-box
+- background image
+- come iil browser approssima i rem in px;
+- viewport: vh
+- grid
+
+POSITION:
+STATIC: default
+RELATIVE: relativo alla sua normale posizione, non esce dal flow ma sovrasta eventuali elementi in parte a lui e non lascia spazio ad altri elementi
+ABSOLUTE: è positionato relativo a suo padre, esce dal suo flow quindi lascia spazio per altri elementi e può sovrastare chiunque
+FIXED: relativo al viewport, esce dal flow lasciando spazio per altri elemnti e sovrasta chiunque
+STICKY: basato sullo scroll dell'user, esce dal flow e sovrasta gli elementi ma ha una funzione particolare
+
+
+-> JAVASCRIPT <-
+
+Appunti utili scritti da Riccardo su let e var:
+- https://www.mrw.it/javascript/differenze-var-let-const_12683.html
+- https://www.html.it/articoli/javascript-var-let-e-const/
+
+----------
+
+DATA TYPES: (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+
+Primitives Values:
+Tutti i valori primitivi sono tutti i valori al più basso livello del linguaggio e sono definiti immutabili ovvero quei tipi di dato il cui contenuto non può essere cambiato. Bisogna fare attenione che quando noi riassegnamo un valore primitivo ad una variabiile non stiamo modificando il valore della variabile ma ben sì riassegnandolo. Infatti quando si applicano i metodi ad es. alle stringhe viene creata una copia modificata della stringa, al contrario dei metodi degli oggetti che modificano l'oggetto di partenza, infatti gli oggetti non si copiano (se non con shallow copy e deep copy), ma si referenziano (sono definiti mutabili). Inoltre è possibile applicare i metodi ai valori primitivi anche se non sono oggetti perchè quando si utilizza un metodo ad un non oggetto javascript in automatico wrappa il valore primitivo in un oggetto (in teoria wrappa una copia del valore stesso) e poi accede ai metodi dell'oggetto stesso. I valori primitivi non sono come gli oggetti che vengono memorizzati, ma vengono parzialemente "memorizzati" durante l'esecuzione del codice.
+    - string: sequenza di caratteri utilizzata per rappresentare un testo
+    - number: javascript non definisce i numeri come diversi tipi di dato (esiste solo un dato: number)
+    - bigint: sono valori numerici che non possono essere immagazzinati come dato: number perchè troppo grandi
+    - boolean: true & false (è possibile creare un booleano come oggetto es. new Boolean(false), in questo caso il valore booleano dell'oggetto Boolean(false) è true appunto perchè l'oggetto esiste)
+    - null: in tutti i linguaggi quando ci si riferisce a null ci si riferisce ad un oggetto che non esiste e la stessa cosa vale per javascipt, però quando si fa il typeof di null restituisce object. questo è un bug che però non viene sistemato a cause dei troppi codice che si distruggerebbero con questa nuova implementazione
+    - undefined: la macchina non è in grado di definire se esiste il valore primitivo o l'oggetto che stiamo indicando (o meglio non indicando)
+    - symbol:
+Objects:
+Un oggetto è un valore in memoria che può essere referenziato da un identificatore, infatti gli oggetti sono definiti mutabili. Anche le funzioni sono oggetti e hanno la peculiarità aggiuntiva di essere richiamabili.
+    - object
+    - array 
+    - date
+    - maps (weakmaps)
+    - set (weaksets)
+    - (function)
+
+TRUTHY & FALSY & NULLISH:
+
+Truthy: sono tutti quei valori che sono considerati true in un condesto booleano. Tutti i valori sono truthy esclusi quelli definiti come falsy
+
+Falsy(falsey): sono valori che sono considerati falsi in un contesto booleano:
+- null: l'assenza di valore, ovvero null punta ad una cella oggetto che non contiene un oggetto. Null appare quando ci si aspetta un oggetto come risultato di qualcosa ma non si ha nessun oggetto come output
+- undefined: è un identificatore globale e appare quando ad una variabile non viene associato nulla o una funzione non ritorna un valore
+- false
+- NaN: (typeof NaN === 'number') //true, (NaN !== NaN) // true, 
+- 0 (-0 / 0n)
+- ''
+- document.all (non dovrebbe essere mai utilizzato)
+
+Nullish: è un valore che è null o undefined; i valori nullish sono sempre falsy value.
+
+Differenza tra Null e undefined:
+Undefined e Null sono uguali in valore ma differenti in tipo:
+null === undefined // false
+null == undefined // true
+
+typeof null // "object" (not "null" for legacy reasons)
+typeof undefined // "undefined"
+null === undefined // false
+null == undefined // true
+null === null // true
+null == null // true
+!null; // true
+Number.isNaN(1 + null) // false
+Number.isNaN(1 + undefined) // true
+
+let x
+if (x == undefined) // true
+if (x == null) // true
+if (x === undefined) // true
+if (x === null) // false
+if (typeof x === "undefined") // true
+if (typeof x === "null") // false
+
+TRUE & FALSE & VALORI NUMERICI:
+javascript cerca di convertire i tipi di dato per trovare una connessione per questo quando scriviamo (true == 1) & (false == 0) restiruisce // true (true funziona solo con l'1 e non con altri numeri perchè è true che viene convertito in 1 ma mantiene il suo valore booleano, stessa cosa per false che viene convertito in 0 ma mantiene il suo tipo di dato booleano). Invece se li confrontiamo per tipo di dato con un uguaglianza stretta === entrambi restituiranno // false
+
+true = 1 -> true + 1 = 2
+false = 0 -> false + 1 = 1
+null = 0 -> null + 1 = 1
+'' = 0 -> '' + 1 = 1
+NaN -> NaN + 1 = NaN
+undefined -> unedfined + 1 = NaN
+
+TYPEOF (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof): 
+L'operatore typeof restituisce una stringa che indica il tipo di dato del soggetto.
+Proprio per il motivo per il quale restutuisce una stringa, quando scriviamo il typeof di un soggetto con un'uguaglianza stretta dobbiamo eguagliarlo ad una stringa (un esempio per capire bene questo concetto: typeof typeof 1 === "string" // true).
+
+typeof === 'soggetto preso in consideraione'
+
+INSTANCEOF:
+L'operatore instanceof restituisce true se un oggetto è un'istanza di un oggetto specificato.
+
+(object instanceof constructor) // mi restituisce sempre un booleano
+
+es1. const cars = ["Saab", "Volvo", "BMW"]
+    (cars instanceof Array) // true
+    (cars instanceof Set) // false
+    (cars instanceof Object) // mi restituisce sempre true perchè un oggetto è sempre un oggetto(constructor)
+
+es2. let a = function () {}
+    (a instanceof Function) // true
+    (a instanceof Map) // false
+    (a instanceof Object) // mi restituisce sempre true perchè un oggetto è sempre un oggetto(constructor)
+
+----------
+
+LOOPS: (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)
+
+> For:
+for (initialization; condition; afterthought) {  // sono tutti e 3 opzionali, afterthought è come se apparisse sotto lo statement
+  statement
+}
+
+> For...in: itera su tutte le proprietà string enumerabili di un oggetto incluse quelle ereditate (ignorando i simboli), inoltre itera anche sugli array nello stesso modo per il quale il forEach funziona anche sugli array
+for (variabile - chiaveIterabile - in - oggetto) {
+  statement
+}
+es.
+const object = { a: 1, b: 2, c: 3 }
+for (const x in object) {  // la variabile dell'oggetto e della x posso essere diversi quindi const object = ..., let x in object
+    console.log(x + ': ' + object[x])  // a: 1, poi b: 2, poi c: 3
+}
+
+> For...of: itera sui valori di un oggetto iterabile
+for (variabile - valoreIterabile - of - oggetto) {
+    statement
+}
+es.
+const array = [1, 2, 3]
+for (const x of array) {  // la variabile dell'array e della x posso essere diversi quindi const array = ..., let x of array
+    console.log(x)  // 1, poi 2, poi 3
+}
+
+> While: crea un ciclo che esegue un'istruzione fintanto che la condizione restituisce true
+while (condition) {  // in questo caso l'initializazion viene posta sopra il while e l'afterthought viene messo sotto lo statement
+  statement
+}
+
+> Do...while: crea un ciclo che esegue un'istruzione fino a quando la condizione del test restituisce false; la condizione viene valutata dopo l'esecuzione dell'istruzione di conseguenza eseguirà l'istruzione una volta in più rispetto ad un ciclo normale (es. for o while), inoltre eseguirà l'istruzione sempre almeno una volta
+do {
+    statement
+} while (condition)
+
+BREAK & CONTINUE & LABEL & RETURN:
+
+> Break: termina un istruzione corrente ad esempio nel caso di un loop(esce fuori) e trasferisce la lettura del codice all'istruzione successiva; è possibile anche specificare al break quale istruzione eseguire di seguito, con uno label(anche se raramente utilizzato in js).
+
+for (let i = 1; i <= 3; i++) {
+
+    for (let j = 1; j <= 3; j++) {
+        if (i == 2) {
+          break
+        }
+        console.log(`i = ${i}, j = ${j}`)
+    }
+}
+Output:
+i = 1, j = 1
+i = 1, j = 2
+i = 1, j = 3
+i = 3, j = 1
+i = 3, j = 2
+i = 3, j = 3
+
+> Continue: termina l'esecuzione delle istruzioni nell'iterazione corrente del ciclo e proseguere all'iterazione successiva del ciclo; ache in questo caso è possibile utilizzare il label.
+
+let text = ''
+for (let i = 0; i < 10; i++) {
+  if (i === 3) {
+    continue;
+  }
+  text = text + i;
+}
+console.log(text)  // 012456789 (skippa le istruzione all'iterazione i = 3)
+
+> Label con continue e break: è possibile etichettare diverse istruzioni per sfruttare al meglio le proprietà di break e continue utilizzandoli per richiamare l'etichetta scelta; è possibili utilizzare break e continue con un'etichetta solo se l'etichetta è un outer dell'istruzione nella quale è presente il break o continue.
+
+loop1: for (let i = 0; i < 3; i++) {  // ciclo etichettato con l'etichetta loop1
+
+  loop2: for (let j = 0; j < 3; j++) {  // ciclo etichettato con l'etichetta loop2
+    if (i === 1 && j === 1) {
+      continue loop1                 // in questo caso svolge la stessa azione di break(senza etichette)
+    }
+    console.log(`i = ${i}, j = ${j}`)
+  }
+}
+Output:
+i = 0, j = 0
+i = 0, j = 1
+i = 0, j = 2
+i = 1, j = 0
+i = 2, j = 0
+i = 2, j = 1
+i = 2, j = 2
+
+loop1: for (let i = 0; i < 3; i++) {
+
+  loop2: for (let j = 0; j < 3; j++) {
+    if (i === 1 && j === 1) {
+      break loop1                     // in questo caso se i = 1 e j = 1 specifico di breakare il loop1
+    }                                 // di conseguenza passo all'istruzione successiva al loop1
+    console.log(`i = ${i}, j = ${j}`)
+  }
+}
+Output:
+i = 0, j = 0
+i = 0, j = 1
+i = 0, j = 2
+i = 1, j = 0
+
+> Return: ha la stessa funzione di break, ovvero termina il ciclo che sto iterando, ma in più permette di portare fuori dallo scoop un valore (non è possibile utilizzare il label con return)
+
+----------
+
+FUNZIONI E TUTTO QUELLO CHE NE è CORRELATO: (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+
+> Funzioni Ricorsive: le funzioni recursive sono anoleghe ai loop e anch'esse hanno bisogno di una condizione per evitare un loop infinito o meglio una recursione infinita. È possibile convertire qualsiasi algoritmo ricorsivo in uno non ricorsivo, ma la logica è spesso molto più complessa e per farlo è necessario l'uso di uno stack.
+
+> Stack (stack overflow): uno stack di chiamate è un meccanismo per un interprete (es. Javascript in un browser) per tenere traccia della sua posizione in uno script che chiama più funzioni: quale funzione è attualmente in esecuzione e quali funzioni vengono chiamate dall'interno di quella funzione, ecc. Quando uno script chiama una funzione, l'interprete la aggiunge allo stack di chiamate e quindi inizia a eseguire la funzione. Tutte le funzioni chiamate da tale funzione vengono aggiunte allo stack di chiamate più in alto ed eseguite dove vengono raggiunte le relative chiamate. Quando la funzione corrente è terminata, l'interprete la toglie dallo stack e riprende l'esecuzione da dove era stata interrotta nell'ultimo listato di codice.
+Se lo stack occupa più spazio di quello assegnato, viene generato un errore di "stack overflow". La funzione principale dello stack è quindi quella di riportare l'esecuzione del codice nel giusto flusso una volta che una suddetta funzione è terminata.
+
+> Hoisting: è possibile richiamare una funzione anche se questa funzione è scritta dopo il suo richiamo perchè per il concetto di hoisting javascript dispone nel foglio le funzioni prima di ogni altra cosa. Attenzione che questo concetto funziona solo se la funzione non viene assegnata ad una variabile.
+
+> Closure: javaScript consente l'annidamento delle funzioni e garantisce alla funzione interna pieno accesso a tutte le variabili e funzioni definite all'interno della funzione esterna (e tutte le altre variabili e funzioni a cui la funzione esterna ha accesso). Tuttavia, la funzione esterna non ha accesso alle variabili e alle funzioni definite all'interno della funzione interna. Ciò fornisce una sorta di incapsulamento per le variabili della funzione interna. Inoltre, poiché la funzione interna ha accesso all'ambito della funzione esterna, le variabili e le funzioni definite nella funzione esterna vivranno più a lungo della durata dell'esecuzione della funzione esterna, se la funzione interna riesce a sopravvivere oltre la vita della funzione esterna. Una closure viene creata quando la funzione interna è in qualche modo resa disponibile a qualsiasi ambito al di fuori della funzione esterna.
+
+> Scope-chaining: è legato al concetto di closure e si definisce quando più di una funzione è innestata in una funzione. Es: date 3 funzioni 'a','b','c', se 'c' è innestata a 'b' che a su volta è innestata ad 'a' si dice che 'c' forma una catena (è concatenata) allo scope di 'b' e 'a' in questo ordine. 'c' può accedere a tutti gli argomenti di 'b', 'b' a tutti quelli di 'a', di conseguenza 'c' può accedere e tutti gli argomenti di 'a'.
+
+- Default parameters (b = 1):
+questo mi ritorna NaN
+    function multiply(a, b) {
+        return a * b;
+    }
+    console.log(multiply(5))
+
+questo mi ritorna 5
+    function multiply(a, b = 1) {
+      return a * b;
+    }
+    console.log(multiply(5))
+
+questo mi ritorna 10
+    function multiply(a, b = 1) {
+      return a * b;
+    }
+    console.log(multiply(5, 2))
+
+> Rest parameters: permette alla funzione di accettare un numero indefinito di argomenti e raggrupparli in un array.
+Il rest parameter deve essere disposto come ultimo argomento(...arg, a, b) // incorretto, e non è possibile disporre più rest parameter come argomenti, solo uno è accettato(...arg1, ...arg2) // incorretto.
+
+rest1(1,2,3,4)
+function rest1(...arg) {
+    console.log(...arg) // [1,2,3,4]
+}
+
+rest2(1,2,3,4)
+function rest2(a, b, ...arg) {
+    console.log(a) // 1
+    console.log(b) // 2
+    console.log(...arg) // [3,4]
+}
+
+rest3(1)
+function rest3(a, b, ...arg) {
+    console.log(a) // 1
+    console.log(b) // undefined
+    console.log(...arg) // []
+}
+
+> Spread operator: funziona in un certo senso in modo contrario al rest paramter, che trasforma più argomenti in un solo argomento, trasforma un solo argomento in più argomenti. Lo spread operator non si applica alle funzioni ma alle invocazione delle funzioni. Lo spread è applicabile solo agli ogetti iterabili. per lo spread invece è possibile utilizzarlo più volte all'interno del richiamo della funzione e a qualsiasi posizione di voglia. Ovviamente lo spread operator non è applicabile solo alle invocazione delle funzioni ma anche ad altri contesti (arr1 = [0,1,2], arr2 = [3,4,5], arr3 = [...arr1, ...arr2] = [0,1,2,3,4,5])
+
+let arr = [1,2,3]
+spread1(...arr)
+function spread1(a, b, c) {
+    console.log(a + b + c) // 6
+}
+
+const arr = [0, 1]
+spread2(-1, ...arr, 2, ...[3])
+function spread2(v, w, x, y, z, i) {
+    console.log(v) // -1
+    console.log(w) // 0
+    console.log(x) // 1
+    console.log(y) // 2
+    console.log(z) // 3
+    console.log(i) // undefined
+}
+
+> Arrow function (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions): le arrow function sono sempre funzioni ma con una sintassi più corta, sono anonime e non hanno:
+- this: ovvero non è possibie utilizzare il this nel caso si utlizzi un'arrow function come metodo di un oggetto (infatti mi restituisce undefined)
+- arguments: arguments è un oggetto simile ad un array accessibile all'interno delle funzioni che contiene i valori degli argomenti passati a quella funzione (anche in questo caso mi restituisce undefined)
+- super:
+- new.target:
+
+Sintassi:
+- senza parametro: () => expression | () => { expression }
+- con un solo parametro: param => expression | param => { expression } / (param) => expression | (param) => { expression }
+- con più parametri: (param1, paramN) => expression | (param1, paramN) => { expression }
+
+Per richiamare un arrow function bisogna richiamare la loro dichiarazione, essendo sempre anonime, inoltre il return è implicito nel caso non si utilizzino le graffe:
+
+const arf = (a) => a + 100
+console.log(arf(5)) // 105
+
+Un esempio del problema delle graffe legato agli oggetti è questo:
+const func = () => { foo: 1 } // javascript interpreta le graffe come quelle della funzione e non capisce che è un oggetto
+const func = () => ({ foo: 1 }) // in questo modo mi restituisce un oggetto
+
+> Operatore ternario: è l'unico operatore che prendi in ingresso 3 operandi ed è spesso utilizzato per sostituire l'if...else:
+
+- condition ? exprIfTrue : exprIfFalse
+
+Inoltre pussono essere concatenati più operatori ternari come se fosse una struttura if...else if... else if...ecc...else:
+
+- function example() {
+    return condition1 ? value1 // if condition1 > value1
+        : condition2 ? value2  // else if condition2 > value2
+        : condition3 ? value3  // else if condition3 > value3
+        : value4               // else > value4
+}
+
+----------
+
+How to check if an object is an object (https://www.w3docs.com/snippets/javascript/how-to-check-if-a-value-is-an-object-in-javascript.html):
+
+objValue && typeof objValue === 'object' && objValue.constructor === Object
+
+1. elimina il caso di null
+2. elimina il caso in cui il soggetto non sia un oggetto
+3. prende in considerazione solo il costruttore oggetto e non array, map ecc
+
+function e(a) {
+    return a = []
+}
+let a = [2]
+console.log(e(a))
+// a = []
+console.log(a)
+
+let b = 'ciao'
+console.log(c(b))
+function c(b) {
+    return b = 'cio'
+}
+console.log(b)
+---
+/* expression statement */
+(function foo(x) {
+//   console.log(x)
+  (function (y) {
+    console.log(y+x)
+  })(2)
+})(5)
+---
+let a = {a: 1}
+let b = a
+console.log(a)
+console.log(b)
+a = {a: 2}
+console.log(a)
+console.log(b)
+b = {b: 5}
+console.log(a)
+console.log(b)
+
+<> Object.keys(x)
+<> metodi degli oggetti
+<>isNaN
+<> ricerchina sugli unicode, secondo un utente sono 1.114.112: https://stackoverflow.com/questions/22737616/javascript-print-all-used-unicode-characters
+Secondo w3schools sono invece 65535
+differenza anche tra unicod e UTF-16 / UTF-8 (dovrebbe essere come vengono immagazzinati e memorizzati i dati utf storizzano i dati in codice binario in toeria)
+<> JSON: sono degli oggetti javascript
+JSON.parse (parsing): serve a convertire un tipo di dato in un altro tipo di dato in questo caso da stringa in json a oggetto in javascript
+<> deep copy | shallow copy (deep clone)
+<> heap
+<> prototype con gli oggetti
+<> classi
+<> errori che possono uscire sulla console
+<> debug degli errori (lezione)
+<> keywords (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords)
+<> funzione lambda (funione anonima)
+<> continuations && lambda calculus
+<> Numeri: si dividono in int. (pyte, short, int, low) e mob. (float, double)
+<> wat js per comprendere meglio javascript
+<> big O notation (fa parte di algoritmi e strutture dati)
+<> equazioni di ricorrenza per calcolare l'efficienza di un codice ricorsivo
+<> async function (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/)
+<> Expression statement (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/Expression_statement)
+<> espressioni regolari
+----------
+
+OBJECT
+
+> Object:

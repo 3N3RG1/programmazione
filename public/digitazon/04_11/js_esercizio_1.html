@@ -1,0 +1,72 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_1</title>
+</head>
+<body>
+
+<script>
+
+    //function x() {]
+
+    const color = 'rainbow'
+
+    switch(color) {
+        case 'red':
+            console.log('hot color');
+            break;
+        
+        case 'green':
+        case 'blue':
+            console.log('cold color');
+            break;
+
+        default:
+            console.log('unknown color type');
+    }
+
+    try {
+        ciao()
+    }
+    catch( err ) {
+        switch( err.name ) {
+            case 'ReferenceError':
+                console.log( 'red' )
+            break
+
+            case 'AppError':
+            case 'ProgramError':
+            case 'DevError':
+                console.log( 'blue' )
+            break
+
+            case 'SyntaxError':
+                console.log( 'green' )
+            break
+        }
+    }
+
+    /*
+    function ciao(x, y) {}
+
+    try {
+    ciao(10, 4)
+    console.log('sono qui')
+    }
+    catch( err ) {
+    console.log('si è verificato un errore!')
+    console.log( err.name + ' ' + err.message )
+    }
+    finally {
+    console.log( 'sono bel blocco finally' )
+    }
+
+    console.log('text')
+    */
+
+</script>
+
+
+</body>
+</html>

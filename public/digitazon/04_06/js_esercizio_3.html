@@ -1,0 +1,42 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_3</title>
+</head>
+<body>
+
+    <div id="box"></div>
+
+<script>
+
+    const jsonStr = 
+    `
+    {
+        "backgroundColor": "#32a852",
+        "color": "white",
+        "width": "300px",
+        "height": "100px",
+        "textAlign": "center"
+    }
+    `
+
+    const jsonObj = JSON.parse( jsonStr )
+
+    console.log( jsonObj );
+
+    const box = document.getElementById('box')
+
+    box.style.backgroundColor = jsonObj.backgroundColor
+    box.style.color = jsonObj.color
+    box.style.width = jsonObj.width
+    box.style.height = jsonObj.height
+    box.style.textAlign = jsonObj.textAlign
+
+    const x = 'Javascript'
+    box.innerHTML = `sono un contenuto ${x}`
+
+</script>
+    
+</body>
+</html>

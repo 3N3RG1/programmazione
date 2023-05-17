@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_replit</title>
+</head>
+<body>
+    
+<script>
+
+/* -- 1 -- */
+
+// between
+function between(a, b) {
+  let c = b, d = []
+  if(a > b) {
+    c = a
+    a = b
+  }
+  for(let i = a+1; i < c; i++) {
+    d.push(i)
+  }
+  return d
+}
+
+// biggerString
+function biggerString(a, b) {
+  if (a.length > b.length) return a
+  else if (a.length < b.length) return b
+  return `${a} e ${b} hanno la stessa lunghezza`
+}
+
+// countNoSpaces
+function countNoSpaces(string) {
+  let a = 0
+  for(let i = 0; i < string.length; i++) {
+    if(string[i] != ' ') a++
+  }
+  return a
+}
+
+// countUndefinedKeys
+function countUndefinedKeys(obj) {
+  let a = Object.values(obj), b = 0
+  for(let i = 0; i < a.length; i++) {
+    if(a[i] === undefined || a[i] === null) b++
+  }
+  return b
+}
+
+// countVowels
+function countVowels(string) {
+  let a = 0
+  for(let i = 0; i < string.length; i++) {
+    if(string[i] == 'a' || string[i] == 'e' || string[i] == 'i' || string[i] == 'o' || string[i] == 'u') a++
+  }
+  return a
+}
+
+// createArray
+function createArray(n) {
+  let a = []
+  if(n < 1) return a
+  if(Number.isInteger(n)) {
+    for(let i = 0; i < n; i++) {
+      a.push(n)
+    }
+  }
+  return a
+}
+
+// even
+function even(arr) {
+  let a = []
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] % 2 == 0) a.push(arr[i])
+  }
+  return a
+}
+
+// isDivisible
+function isDivisible(a, b) {
+  return a % b == 0
+}
+
+// isInArray
+function isInArray(n, ns) {
+  for(let i = 0; i < n.length; i++) {
+    if(n[i] === ns) return true
+  }
+  return false
+}
+
+// isInString
+function isInString(s, t) {
+  if(s.includes(t)) return true
+  return false
+}
+
+// larger
+function larger(a, b) {
+  if(a > b) return a
+  else if(a < b) return b
+  return 'I due numeri hanno lo stesso valore'
+}
+
+// lessThan
+function lessThan(a, b) {
+  return a < b
+}
+
+// stringConcat
+function stringConcat(a, b) {
+  let c = a.concat('#', b)
+  return c
+  // let c = a + '#' + b
+  // let c = `${a} # ${b}`
+}
+
+// sum
+function sum(arr) {
+  let b = 0
+  for(let i = 0; i < arr.length; i++) {
+    b += arr[i]
+  }
+  return b
+}
+
+/* -- 2 -- */
+
+// addUpFromNumber
+function addUpFromNumber(n) {
+  // nella consegna correggerei se è un intero positivo
+  // if(Number.isInteger(n))
+  let a = 0
+  for (let i = 1; i <= n; i++) {
+    a += i
+  }
+  return a
+}
+
+// alfabetoStrambo
+function alfabetoStrambo(s) {
+  let a = ''
+  for(let i = 0; i < s.length; i++) {
+    if(s[i+1] == ' ' || i == s.length-1 && (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u')) a += s[i] + 'r' + s[i]
+    else a += s[i]
+  }
+  return a
+}
+
+// algebra
+function algebra(arr) {
+    let a = 1, b = 0
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] % 2 == 0) a = a * arr[i]
+        else b += arr[i]
+    }
+    if(a == 1) a = 0
+    return a - b
+}
+
+// arraySwap
+function arraySwap(arr) {
+    let a = []
+    for(let i = 0; i < arr.length; i = i+2) {
+        if(arr[i+1] !== undefined) a.push(arr[i+1])
+        a.push(arr[i])
+        // oppure
+        // if(arr[i+1] === undefined) a.push(arr[i])
+        // else a.push(arr[i+1]) + a.push(arr[i])
+    }
+    return a
+}
+
+// concatAll
+function concatAll(...arrs) {
+    let array = []
+    for(let i = 0; i < arrs.length; i++) {
+        array = array.concat(arrs[i])
+    }
+    return array
+}
+
+// createRandomSortedArray
+function createRandomSortedArray(n) {
+    let a = []
+    if(n <= 0 || Number.isInteger(n) == false) return a
+    for(let i = 0; i < n; i++) {
+        b = Math.random()
+        if(b != 0) a.push(b)
+    }
+    return a
+}
+
+// firstMatrix
+function firstMatrix(arr, n) {
+    let a = []
+    for(let i = 0; i < n; i++) {
+        a.push(arr)
+    }
+    return a
+}
+
+// intersection
+function intersection(a, b) {
+  // let map1 = new Map(), map2 = new Map(), array = []
+  // for(let i = 0, j = 0; i < a.length && j < b.length; i++, j++) {
+  //     if(!map1.has(a[i])) map1.set(a[i], 1)
+  //     else map1.set(a[i], map1.get(a[i])+1)
+  //     if(!map2.has(b[j])) map2.set(b[j], 1)
+  //     else map2.set(b[j], map2.get(b[j])+1)
+  // }
+  // map1.forEach(function(v,k) {
+  //     if(map2.has(k)) {
+  //         if(v > map2.get(k)) {
+  //             for(let z = 0; z < map2.get(k); z++) {
+  //                 array.push(k)
+  //             }
+  //         }
+  //         else {
+  //             for(let y = 0; y < v; y++) {
+  //                 array.push(k)
+  //             }
+  //         }
+  //     }
+  // })
+  // return array
+  let map = new Map(), array = []
+    for(let i = 0; i < b.length; i++) {
+        if(!map.has(b[i])) map.set(b[i], 1)
+        else map.set(b[i], map.get(b[i])+1)
+    }
+    for(let j = 0; j < a.length; j++) {
+        if(map.has(a[j])) {
+            if(map.get(a[j]) > 1) {
+                map.set(a[j], map.get(a[j])-1)
+                array.push(a[j])
+            }
+            else {
+                map.delete(a[j])
+                array.push(a[j])
+            }
+        }
+    }
+    return array
+}
+
+// isHomogeneous
+function isHomogeneous(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        if(typeof arr[0] != typeof arr[i]) return false
+    }
+    return true
+}
+
+// largestSwap
+function largestSwap(n) {
+    a = '' + n
+    if(n > '' + a[1] + a[0]) return true
+    else if(n < '' + a[1] + a[0])return false
+    return 'il numero invertito è uguale a se stesso'
+}
+
+// mapsUnion
+function mapsUnion(m1, m2) {
+  m2.forEach(function(v,k) {m1.set(k,v)})
+  return m1
+  // return new Map([...m1, ...m2])
+}
+
+// removeVowels
+function removeVowels(string) {
+    let a = ''
+    for(let i = 0; i < string.length; i++) {
+        if(string[i] != 'a' && string[i] != 'e' && string[i] != 'i' && string[i] != 'o' && string[i] != 'u') a += string[i]
+    }
+    return a
+}
+
+// reverse
+function reverse(string) {
+    let a = ''
+    for(let i = string.length-1; i >= 0; i--) {
+        a += string[i]
+    }
+    return a
+}
+
+// union
+function union(arr1, arr2) {
+    return arr1.concat(arr2)
+}
+
+/* -- 3 -- */
+
+// chessboard
+function chessboard(n) {
+    let arr1 = [], arr2 = [], arr = []
+    for(let i = 0; i < n; i++) {
+        if(i % 2 == 0) {
+            arr1.push('#')
+            arr2.push(' ')
+        }
+        else {
+            arr1.push(' ')
+            arr2.push('#')
+        }
+    }
+    for(let i = 0; i < n; i++) {
+        if(i % 2 == 0) arr.push(arr1)
+        else arr.push(arr2)
+    }
+    return arr
+
+    // let a = [], b = [], e = []
+    // for(let i = 0; i < l; i++) {
+    //     let c = '#'
+    //     if(i % 2 != 0) c = ' '
+    //     a.push(c)
+    //     c = '#'
+    //     if(i % 2 == 0) c = ' '
+    //     b.push(c)
+    // }
+    // for(let k = 0; k < l; k++) {
+    //     if(k % 2 == 0) e.push(a)
+    //     else e.push(b)
+    // }
+    // return e
+}
+
+// filterString
+
+// findLongestSubstring
+function findLongestSubstring(string) {
+    let set = new Set(string), newString = ''
+    set.forEach(function(v) {newString += v})
+    return newString
+}
+
+// firstSum
+function firstSum(arr, n) {
+    const set = new Set()
+    for(let i = 0; i < arr.length; i++) {
+        if (set.has(n-arr[i])) return [arr[i], n-arr[i]];
+         set.add(arr[i]);
+    }
+    return []
+
+    // for(let i = 0; i < arr.length; i++) {
+    //     for(let j = i+1; j < arr.length; j++) {
+    //         if(arr[i] + arr[j] == n) {
+    //             return [arr[i], arr[j]]
+    //         }
+    //     }
+    // }
+    // return []
+}
+
+// isPalindrome
+function isPalindrome(string) {
+    if(string == '') return false
+    for(let i = 0; i < Math.trunc(string.length/2); i++) {
+        if(string[i] != string[string.length-1-i]) return false
+    }
+    return true
+}
+
+// mapString
+
+// mergeSortedArray
+function mergeSortedArrays(arr1, arr2) {
+    const array = []
+    for(let i = 0, j = 0; i <= arr1.length && j <= arr2.length;) {
+        if(arr1[i] <= arr2[j]) array.push(arr1[i++])
+        else if(arr1[i] > arr2[j]) array.push(arr2[j++])
+        else if(i == arr1.length) for(j, i++; j < arr2.length; j++) array.push(arr2[j])
+        else if(j == arr2.length) for(i, j++; i < arr1.length; i++) array.push(arr1[i])
+    }
+    return array
+}
+
+// morse
+function morse(parola) {
+    let map = new Map([
+        ['a', '.-'],
+        ['b', '-...'],
+        ['c', '-.-.'],
+        ['d', '-..'],
+        ['e', '.'],
+        ['f', '..-.'],
+        ['g', '--.'],
+        ['h', '....'],
+        ['i', '..'],
+        ['j', '.---'],
+        ['k', '.-.'],
+        ['l', '.-..'],
+        ['m', '--'],
+        ['n', '-.'],
+        ['o', '---'],
+        ['p', '.--.'],
+        ['q', '--.-'],
+        ['r', '.-.'],
+        ['s', '...'],
+        ['t', '-'],
+        ['u', '..-'],
+        ['v', '...-'],
+        ['w', '.--'],
+        ['x', '-..-'],
+        ['y', '-.--'],
+        ['z', '--..']
+    ]), string = ''
+    for(let i = 0; i < parola.length; i++) {
+        if(i != parola.length-1) string += map.get(parola[i]) + ' '
+        else string+= map.get(parola[i])
+    }
+    return string
+}
+
+// noConditionals
+function noConditionals(n) {
+    // (n + 1) - (2 * n)
+    return 1 - n
+}
+
+// occurencies
+function occurrencies(word) {
+    let map = new Map(), array = []
+    for(let i = 0; i < word.length; i++) {
+        if(!map.has(word[i]) && word[i] != ' ') map.set(word[i], 1)
+        else if(word[i] != ' ') map.set(word[i], map.get(word[i])+1)
+    }
+    map.forEach(function(v) {
+        array.push(v)
+    })
+    return array.sort(function(a, b){return a - b})
+}
+
+// reduceString
+
+/* -- 4 -- */
+
+// anagrams
+
+function nand(b1, b2) {
+  return !(b1 && b2)
+}
+
+function andGate(b1, b2) {
+  return 
+}
+
+// functionsReturningNumbers
+function functionsReturningNumbers(f, g) {
+  // if: console.log(functionsReturningNumbers(a, b)
+  if(f() > g()) return 'f'
+  if(f() < g()) return 'g'
+  else return 'nessuna'
+  // if: console.log(functionsReturningNumbers(a(), b())
+  // if(f > g) return 'f'
+  // if(f < g) return 'g'
+  // else return 'nessuna'
+}
+</script>
+
+</body>
+</html>

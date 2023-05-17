@@ -1,0 +1,67 @@
+body > div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    /* gap: 20px; */
+}
+
+.page {
+    padding: 40px;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    border: 1px solid;
+    border-radius: 5px;
+    background-color: #E4E4E4;
+    gap: 10px;
+    padding: 20px 30px;
+    overflow-y: scroll;
+    margin-bottom: 15px;
+}
+
+.action {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.chat > div  {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.username {
+    background-color: #919191;
+    color: #FFFFFF;
+    padding: 5px 20px;
+    border-radius: 20px;
+    margin-right: auto;
+}
+
+.message {
+    background-color: white;
+    padding: 5px 20px;
+    border-radius: 0 20px 20px 20px;
+    margin-right: auto;
+}
+
+input {
+    width: 200px;
+    border-radius: 20px;
+    padding: 5px 20px;
+}
+
+button {
+    width: 100px;
+    border-radius: 20px;
+}
+
+button:hover {
+    background-color: #919191;
+    color: #FFFFFF;
+    cursor: pointer;
+}

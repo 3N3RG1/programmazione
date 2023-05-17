@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_1</title>
+</head>
+<body>
+    
+<script>
+
+// 1
+{
+const obj = {
+  name: 'Riccardo',
+  lastname: 'Degni'
+}
+
+const livelloDiFormalità = 'house'
+function checkLivelloDiFormalità() {
+  if( livelloDiFormalità == 'work' ) return 'lastname'
+  if( livelloDiFormalità == 'house' ) return 'name'
+}
+
+console.log( 'Ciao ' + obj[ checkLivelloDiFormalità() ] ) // obj[x] -> obj.x ma è modulare
+}
+
+// 2
+{
+const obj = {
+    name: 'Riccardo',
+    lastname: 'Degni',
+    skills: {
+    frontEnd: ['html', 'css', 'js', 'react', { x: { colors: ['blue', 'green'], fn: function() { console.log('hai chiamato fn!') } } } ],
+    backEnd: ['node', 'java', 'py', 'php']
+    }
+}
+
+console.log( obj.skills.frontEnd[4].x.colors[1] )
+obj.skills.frontEnd[4].x.fn()
+}
+
+// 3
+{
+const z = new Map([
+  ['name', 'Riccardo'],
+  ['lastname', 'Degni'],
+  ['skills', { frontEnd: ['js'], backEnd: ['node'] }],
+  ['fn', function() { console.log('hai chiamato fn!') }],
+  [10, 'ciao']
+])
+
+console.log( z.get('skills').frontEnd[0] )
+z.get('fn')()
+
+console.log( z.has(10) )
+
+const m = new Map([
+  ['numeroDiMele', 0]
+])
+
+function aumentaNumeroDiMeleDi(n) {
+  m.set('numeroDiMele', m.get('numeroDiMele') + n)
+}
+
+aumentaNumeroDiMeleDi(1)
+aumentaNumeroDiMeleDi(1)
+aumentaNumeroDiMeleDi(4)
+
+console.log( m.get('numeroDiMele') )
+}
+</script>
+
+</body>
+</html>

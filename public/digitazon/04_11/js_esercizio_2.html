@@ -1,0 +1,74 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_2</title>
+</head>
+<body>
+
+    <input id="elUsername" type="text" placeholder="insert your username">
+    <div id="usernameResp"></div>
+    <input id="elEmail" type="email" placeholder="insert your e-mail address">
+    <div id="emailResp"></div>
+
+    <div>
+        <button id="elBtn">send</button>
+    </div>
+
+    <div id="elResp"></div>
+
+<script>
+
+    class WrongEmailError extends Error {}
+
+    const elUsername = document.getElementById('elUsername')
+    const elEmail = document.getElementById('elEmail')
+    const elBtn = document.getElementById('elBtn')
+
+    const usernameResp = document.getElementById('usernameResp')
+    const emailResp = document.getElementById('emailResp')
+    const elResp = document.getElementById('elResp')
+
+    let isError = false
+
+    elBtn.addEventListener('click', function() {
+        const vUsername = elUsername.value.trim()
+        const vEmail = elEmail.value.trim()
+
+        switch( vUsername ) {
+            case '':
+                try {
+                    throw new WrongEmailError('lo username non può essere vuoto!')
+                }
+                catch(err) {
+                    usernameResp.innerHTML = err.message
+                    isError = true
+                }
+            break
+        }
+
+        switch( vEmail ) {
+            case '':
+                try {
+                    throw new WrongEmailError('la mail non può essere vuota!')
+                }
+                catch(err) {
+                    emailResp.innerHTML = err.message
+                    isError = true
+                }
+            break
+
+            case 'error':
+
+            break
+        }
+
+        if( isError) {
+            elResp.innerHTML = 'Ci sono errori nel form!'
+        }
+    })
+
+</script>
+    
+</body>
+</html>

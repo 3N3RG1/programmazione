@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript_basi_2</title>
+</head>
+<body>
+
+<script>
+
+    // crea tre stringhe a piacere e stampa la stringa più corta
+    const a = 'digitazon'
+    const b = 'mela'
+    const c = 'pc'
+
+    let min = c
+
+    if( a.length < b.length ) {
+        if( a.length < c.length ) {
+            min = a
+        }
+    }
+
+    else {
+        if( b.length < c.length ) {
+            min = b
+        }
+    }
+
+    console.log(min);
+    
+    // crea una variabile stringa con valore a piacere e stampa 
+    // il suo primo carattere, unito al simbolo '_' e al suo ultimo carattere
+
+    const s = 'digitazon'
+
+    console.log( s.charAt(0) + '_' + s.charAt(s.length - 1) );
+
+</script>
+
+</body>
+</html>

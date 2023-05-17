@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi_esperimento</title>
+</head>
+<body>
+    
+<script>
+
+
+
+// -----------------------------------------------------------------------
+
+{
+// occurencies
+function occurrencies(word) {
+    let map = new Map(), array = []
+    for(let i = 0; i < word.length; i++) {
+        if(!map.has(word[i]) && word[i] != ' ') map.set(word[i], 1)
+        else if(word[i] != ' ') map.set(word[i], map.get(word[i])+1)
+    }
+    map.forEach(function(v) {
+        array.push(v)
+    })
+    return array.sort(function(a, b){return a - b})
+}
+console.log(occurrencies('alberto zaccagni'))
+}
+
+// ------------------------------------------------------------------------
+
+{
+// anagrams
+let string = 'ciao'
+let array =  ['caio', 'cio', 'oiac', 'byei']
+
+function anagrams(word, maybeAnagrams) {
+    let map = new Map(), a = []
+    for(let i = 0; i < word.length; i++) {
+        if(!map.has(word[i])) map.set(word[i], 1)
+        else map.set(word[i], map.get(word[i])+1)
+    }
+    let newMap = new Map()
+    for(let j = 0; j < maybeAnagrams.length; j++) {
+        for(let k = 0; k < maybeAnagrams[j].length; k++) {
+            if(!newMap.has(maybeAnagrams[j][k])) newMap.set(maybeAnagrams[j][k], 1)
+            else newMap.set(maybeAnagrams[j][k], newMap.get(maybeAnagrams[j][k])+1)
+        }
+        if(map.entries() == newMap.entries()) a.push(maybeAnagrams[j])
+        // if (map.size !== newMap.size) {return false
+        // for (var [key, val] of map1) {
+        //     testVal = map2.get(key);
+        //     if (testVal !== val || (testVal === undefined && !map2.has(key))) {
+        //         return false;
+        //     }
+        // }
+        // return true;
+    }
+    return a
+    // PROBLEMA DI REFERENCE
+    // let map = new Map(), a = []
+    // for(let i = 0; i < word.length; i++) {
+    //     if(!map.has(word[i])) map.set(word[i], 1)
+    //     else map.set(word[i], map.get(word[i])+1)
+    // }
+    // for(let j = 0; j < maybeAnagrams.length; j++) {
+    //     let newMap = map
+    //     for(let k = 0; k < maybeAnagrams[j].length; k++) {
+    //         if(newMap.has(maybeAnagrams[j][k])) newMap.set(maybeAnagrams[j][k], newMap.get(maybeAnagrams[j][k])-1)
+    //         if(newMap.get(maybeAnagrams[j][k]) == 0) newMap.delete(maybeAnagrams[j][k])
+    //     }
+    //     if(!newMap.size) a.push(maybeAnagrams[j])
+    // }
+    // return a
+}
+console.log(anagrams(string, array))
+}
+
+// ------------------------------------------------------------------------
+
+{
+// Data una stringa che contiene solo parentesi tonde aperte e parentesi tonde chiuse, scrvere una funzione che ritorna true se tutte le parentesi sono bilanciate, false altrimenti
+let z = ')('
+function bilancio(string) {
+    let count = 0
+    for(let i = 0; i < string.length; i++) {
+            if(string[i] == '(') count++
+            else count--
+            if(count < 0) return false
+        }
+    return !count
+}
+console.log(bilancio(z))
+}
+
+// ------------------------------------------------------------------------
+
+{
+// 4 - andGate
+a = false
+b = false
+function nand(b1, b2) {
+  return !(b1 && b2)
+}
+function andGate(b1, b2) {
+    return nand(true, nand(b1,b2))
+    // y = true
+    // if(b1 == b2) y = false
+    // return nand(true, y)
+}
+// console.log(andGate(a,b))
+}
+
+{
+// 4 - orGate
+let a = true
+let b = true
+function nand(b1, b2) {
+  return !(b1 && b2)
+}
+function orGate(b1, b2) {
+  return nand(nand(b1, b1), nand(b2, b2))
+}
+console.log(orGate(a, b))
+}
+
+// ------------------------------------------------------------------------
+
+{
+function fattoriale(n) {
+    let result = 1
+    for(let i = 2; i <= n; i++) {
+        result *= i
+    }
+    return result
+}
+console.log(fattoriale(2))
+}
+
+// ----------
+
+{
+// creare un oggetto chiamato "language" che rappresenta un linguaggio di programmazione, e che abbia le seguenti caratteristiche:
+// - proprietà label, indica il nome del linguaggio
+// - proprietà tags; un array di 3 stringhe che indica le caratteristiche dell'oggetto
+// - un metodo printTags che itera sui tag dell'oggetto e li stampa con un WHILE
+
+// chiamare il metodo printTags per mostrare i dati in console
+
+const language = {
+    label: 'js',
+    tags: ['debolmente tipizzato', 'linguaggio di programmazione', 'semplice'],
+    printTags: function() {
+        let i = 0
+        while(i < this.tags.length) {
+            console.log(this.tags[i++])
+        }
+    }
+}
+language.printTags()
+}
+
+{
+function e(a) {
+    a = a.push(3)
+}
+let ax = [2]
+console.log(e(ax))
+console.log(ax)
+}
+
+{
+/*
+Ex 1
+creare un array in cui occorre includere 5 dati di tipi diversi:
+- un letterale oggetto con proprietà x: 10 e y: 5
+- un numero (100)
+- una stringa ("javascript")
+- una mappa ("label" -> "sono una mappa")
+- un array [40, 50, 60]
+Iterare sull'array esterno con un foreach e...
+se l'elemento corrente è...
+un letterale oggetto, stampa la somma delle sue proprietà x e y
+un numero, controlla se è > 100 scrivi red, altrimenti blue
+una stringa, stampa il suo primo carattere
+una mappa, stampa il valore della sua proprietà "label", se ce l'ha
+un array, stampa i numeri in ordine inverso
+*/
+
+let array = [
+    {x: 10, y: 5},
+    100,
+    'javascript',
+    new Map([['label', 'sono una mappa']]),
+    [40, 50, 60]
+]
+
+array.forEach(v => {
+    if(typeof v === 'object' && v.constructor === Object) {
+        console.log(v.x + v.y)
+        return
+    } if(typeof v === 'number') {
+        console.log((v > 0) ? 'red' : 'blue')
+        return
+    } if(typeof v === 'string') {
+        console.log(v[0])
+        return
+    } if(v instanceof Map) {
+        console.log(v.get('label'))
+        return
+    } if(Array.isArray(v)) console.log(v.reverse())
+})
+}
+
+{
+/*
+dati due array ordinati, creare una funzione chiamata merge, che prende in ingresso i due array e ne ritorna uno solo, ordinato
+*/
+
+let array1 = [1,3,6,8]
+let array2 = [-2,5,6,9]
+
+function mergeSortedArrays(arr1, arr2) {
+    const array = []
+    // let i, j
+    for(let i = 0, j = 0; i < arr1.length && j < arr2.length;) {
+        if(arr1[i] <= arr2[j] /* || arr2[j] === undefined */) array.push(arr1[i++])
+        else if(arr1[i] > arr2[j] /* || arr1[i] === undefined*/) array.push(arr2[j++])
+        // else if(i == arr1.length) for(j, i++; j < arr2.length; j++) array.push(arr2[j])
+        // else if(j == arr2.length) for(i, j++; i < arr1.length; i++) array.push(arr1[i])
+    }
+    return array
+}
+console.log(mergeSortedArrays(array1, array2))
+}
+
+let x = null
+if (x == undefined) console.log('a') // these statements execute
+if (typeof x === null) console.log('b')// these statements execute
+if (x == null) console.log('c')
+if(NaN !== NaN) console.log('d')
+if(true === 1) console.log(3)
+
+{
+const arr = [1, 2, 3];
+const arr2 = arr; // like arr.slice()
+arr2.push(4)
+console.log(arr)
+console.log(arr2)
+}
+
+{
+// let a = 1
+// let b = a
+// console.log(b)
+// a = 3
+// b = a
+// console.log(b)
+
+let a = 1
+let b = a
+function c(m) {
+    m = 5
+    return m
+}
+console.log(c(b))
+console.log(a)
+console.log(b)
+let h = 5
+h = 7
+
+let x = [1]
+let y = x
+function z(n) {
+    return n.push(2)
+}
+z(y)
+console.log(y)
+console.log(x)
+
+function e(as) {
+    return as = []
+}
+let as = [2]
+console.log(e(as))
+console.log(as)
+}
+
+{
+let a = 5
+function ciao1(z) {
+  z = 6
+  console.log(a)
+}
+ciao1(a)
+console.log(a)
+
+let b = 10
+function ciao2(b) {
+  b = b+1
+  console.log(b)
+}
+ciao2(b)
+console.log(b)
+}
+
+</script>
+
+</body>
+</html>

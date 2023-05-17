@@ -1,0 +1,126 @@
+(1) FRONT-END & BACK-END
+- Front-end: HTML, CSS, Javascript (i primi duenon sono linguaggi di programmazione ma di make-up)
+Ci sono dei programmi specializzati in front-end che hanno preso lla sintassi di Javascript, l'hanno migliorata e hanno creato un piccolo ecosistema evoluto definito frontend fraimwork e questi programmi sono Angular, React, ecc
+- Back-end: Java, C-Sharp, PHP, Python, Ruby, NodeJS (che sono veri e propri programmi)
+Sono state create backedn definiti Rest-API che permettono di creare un unico codice che interagisce sia al frontend di un sito internet o di un'applicazione mobile
+- Full Stack è quel soggetto che ha competenze di frontend, backend e anche di database
+
+(2) DATABASE | Linguaggio: SQL (non è un linguaggio di programmazione ma un linguaggio di interrogazione della nostra base di dati)
+- Relazionali | (My sequel | Sequel Server | Postgr SQL):
+  Sono chiamati così perchè mettono in relazioni i vari dati relativi ad un medesimo oggetto (sono utilizzati nel 95% delle volte)
+- Non Relazionali
+  Sono l'opposto dei relazionali e vengono utilizzati in casistiche molto specifiche appunto perchè non si possono usare i database relazionali
+  I database non relazionali sono tanti (come una grossa famiglia) e ognuno di questi risolve problemi differenti, non come i relazionali che sono molto simili e si diversificano solo per determinate peculiarità
+  Vengono usati ad esempio nei giochi quando tutti i giocatori sono tutti nella stessa stanza oppure quando molti utenti sono nella stessa chat e le informazioni sono molti veloci da memorizzare
+
+(3) SOFTWARE | (Java | C-sharp | C | C++)
+Le tecnologie utilizzate sono molto differenti in base al tipo di software che si vuole andare a sviluppare
+Negli ultimi anni però molti sviluppatori danno vita a software utilizzando HTML, CSS e Javascrpt legati assieme da Electron.JS (lo stesso Visual Studio Code è stato realizzato con questi "linguaggi")
+
+4) GAMING | (Unity 3D è una programma a sua volta che al suo interno ti permette di usare un sacco di linguaggi es: Csharp | Javascript (c'è ne sono molti altri di programmi oltre a unity))
+Anche qui le tecnologie e i linguaggi variano molti in base ai tipo di tecnologie delle aziende e tipo di gioco che si vuole sviluppare o piattaforma su cui ci si appoggia
+
+5) SVILUPPO MOBILE (Android -> Java, Cotlin | IOS -> Swift, Objective C)
+Il linguaggio di programmazione per sviluppare una determinata applicazione deriva direttamente dal Sistema operativo (perchè sono in grado di comprendere dei linguaggi che per loro sono definiti nativi)
+Per bypassare questi problemi sono stati sviluppati dei programmi che utilizzano altri linguaggi e non di programmazione.
+Sviluppo Ibrido: permette di scrivere il codice in un linguaggio non nativo (esistono tante tecnologie: Cordova che permette di scrivere in HTML, CSS, Javascript | Flutter (creato da Google) | React Native (creato da facebook)) ma che viene compresa da tutti i stistemi operativi
+
+6) ROBOTICA & AUTOMAZIONE (C, ma si possono usare veramente un sacco di linguaggi)
+- IoT (Internet Of Things): si intendono tutti quei dispositivi intelligenti o smart che sono collegati all'internet
+- Sistemi Embedded / Integrati: si intendono tutti quegli oggetti che hanno al loro interno dei componenti elettronici (Es: TV, Telecomando, Macchina del caffè)
+Chi lavora in questo ambito conosce molto bene anche la matematica e quasi tutti lavorano però nell'ambito della ricerca (Centro di ricerca / progetti di dottorato) perchè c'è poca richiesta
+
+7) DATA ANALYSIS / SCIENCE & BUSINESS INTELLIGENT (Analisi di dati)
+Solitamente si trattano di enterprize (aziende milionarie sparse per il mondo) che analizzano dati di altri companies (tipo gucci o altro) e in che modo lo fanno:
+Queste interprize comprano dei tool di analisi di dati (quindi tool specializzait nell'analisi massiva) e lo utilizza per i propri progetti utili alle companies.
+Sono richieste poche competenze di programmazione anche perchè appunto si utilizzano molte API (ad esempio ci lavorano persone laureate in economia o soprattutti persone laureate in analisi e statistica)
+All'interno di questa macro categoria dell'analisi dei dati ci sono due divisioni (che differenziano anche per i pannelli si utilizzo di analisi):
+- Data Scientis: analizza i dati per fare delle previsioni future
+- Business Intelligent: estrai informazioni dai dati del passato
+I linguaggi di programmazione sono limitati ma la maggior parte delle volte è richiesta la capacità di utilizzo di SQL (che non è un linguaggio di programmazione), R o Pyton più raramente
+
+(8) MACHINE LEARNING / DEEP LEARNING & NPL (Analizzare il modo in cui l'essere umano comunica, quindi analisi di testi, di parlato / vocale)
+Tendenzialmente si usa Pyton perchè ci sono una marea di librerie (numeriche e matematiche) che permettono di scrivere in maniera semplice tutti gli algoritmi di machine learning
+Tuttavia ci sono altri strumenti di maggior livello che permettono si usare linguaggi differenti
+Solitamente sono richieste altre competenze come quelle matematiche o di analisi
+
+Il machine learning specialist o engineer è una figura tecnica con un background matematico che combina statistica e informatica al fine di sviluppare algoritmi; questi ultimi apprendono informazioni direttamente dai dati e dall’esperienza attraverso metodi matematico-computazionali. Si tratta di algoritmi che si evolvono e che migliorano continuamente: l’obiettivo finale è ottenere una macchina in grado di imparare ed evolversi in autonomia.
+
+Un esperto di machine learning, oltre a progettare e sviluppare algoritmi di apprendimento automatico, ha diverse responsabilità. Eccone alcune:
+
+identificare i pattern attraverso l’analisi di dati storici
+scoprire e progettare nuovi metodici analitici
+eseguire analisi esplicative dei dati
+generare e testare ipotesi di lavoro
+fornire supporto tecnico per la gestione del programma e per le attività di sviluppo commerciale
+gestire la condivisione delle conoscenze all’interno di una community di riferimento.
+Quali sono le competenze che le aziende ricercano in un machine learning engineer?
+Per essere assunti come machine learning specialist non basta conoscere i concetti di machine learning e deep learning: occorrono competenze tecniche specifiche.
+
+All’interno delle job description, il più delle volte sono elencati questi requisiti:
+
+laurea in informatica, ingegneria informatica, matematica o simile
+conoscenza della struttura dei dati e di come funzionano
+conoscenza dei linguaggi di programmazione più diffusi come Python, Java, C++ o JavaScript
+familiarità con i framework Tensorflow, Pytorch, keras
+ottima conoscenza di SQL
+conoscenza dei principi della Data Science
+esperienza tecniche NLP
+comprensione di matematica, probabilità e statistica.
+
+In sostanza, per questa professione è importante essere intraprendenti e autodidatti: occorre sviluppare le proprie competenze seguendo corsi aggiuntivi a quelli universitari, come ad esempio quello tenuto da Andrew Ng su Coursera e offerto dalla Stanford University, quelli presenti su Udemy e Amazon AWS e il master in deep learning proposto da Experis.
+
+9) CLOUD
+é una sorta di mix tra un sistemista e un architect, ovvero quella persona che ha delle competenze per le quali deve comprendere al meglio dove mettere i determinati server in base al bacino di utenza e in quali paesi è presente l'utenza, qanti duplicati del database servono, ecc
+Ci sono diversi programmi anche qui come AWS (di Amazon) e altri
+
+(10) SICUREZZA (è veramente enorme (Es. Assembly))
+
+Per intraprendere la carriera di Cyber Security Engineer è generalmente richiesta una laurea in Informatica, Ingegneria Informatica o discipline affini. Si possono completare gli studi accademici con Master e corsi sulla sicurezza informatica. 
+
+Molti professionisti scelgono poi di continuare a studiare attraverso corsi di aggiornamento specifici, i quali prevedono spesso il rilascio di certificazioni: sono un esempio la Certified Information Systems Security Professional (CISSP) o la Certified Ethical Hacker (CEH) promossa dall’EC-Council2.
+
+Per quanto riguarda le competenze, tra le principali hard skill che un Cyber Security Engineer dovrebbe possedere vi sono: 
+
+Conoscenza del funzionamento dei sistemi operativi più diffusi (Windows, UNIX, Linux...);
+Conoscenza dei linguaggi di programmazione più diffusi, come Python, C++, Java e Ruby;
+Conoscenza delle principali tecniche e metodologie di Risk Assessment;
+Conoscenza del funzionamento dei firewall e, in generale, conoscenza dei più diffusi software antivirus;
+Conoscenza degli strumenti di Malware Analysis più utilizzati, per esempio debugger, disassembler, System Monitors;
+Esperienza con le tecniche di Penetration Test e di Ethical Hacking;
+Esperienza con le principali tecniche di crittografia;
+Tra le soft skill più richieste ai Cyber Security Engineer, invece, vi sono:
+
+11) DEVOPS
+Nata di recente, è una metodologia di gestione del progetto, quella figura che è una sorta di programmatore e sistemista
+Applica determinate metodologie di lavoro del team per agevolore e velocizzare la parte di scrittura e test del codice
+Ci sono molti tool e sono in continuo cambiamento
+
+(12) BLOCKCHAIN
+
+In questo contesto si inserisce la figura del Blockchain Developer, cioè il professionista che principalmente si occupa di:
+
+Definire l’architettura del network;
+Configurare i protocolli di sicurezza della rete;
+Sviluppare gli smart contract;
+Sviluppare il front end design e la componente di back end;
+Effettuare test per verificare che la dApp funzioni correttamente.
+A seconda delle funzioni che svolgono in ambito aziendale, i Blockchain Developer possono essere raggruppati in tre categorie2:
+
+Gli Sviluppatori Back End sono responsabili della progettazione e dello sviluppo di Application Programming Interface (API) per l'integrazione Blockchain, di testing e deployment e in generale della progettazione di software in collaborazione con altri sviluppatori e designer;
+Gli Sviluppatori Blockchain si occupano di supervisionare e pianificare i progetti Blockchain, di strutturare le offerte iniziali di monete (ICO) e di comprendere e soddisfare le esigenze aziendali in termini di app;
+Gli Smart-contract Engineer si occupano di tutto ciò che riguarda gli smart-contract, dallo sviluppo all’analisi dei flussi.
+BLOCKCHAIN DEVELOPER: FORMAZIONE E COMPETENZE
+Generalmente, per svolgere la professione di Blockchain Developer, può essere utile possedere una laurea in Informatica o Ingegneria Informatica, per esempio. 
+
+Le hard skill più comuni per il Blockchain Developer, riguardano i seguenti ambiti:
+
+I linguaggi di programmazione più utilizzati3 (per esempio, Python, Java, Scala, C, C-Sharp e C++);
+I linguaggi di programmazione specifici per la scrittura di smart-contract (come Solidity);
+Le principali strutture dati (alberi binari di ricerca, Hash Table…);
+I meccanismi di Cyber Security;
+Gli algoritmi e le tecnologie decentralizzate;
+Le principali tecniche di Data Analysis.
+Un Blockchain Developer dovrebbe, inoltre, avere ampie competenze in ambito di sviluppo di dApp, cioè applicazioni decentralizzate eseguite su una rete peer-to-peer di computer, anziché su un unico computer. Si tratta di una forma di software progettata per funzionare online ed essere controllata da più entità. Tra le dApp più utilizzate ricordiamo Etherum. 
+
+Poichè molto spesso la Blockchain viene applicata in contesti Banking e Fintech, può essere utile al Blockchain Developer avere conoscenze base in discipline quali economia, finanza e diritto, nonché conoscenze in materia di privacy e GDPR.

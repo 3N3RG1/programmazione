@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+    
+<script>
+
+/*  Ex 1
+    creare la funzione selector, che accetta una stringa in ingresso è in grado di stabilire se è un selettore CSS valido (selettore semplice, senza annidamenti), tra:
+    - selettore di id
+    - selettore di classe
+    - selettore di un elemento tra div, span e img
+    Se lo è, restituisce true, altrimenti false.
+    In fase di chiamata, stampare un apposito messaggio in ouput, per ognuna delle seguenti chiamate:
+    selector('#myDiv')  -> è un selettore valido, di id
+    selector('.myDiv')  -> è un selettore valido, di classe
+    selector('div')  -> è un selettore valido, di elemento div
+    selector('paperino')  -> non è un selettore valido
+    selector('ul')  -> non è un selettore valido (non è div, span o img)
+*/
+{
+function selector(a) {
+    if(a[0] == '#') {
+        console.log(a + ' è un selettore valido di id')
+        return true
+    } else if(a[0] == '.') {
+        console.log(a + ' è un selettore valido di classe')
+        return true
+    } else if(a == 'div' || a == 'span' || a == 'img') {
+        console.log(a + ' è un selettore valido di elemento div, span o img')
+        return true
+    } else {
+        console.log(a + ' non è un selettore valido')
+        return false
+    }
+}
+selector('#myDiv')
+selector('.myDiv')
+selector('div')
+selector('paperino')
+selector('ul')
+}
+console.log('----------')
+
+/*  Ex 2
+    creare una funzione checkArray che prende in ingresso un array di N numeri e stampa:
+    - quanti sono pari
+    - quanti sono dispari
+    - se contiene il numero 10
+    - se è un array o meno
+    chiamare con:
+    checkArray([90, 78, 45, 34])
+    checkArray([0, 0, 0])
+    checkArray([10])
+    checkArray(10)
+*/
+{
+function checkArray(a) {
+    if(Array.isArray(a)) {
+        let b = 0, d = false;
+        for(let i = 0; i < a.length; i++) {
+            if(a[i] % 2 == 0) b++
+            if(a[i] == 10) d = true
+        }
+        let c = a.length - b
+        console.log('l\'array contiene ' + b + ' numeri pari')
+        console.log('l\'array contiene ' + c + ' numeri dispari')
+        if(d) console.log('l\'array contiene uno o più cifre corrispondenti al 10')
+    } else console.log(a + ' non è un array')
+}
+checkArray([90, 78, 45, 34])
+checkArray([0, 0, 0])
+checkArray([10])
+checkArray(10)
+}
+console.log('----------')
+
+/*  Ex 3
+    creare una funzione makeElement, che prende in ingresso una stringa che identifica il tipo di elemento HTML da generare, una stringa che identifica il suo id, una stringa che identifica il suo contenuto, e un booleano che indica se chiudere o meno il tag (false indica un tag a chiusura implicita, true a chiusura esplicita)
+    La funzione restituisce la stringa formattata correttamente che rappresenta un elemento HTML. In fase di chiamata, stamparla in console.
+    Usare i seguenti valori:
+
+    makeElement('input', 'myInput', '', false)  ->  <input id="myInput">
+    makeElement('div', 'box', 'javascript', true)  -> <div id="box">javascript</div>
+*/
+{
+function makeElement(a, b, c, d) {
+    let tag = '<' + a + ' id="' + b + '">'
+    if(d) {
+        console.log(tag + c + '</' + a + '>')
+    } else console.log(tag)
+}
+makeElement('input', 'myInput', '', false)
+makeElement('div', 'box', 'javascript', true)
+}
+console.log('----------')
+
+/* Ex 4
+    creare una funzione treeStr che prende in ingresso una stringa che deve avere una lunghezza pari e superiore a 4 e stampa la seguente formattazione in output:
+    treeStr('javascript')
+             s
+            s c
+          a s c r
+        v a s c r i
+      a v a s c r i p
+    j a v a s c r i p t
+*/
+{
+function treeStr(string) {
+    let stringa = '', spazi = ''
+    for(let i = string.length/2-1; i >= 0; i--) {
+        if(i == string.length/2-1) {console.log(spazi.padStart(i*2+1, ' ') + string[i])}
+        stringa = string[i] + ' ' + stringa + string[string.length-i-1] + ' '
+        console.log(spazi.padStart(i*2, ' ') + stringa)
+    }
+}
+let a = 'javascript'
+treeStr(a)
+}
+console.log('----------')
+
+/*  Ex 5
+    Creare una funzione makeMatrix, che prende in ingresso un array di 10 numeri a piacere compresi tra 1 e 10, e restituisce una matrice composta da due array, uno in cui ci sono tutti i numeri pari o superiori a 6, uno in cui ci sono tutti i numeri inferiori a 6.
+    Con la matrice restituita, stampare la media dei numeri pari o superiori a 6 del primo array e la media dei numeri inferiori a 6 del secondo array.
+*/
+{
+function maleMatrix(a) {
+
+    if(a.length != 10) return false
+    for(let i = 0; i < a.length; i++) {
+        if(isNaN(a[i]) || a[i] < 0 || a[i] > 10) return false
+    }
+
+    let b = [], c = [], d = [b + c]
+    for(let j = 0; j < a.length; j++) {
+        if(a[j] % 2 == 0 || a[j] > 6) b.push(a[j])
+        if(a[j] < 6) c.push(a[j])
+    }
+
+    let e = 0, f = 0
+    for(let k = 0; k < b.length; k ++) {
+        e += b[k]
+    }
+    for(let l = 0; l < c.length; l ++) {
+        f += c[l]
+    }
+
+    console.log(e / b.length)
+    console.log(f / c.length)
+    
+}
+maleMatrix([3, 8, 5, 2, 7, 1, 9, 4, 10, 6])
+}
+console.log('----------')
+
+</script>
+
+</body>
+</html>

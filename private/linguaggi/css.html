@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS</title>
+</head>
+
+<body>
+  
+ <h1>CSS</h1>
+ <p>Dove posso scrivere css:</p>
+ <br>Prima di tutto sotto il tag title di html bisogna mettere link rel="stylesheet type="text/css" href="il nome del file css (come lo abbiamo salvato)"
+ <ul>
+     <li>mettendo l'attributo style direttamente nei tag di html e poi modificando ciò che si vuole con i valori necessari</li>
+     <li>aprendo un tag style e scrivendo poi type="text/css"; a questo punto basta inserire i tag che ci serve modificare</li>
+     <li>scrivendo un nuovo file css dove si richiamano i tag in html che diventano elementi</li>
+ </ul>
+ <p>Quali sono i modi per richiamare i tag html in un file css (in css i tag prendono il nome di elementi):</p>
+ <ul>
+     <li>basta mettere il tag html seguito da una graffa e si selezionano tutti i tag di quel tipo</li>
+     <li>mettendo un id come attributo in un tag con un valore unico per lui, si richiama in css con l'hastag (has) e si apre sempre una graffa (il cambiamento che si fa in css varrà solo per lui)</li>
+     <li>mettendo un attributo class in un tag con un valore che poi essere uguale per più tag, si richiama in css con un semplice punto davanti e poi si apre un graff (il cambiamento varrà per tutti i tag che hanno lo stesso valore nella class)</li>
+     <li>mettendo un asterisco invece si selezionano proprio tutti i tag di html</li>
+     <li>se si vuole selezionare più di un tag o anche solo uno che si trova già dentro ad un altro tag si deve mettere in css il tag che comprende i tag che si vuole selezionare e poi il tag(proprio il nome del tag) dei tag che si vuole selezionare (tutti i tag dei tag che si vuole selezionare che no saranno dentro il primo tag non verranno selezionati) - (questo metodo di selezione di chiama ascendent)</li>
+     <li>quando voglio selezionare tag che presentano degli attributi con dei valori specifici devo mettere in css il tag che mi serve seguito da una parantesi quadra che contiene l'attributo con il valore specifico e poi aprire normalmente la parentesi graffa</li>
+ </ul>
+
+ <h4>PROPRIETà DI CSS</h4>
+ <br><b>font-family:</b> ti fa scegliere il font che vuoi utilizzare
+ <br><b>font-size:</b> permette di scegliere la grandezza del font in px
+ <br><b>font-weight:</b> permette di scegliere lo spessore del nostro font (tipo bold, medium, thin ecc.)
+ <br><b>line-height:</b> definisce l'altezza presente al di sopra del contenuto (in pratica lo spazio tra l'elemento sopra e quello che si seleziona)
+ <br><b>text-align:</b> permette di scegliere se mettere a destra a sinistra o al centro l'elemento che selezioniamo
+ <br><b>text-decoration:</b> permette di creare una linea in alto (overline), in basso (underline), al centro che taglia (line-through), sopra e sotto assieme (underline overline)
+
+ <h1>BACKGROUNDS</h1>
+ <br><b>background-color:</b> determina il coloro di sfondo
+ <br><b>background-image:</b> permette di mettere un immagine di sfondo (per impostazione predefinita l'immagine viene ripetuta per ricoprire tutto lo sfondo sia in verticale che orizzontale)
+ <br><b>backgorund-repeat:</b> permette di scegliere se ripetere l'immagine solo in verticale o orizzontale con i valori repeat-x e repeat-y, mentre con il valore no-reapeat l'immagine non si ripetere
+ <br><b>background-position:</b> permette di scegliere la posizione (alto a dx/sx o in basso a dx/sx) del contenuto di un background ad esempio di un immagine
+ <br><b>background-attachment:</b> specifica se ad esempio l'immagine di sfondo deve scorrere o essere fissa (quando si scorre ad esempio verso il basso la pagina se l'immgine è fissa (fixed) scendendo col cursore non scomparirà altrimenti se non è fissa (scroll) scomparirà)
+ <br>Se voglio scrivere ad esempio più valori e non voglio scrivere tutte le volte background-color poi background-position ecc, posso mettere solamente l'elemento background e poi scrivo tutti i valori spaziati solo da uno spazio (questa proprietà è detta shorthand)
+ 
+ <h1>BORDERS</h1>
+ <br><b>border-style:</b> determina lo stile del background-color
+ <ul>
+     <li><b>dotted:</b></li> il bordo appare con i pallini
+     <li><b>dashed:</b></li> il bordo appare tratteggiato
+     <li><b>solid:</b></li> il bordo appare uniforme
+     <li><b>double:</b></li> il bordo appare con una doppia linea sottilinea
+     <li><b>groove:</b></li> (deve sempre essre accompagnato da un colore) il bordo appare della metà interna del colore selezionato mentre della metà esterna sempre del colore selezionato ma più saturato (quindi più scuro)
+     <li><b>ridge:</b></li> il contraio di groove
+     <li><b>inset:</b></li> (deve essere sempre accompagnato da un colore) il bordo in basso e a destra appare del colore selezionato mentre in alto e a sinistra appare sempre del colore selezionato ma più saturato (quindi più scuro)
+     <li><b>outset:</b></li> il contrario di inset
+     <li><b>none:</b></li> elimina il bordo quindi anche i pixel di base che occupa
+     <li><b>hidden.</b></li> nasconde il bordo
+     <li><b>come fare il bordo mixato:</b></li> basta mettere border-style e poi inserire i bordi in senso orario partendo dal bordo in alto
+ </ul>
+ <br><b>border-width:</b> determina la grandezza del bordo che si può esprimere in px,cm,em o con le grandezze con thin, medium,thick (anche qui si può fare 4 grandezze diversi per i bordi partendo a scrivere la grandezza dei bordi da quello in alto e poi proseguendo in senso orario)
+ <br><b>border-color</b> si può determinare il colore del bordo specificandolo con il colore stesso, l'RGB e l'hastag (HEX) (anche qui funziona la roba del senso orario per i bordi)
+ <br><b>come selezionare bordo per bordo:</b> border-top-style (bordo in alto), border-right-style (bordo a destra), border-bottom-style (bordo in basso), border-left-style (bordo a sinistra)
+ <br><b>border-radius:</b> specifica la rotondità del bordo (da specificare in px, cm e em)
+
+ <h1>MARGINS</h1>
+ <br><b>margin-top/-rigth/-bottom/-left:</b> per selezionare e scegliere ad esempio la grandeza di ogni margine (si possono usare gli shortcut)
+ <br>I valori del margin possono essere la grandezza stessa LENGTH espressa in px, cm, em; AUTO mette centra l'elemento preso in considerazione; % che scegliamo noi e si riferisce alla larghezza dell'elemento in cui è contenuto; inherit specifica che il margine deve essere ereditato dall'elemento genitore
+ <br>Cosa importante da tenere a mente è il collassamento dei margini, ovvero se si hanno due margini attaccati quello più piccolo è come se non esistessa
+
+ <h1>PADDINGS</h1>
+ <br><b>padding-top/-rigth/-bottom/-left:</b> per selezionare e scegliere ad esempio la grandeza di ogni padding (si possono usare gli shortcut)
+ <br>I valori del padding possono essere la grandezza stessa LENGTH espressa in px, cm, em; AUTO mette centra l'elemento preso in considerazione; % che scegliamo noi e si riferisce alla larghezza dell'elemento in cui è contenuto; inherit specifica che il margine deve essere ereditato dall'elemento genitore
+
+ <h1>HEIGHT/WIDTH</h1>
+ <br>Determina l'altezza o la larghezza solamente del contenuto e non quella del padding, border e margin
+ <br>I valori che si possono inserire sono:
+ <ul>
+     <li><b>auto:</b></li> è di default e viene calcolata già dal browser (che ha delle sue grandezze standard per ogni elemento)
+     <li><b>lenght:</b></li> definisce l'altezza o la larghezza in px, cm, em
+     <li><b>%:</b></li> definisce l'altezza o la larghezza in % (rispetto al contenuto base che è definito dal browser)
+     <li>initial:</li> l'altezza/larghezza sarà ereditata dal valore del suo genitore
+     <li>inherit:</li> imposta l'altezza/larghezza al valore predefinito
+ </ul>
+
+ <h1>OUTLINE</h1>
+ <br>Outine è una proprietà che permette di creare un bordo al border) è come un secondo bordo.
+ <br>Ha le proprietà/valori del border tranne che per il radius (ha un particolare valore per la proprietà color che è invert che permette di visualizzare il colore in un coloro opposto al colore di sfondo che altrimenti apparirebbe uguale.
+ <br>Un'altra proprietà particolare è outline-offset che crea uno spazio trasparente tra l'outline e il border
+
+ <h1>TEXT</h1>
+ <br><b>color:</b> per scegliere il colore della scritta
+ <br>Per quanto riguarda l'allineamento del testo ci sono diversi elementi
+ <ul>
+     <li>
+        <b>text-align:</b> determina l'allineamento orizzontale del testo
+        <ul>VALORI:
+            <li><b>center:</b> allinea al centro il testo</li>
+            <li><b>left:</b> allinea a sinistra il testo</li>
+            <li><b>right:</b> allinea a destra il testo</li>
+            <li><b>justify:</b> allinea sia a destra che a sinistra il testo</li>
+        </ul>
+     </li>
+     <li>
+         <b>text-decoration-line:</b> viene utilizzata per aggiungere una linea di decorazione al testo
+         <ul>VALORI:
+             <li><b>overline:</b> crea una linea al di sopra del testo</li>
+             <li><b>underline:</b> crea una linea al di sotto del testo</li>
+             <li><b>line-through</b> crea una linea che sbarra il testo</li>
+             <li><b>overline underline</b> crea una linea sia sopra che sotto il testo</li>
+         </ul>
+     </li>
+     <li>
+         <b>text-decoration-color:</b> permette di rendere una linea di decorazione del colore che si vuole (quindi affinchè sia efficace deve essere presente anche la proprietà text-decoration-line)
+     </li>
+     <li>
+         <b>text-decoration-style:</b> permette di scegliero lo stile della linea del testo
+         <ul>VALORI
+             <li><b>solid:</b> la linea è una linea normale</li>
+             <li><b>double:</b> la linea è doppia</li>
+             <li><b>dotted:</b> la linea è a punti</li>
+             <li><b>dashed:</b> la linea è tratteggiata</li>
+             <li><b>wavy:</b> la linea è a zig-zag</li>
+         </ul>
+     </li>
+     <li>
+         <b>text-decoration-thickness:</b> determina la grandezza della linea che si può fare con px, cm, %, em 
+     </li>
+     <li>
+         <b>(text-decoration: none;) :</b> serve a togliere le sottolineature che sono presenti nei testi che hanno dei link
+     </li>
+     <li>
+         <b>tex-transform:</b> viene utilizzata per specificare le lettere maiuscole e minuscole in un testo
+         <ul>
+             <li><b>uppercase:</b> trasforma tutte le lettere in maiuscolo</li>
+             <li><b>lowercase:</b> trasforma tutte le parole in minuscolo</li>
+             <li><b>capitalize:</b> trasforma la prima lettera di ogni parola in una maiuscolo</li>
+         </ul>
+     </li>
+     <li>
+         <b>text-indent:</b> (seguito da una misura ad esempio 50px) indica la distanza della prima lettera dal limite del contenuto
+     </li>
+     <li>
+         <b>letter-spacing:</b> per determinare lo spazio orizzontale tra le parole
+     </li>
+     <li>
+         <b>line-height:</b> per determinare lo spazio verticale tra le righe
+     </li>
+     <li>
+         <b>word-spacing:</b> per determinare lo spazio orizzontale tra ogni parola
+     </li>
+     <li>
+         <b>(white-space: nowrap;) :</b> specifica come viene gestito lo spazio bianco all'interno di un elemento, in questo modo si disabilita il wrapping del testo all'interno di un elemento (in pratica non il testo non va mai a capo)
+     </li>
+     <li>
+         <b>text-shadow:</b> serve a dare un ombra al testo, da notare che l'ombra va verso e destra e verso il basso, quindi quando si mettono i pixel la prima misura è per la destra mentre la seconda è per l'altezza verso il basso (se vogliamo che facciano il contrario dobbiamo mettere il meno davanti alla misura dei px)
+     </li>
+ </ul>
+  
+ <h1>FONTS</h1>
+ <b>font-family:</b> serve a specificare il font che si vuole utilizzare
+ <ul>
+     <li><b>font-style:</b> serve a determinare lo stile del font
+        <ul>VALORI
+            <li><b>normal:</b> è quella di base le lettere vengono visualizzate normali</li>
+            <li><b>italic:</b> le lettere sono piegate</li>
+            <li><b>oblique:</b> le lettere sono anche qui piegate ma sono meno supportate (supportate presumo intenda dai browser)</li>
+        </ul>
+    </li>
+    <li>
+        <b>font-weight:</b> determina la grandezza delle lettere stesse (normal, bold, thick, ecc.)
+    </li>
+    <li>
+        <b>(font-variant: small caps;) :</b> tutte le lettere appaiono in maiscolo ma hanno una dimensione inferiore alle lettere normali in maiuscolo
+    </li>
+    <li>
+        <b>font-size:</b> serve a determinare la dimensione del testo (se si utilizza em la dimensione del testo diminuisce al cambiare della grandezza del browser)
+    </li>
+ </ul>
+
+ <h1>LINKS</h1>
+ <ul>
+     <li><b>(a:link):</b> per scegliere il colore del link (il colore può essere di qualsiasi cosa, dallo sfondo, al sottolineamento, alla scritta stessa ad un border)</li>
+     <li><b>(a:visited):</b> per scegliere il colore di un link già visitato dall'utente</li>
+     <li><b>(a:hover):</b> per scegliere il colore del link quando ci si va sopra con il mouse</li>
+     <li><b>(a:active):</b></li> per scegliere il colore del link al momento del click
+ </ul>
+
+ <h1>LIST</h1>
+ <ul>
+     <li><b>list-style-type:</b> permette di scegliere i punti delle liste ul e ol</li>
+     <li><b>list-style-image:</b> permette di mettere un immagine come punto di ul e ol</li>
+     <li><b>(list-style-position: outside;):</b> permette di mettere i punti di un ul e ol al di fuori della scritta stessa (è l'impostazione predefinita)</li>
+     <li><b>(list-style-position: inside;):</b> permette di mettere i punti di un ul e ol dentro la scritta stessa</li>
+     <li><b>(list-style-type: none;):</b></li> permette di eliminare i punti dell'elenco se si mette padding e margin 0 li fa diventare come dei br
+ </ul>
+
+ <h1>TABLE</h1>
+ <ul>
+     <li><b>border:</b> per scegliere lo stile del bordo il colore ecc. (si possono mettere un sacco di valori)</li>
+     <li><b>border-collapse:</b> il bordo scompare</li>
+     <li><b>size</b></li>
+     <li><b>width:</b> per scegliere la larghezza orizzontale della tabella o caselle</li>
+     <li><b>height:</b> per sceglier l'altezza della tabella o caselle</li>
+     <li><b>text-align:</b> per scegliere l'allineamento del testo</li>
+     <li><b>vertical-align:</b> per determinare lìallineamento verticale del testo (se in alto (valore top) se in basso (valore bottom) se al centro (valore center))</li>
+     <li><b>border-top/bottom/right/left</b> per scegliere quale bordo modificare</li>
+     <li><b>tr:hover</b> per rendere colorate le tr al passaggio del maouse (funziona solo con tr e ovviamente si può scegliere qualsiasi cosa da colorare dalle scritte allo sfondo</li>
+     <li><b>tr:nth-child(even)</b> per rendere le righe colorate una sì e una no (si può scegliere se quelle pari o quelle dispari)</li>
+ </ul>
+<p>Se si vuole una tabella che non si restringe al restringersi della pagina bisogna aggiungere questa chiave valore (overflow-x:auto) allo style del tag che contiene la tabella, e apparirà una barra che rende scorribile solo la tabella, altrimenti apparirebbe una barra in fondo alla pagine che farebbe scorrere tutta la pagina</p>
+
+ <h1>DISPLAY</h1>
+ <ul>
+     <li><b>(display: block;):</b> rende l'elemento un elemento block che prenderà tutto lo spazio della riga (ovviamente molto elementi ce l'hanno già per impostazione predefinita come il div)</li>
+     <li><b>(display: inline;):</b> rende l'elemento un elemento inline che quindi prende solo lo spazio necessario (ovviamente molti elementi ce l'hanno già per impostazione predefinita com lo span)</li>
+     <li><b>(display: none;):</b> serve a rendere un elemento non presente nel front-end infatti la configurazionde della pagina sarà come se quell'elemento non fosse mai esistito (serve per non dover cancellare tutte le volte un elemento perchè se poi si vuole rimettere bisogna ricrearlo)</li>
+     <li><b>(visibility:hidden;):</b> rende l'elemento invisibile ma nel front-end occupa ancora lo spazio nella pagina anche se non è visibile</li>
+ </ul>
+
+ <h1>MAX-WIDTH</h1>
+ <br><b>max-width:</b> permette di rendere responsive gli elementi, altrimenti in un cellulare, se l'elemento è troppo grande, si visualizzerebbe una barra per scorrere e vedere così tutto l'elemento
+
+ <h1>POSITION</h1>
+ <ul>
+     <li><b>(position: static;):</b> per impostazione predefinita tutti gli elementi sono impostati su questo valore ovvero statico</li>
+     <li><b>(position: relative):</b> l'elemento è posizionato rispetto alla sua posizione normale, quindi quando noi diamo ad esempio uno spazio a sinistra di 30 px lui si sposterà di 30 px rispetto alla sua posizione originale</li>
+     <li><b></b>(position: fixed;):</li> l'elemento rimane fisso in quel punto, anche se si muove la pagina lui rimane fermo in quella posizione, quindi ono scorre con il resto della pagina
+     <li><b>(position: absolute;):</b> è posizionato rispetto all'antenato posizionato più vicino (invece di essere posizionato rispetto alla finestra di visualizzazione, come fixed (vuol dire che rimane fisso rispetto all'elemento in cui è contenuto, quindi tutto quello che non lo riguarda non lo influenza)</li>
+     <li><b>(position: sticky;):</b> l'elemento rimane fissato a dipendenza di dove si mette e dello scorrimento della pagina</li>
+ </ul>
+ 
+ <h1>Z-INDEX</h1> 
+ <br><b>z-index:</b> permette di scegliere quale elemento posizionare sopra l'altro se due elemnti sono sovrapposti
+
+ <h1>OVERFLOW</h1>
+ <ul>
+     <li><b>(overflow: visible;):</b> rende visibile tutto il testo anche se fuoriesce dalla caselle in cui è contenuto (mettiamo che crei una casella di tot pixel ma il testo non ci sta dentro perchè è troppo lungo)</li>
+     <li><b>(overflow: hidden;):</b> oscura la parte di testo che fuorisce dal bordo, in questo modo non è visibile</li>
+     <li><b>(overflow: scroll;):</b> aggiunge delle barra di scorrimento anche nei lati dove non è necessario</li>
+     <li><b>(overflow: auto;):</b> aggiunge le barre di scorrimento solo dove è necessario</li>
+     <li><b>overflow-x/y:</b> permettono di dicidere cosa fare con un bordo alla volta</li>
+ </ul>
+
+ <h1>FLOAT</h1>
+ <ul>
+     <li><b>(float: left;):</b> l'elemento fluttua a sinistra del suo contenitore (se ad esmpio abbiamo un immagine che si trov a nello stesso div di un testo questo apparirà a sinstra dell'immagine e sarà incolonnato bene</li>
+     <li><b>(float: right;):</b> stessa cosa ma l'elemneto sarà a destra</li>
+     <li><b>(float: none;):</b> l'elemento non flutta (è l'impostazione predefinta)</li>
+     <li><b>(float: inherit;):</b> prenderà il float dell'elemento genitore (ovvero in cui è contenuto)</li>
+ </ul>
+
+ <h1>CLEAR</h1>
+ <ul>
+     <li><b>(clear: none;):</b> non viene apportata alcuna modifica all'elemento che presenta il float</li>
+     <li><b>(clear: left;):</b> l'elemento che presenta il float apparirà in basso a sinistra sotto l'altro elemento</li>
+     <li><b>(clear: right;):</b> l'elemento che presenta il float apparirà in basso a destra sotto l'altro elemento</li>
+     <li><b>(clear: both;):</b> l'elemento che presenta il float apparirà in basso sia a sinistra che a destra sotto l'altro elemento</li>
+     <li><b>(clear: inherit;):</b> l'elemento eredita il valore di cancellazione dal suo genitore</li>
+     <li><b>(overflow: auto;):</b> se un elemento con float è più alto dell'elemento che lo contiene, "traboccherà" al di fuori del suo contenitore e con overflow si può fixare questa cosa</li>
+ </ul>
+
+ <h1>INLINE-BLOCK</h1>
+ <br><b>inline-block:</b> permette di posizionare due elementi in inline e di scegliere anche la dimensione (questo perchè con l'inline e basta non è possibile scegliere la dimensione)
+
+ <h1>ALIGN</h1>
+ <ul>
+     <li><b>(margin: auto;):</b> serve a centrare orizzontalmente nello spazio degli elementi block</li>
+     <li><b>(text-align: center;):</b> serve a centrare orizzontalmente un testo o anche verticalmente</li>
+     <li><b>(position: absolute;):</b> permette di buttare l'elemento a destra/sinistra in alto/ basso della pagina a seconda dell'impostazione che mettiamo dopo (es. right: 0; mi schiaccerà l'elemento selezionato a destra perchè solo right: 0; non funziona serve anche questa funzione)</li>
+     <li><b>(justify-content: center;):</b> permette di centrare il testo (non è supportato da tutte le versioni)</li>
+ </ul>
+
+ <h1>COMBINATORS</h1>
+ <br>Sono selettori e sono di 4 tipologi
+ <ul>
+     <li><b>descendant ( ):</b> quando vuoi selezionare un elemento dentro un altro elemento li dividi solamente da uno spazio</li>
+     <li><b>child (>):</b> seleziona tutti gli elementi che sono dentro un altro elemento, ma se un elemento(3) è dentro un elemento(2) che è dentro a sua ad un elemento(1), questo elemento(3) non verrà selezionato perchè non è direttamente sentro l'elemento(1) ma dentro un elemento(2) che è dentro l'elemento(1)</li>
+     <li><b>adjacent sibling (+):</b> seleziona ogni elemento che si trova al di sotto dell'elemento selezionato (es. div + p; mi selezionerà tutti gli elementi p che in html si trovano sotto div)</li>
+     <li><b>general sibling (~):</b> seleziona tutti gli elementi che hanno lo stesso tag e sono scritti in html al di sotto dell'elemento precedent a ~ (es. span ~ p; mi prende tutti gli elementi p che si trovano al di sotto dello span anche se nello span non è presente nessuna p</li>
+ </ul>
+
+ <h1>PSEUDO-CLASS</h1>
+ <ul>
+     <li><b>x:first-child:</b> (la x può essere qualsiasi elemento) praticamente serve a selezionare solo il primo elemento tra tutti quelli presenti per poi modificare solo lui</li>
+     <li><b>x:lang(y)</b> (la x può essere qualsiasi elemento);(y è il valore dell'id che è l'attributo di x) permette di mettere dei caratteri speciali prima e dopo ciò che è contenuto nei tag di x (cerca in w3school - sezione pseudo-class)</li> 
+ </ul>
+
+ <h1>PSEUDO-ELEMENT</h1>
+ <br> Uno pseudo-elemento CSS viene utilizzato per creare lo stile di parti specifiche di un elemento ad esempio per modellare la prima lettera, o riga, di un elemento.
+ <ul>
+     <li><b>(x::first-line):</b> (x è un elemento qualsiasi) permette di cambiare solo l'aspetto come si vuole della prima riga di ad es un tempo</li>
+     <li><b>(x::first-letter):</b> stessa cosa ma con la prima lettera</li>
+     <li><b>(x::before):</b> permettere di mettere un elemento prima di un altro</li>
+     <li><b>(x::after):</b> permette di mettere un elemento dopo un altro</li>
+     <li><b>(x::marker):</b> seleziona i marcatori di un elemento che poi possono essere modificati a piacimento</li>
+     <li><b>(x::selection):</b> permette di modificare tutti gli elementi che vengono scritti davanti al ::selection</li>
+ </ul>
+
+ <h1>OPACITY</h1>
+ <br><b>opacity:</b> permette di determinare l'opacità e si definisce con un valore che va da 0.0 a 1.0 (si può esprimere anche con la percentuale)
+
+ <h1>NAVIGATION BAR</h1>
+ <br>Solitamente quando si vuole creare una navigation bar si crea partendo da una lista
+ <br>Il padding e margin si imposta su 0 e per rimuovere i list item si usa: list-style-type: none;
+ <br>Per sapere molto bene l'argomento vai su w3scholl
+
+ <h1>DROPDOWN BAR</h1>
+ <br>Non esiste un vero e proprio elemento per i drop down menu ma vengono usati gli hover o altro
+
+ <h1>ATTRIBUTE SELECTOR</h1>
+ <ul>
+     <li><b>[attributo]:</b> permette di selezionare tutti i tag con quell'attributo che può contenere qualsiasi valore</li>
+     <li><b>[attributo="value"]</b> permette di selzionare tutti i tag che presentano quell'attributo con quello specifico valore (solo quel valore)</li>
+     <li><b>[attributo~="valore"]</b> permette di selzionare tutti i tag che presentano quell'attributo con quello specifico valore all'interno dei suoi valori (quindi basta che l'attributo contenga quel tag tra i suoi tag che viene selezionato)</li>
+     <li><b>[attributo|="valore"]</b> permette di selezionare tutti i tag che presentano quell'attributo con quello specifico valore o con un valore che è scritto tipo valore-x dove cx sta per un'altra parola (es. se il valore è top seleziona non solo tutti i valori topo ma anche ad esempio top-cane, top-gatto ecc.)</li>
+     <li><b>[class^="valore"]</b> permette di selezionare tutti i tag che presentano quell'attributo con quello specifico valore o attributi che contengono quel valore anche in altre parole tipo se il valore è top verranno selezionati anche i valori topcontent o bicitop ecc.</li>
+     <li><b>[class$="valore"]</b> permette di selezionare tutti i tag che presentano quell'attributo con quello specifico valore o attributi che hanno alla fine di tutti i valori quel valore specifico che può essere anche contenuto nell'ultima parola ma deve apparire come porzione finale di quella parola (es. panevalore, gatto-valore, ecc)</li>
+     <li><b>[attribute*="valore"]</b> permette di selezionare tutti i tag che presentano valori con all'interno le sillabe messe (es. metto al posto di te: gi, tutti i gli attributi che presentano parole con quelle sillabe vengono selezionati tipo giro, orgia, ecc)</li>
+ </ul>
+
+ <h1>IMPORTANT</h1>
+ <br><b>!important:</b> va scitto in parte alla chiave di un attributo, prima del punto e virgola, e serve ad indicare che quel determinato stile ha un valore maggiore rispetto a stili scritti in precedenza sempre per lui
+
+ <h1>FUNZIONI MATEMATICHE</h1>
+ <br>Servono a regolare le grandezze in modo responsivo
+ <ul>
+     <li><b>calc():</b> serve a stabilire una dererminata altezza o lunghezza (dentro la parentisi si possono usare le funzioni + - * /)</li>
+     <li><b>max():</b> serve a impostare la grandezza massima e utilizza il valore più grande, da un elenco di valori separati da virgole, come valore della proprietà</li>
+     <li><b>min():</b> serve a impostare la grandezza minima e utilizza il valore più piccolo, da un elenco di valori separati da virgole, come valore della proprietà</li>
+ </ul>
+
+ <h1><i>CSS AVANZATO</i></h1>
+
+ <h1>BORDER RADIUS</h1>
+ <br><b>border-radius:</b> permette di specificare la rotondità di un bordo
+ <br>Si possono usare anche border-top-left-radius, border-top-right-radius, border-bottom-right-radius and border-bottom-left-radius
+ <br>Si può scrivere la sequenza dei bordi mettendoli un dopo l'altro tipo (15px 20px 3px 5px) altrimenti si possono fare anche dei bordi elittici mettendo come chiave es. 50px / 15px
+ 
+ <h1>BORDER IMAGE</h1>
+ <br><b>border-image:</b> permette di utilizzare un immagine come bordo
+ <br>Cosa da tenere a mente è che bisogna sempre specificare l'esistenza del bordo quindi es. 10px solid transparent
+ <br>Questa proprietà taglia l'immagine in nove parti e posiziona gli angoli dell'immagine agli angoli del bordo
+ <br>Se si utilizza la parola round dopo il link dell'immagine questa verrà ripetuta un numero di volte pari a quello che noi mettiamo
+ <br>Se si utilizza la parola stretcyh, l'immagine verrà stretchata per occupare tutto lo spazio
+
+ <h1>BACKGROUNDS</h1>
+ <ul>
+     <li><b>background-size:</b> permette di ridimensionare le immagine messe come sfonfo utilizzando px ecc.
+        <ul>VALORI:
+            <li><b>contain:</b> permette all'immagine di rientrare perfettamente nello ma alcune parti potrebbero rimanere bianche se lo sfondo e l'immagine non hanno le stesse misure</li>
+            <li><b>cover:</b> permette all'immagine di coprire tutto lo sfondo ma se hanno due misure diverse parte dell'immagine sarà fuori dalla sfondo e quindi non visibile</li>
+        </ul>
+    </li>
+    <li><b>background-origin:</b> permette di specificare da dove l'immagine inizia a mostrarsi, quindi se dalla parte in altro a sinistra del bordo, padding o contenuto
+        <ul>VALORI:
+            <li><b>border-box:</b> fa partire l'immagine da in alto a sinistra del bordo</li>
+            <li><b>padding-box:</b> fa partire l'immagine da in alto a sinistra del padding</li>
+            <li><b>content-box:</b> fa partire l'immagine da in alto a sinistra del contenuto</li>
+        </ul>
+    </li>
+    <li><b>background-clip:</b> permette di scegliere dove mostrare lo sfondo, se solo al contenuto, padding o bordo
+        <ul>VALORI:
+            <li><b>border-box:</b> è quello di default e mostra lo sfondo sia a contenuto, padding e bordo</li>
+            <li><b>padding-box:</b> mostra lo sfondo a paddign e contenuto</li>
+            <li><b>content-box:</b> mostra lo sfondo solo al contenuto</li>
+        </ul>
+    </li>
+ </ul>
+
+ <h1>COLOR KEYWORDS</h1>
+ <ul>
+     <li><b>transparent:</b> permette di rendere trasparente la sezione selezionta (è l'queivalente di scrivere rgba(0,0,0,0))</li>
+     <li><b>currentcolor:</b> richiama il colore di un elemento in cui è contenuto, se non è contenuto in nessun elemento si riferisce a quello del body</li>
+     <li><b>inhert:</b> specifica che il colore viene ereditato dell'elemento genitore</li>
+ </ul>
+
+ <h1>GRADIENTS</h1>
+ <h3>GRADIENTI LINEARI</h3>
+ <br>La sintassi si scrive così: chiave: linear-gradient (direzione, colore1, colore2, ecc)
+ <br>La direzione indica da dove a dove deve andare il colore (es. to right= vuol dire che deve andare a destra, to bottom right= deve andare da in alto a sinstra a in basso a destra)
+ <br>Si possono utilizzare anche gli angoli al posto della direzione quindi es 180deg andrà dall'alto al basso (i gradi selzionati sono il punto di arrivo del primo colore quindi il punto di partenza del primo)
+ <br>Con la parola repeating davanti alla direzione si permette di ripetere la transizioni dei colori (bisogna specificare con % però quanto lunghi si vogliono i colori)
+ <h3>GRADIENTI RADIALI</h3>
+ <br>La sintassi si scrive così: chiave: radial-gradient (direzione, colore1, colore2, ecc)
+ <br>La direzione di partenza è dal centro verso l'esterno quindi il primo colore partirà dal centro mentr l'ultimo sarà al configurazionde
+ <br>Per impostazione predefinita il gradiente radiale appare come un ellisse ma si può rendere anche un cerchio mettendo prima dei colori la parola circle
+ <br>Il parametro size definisce la grandezza del gradiente e si esprime in quattro valori: closest-side, farthest-side, closest-corner, farthest-corner
+ <h3>GRADIENTI CONICI</h3>
+ <br>La sintassi si scrive così: chiave: conic-gradient ([from angle] [at position,] color [degree], color [degree], ...)
+ <br>Ci sono un sacco di cose da poter fare, vattele a guardare su w3school
+
+ <h1>SHADOW</h1>
+ <ul>
+     <li><b>text-shadow:</b> permette di mettere un'ombra al testo, bisogna sempre specificare la distanza</li>
+     <li><b>box-shadow:</b> permette di creare una o più ombre ad un elemento</li>
+ </ul>
+
+ <h1>TEXT EFFECTS</h1>
+ <ul>
+     <li><b>tecxt-overflow:</b> permette di specificare come deve essere segnalato all'utente il contenuto di un testo non visualizzabile perchè ad esempio non ci sta in una casella
+        <ul>VALORI:
+            <li><b>clip:</b> semplicemente stoppa le parole quando non ci stanno più</li>
+            <li><b>ellipsis:</b> stoppa sempre le parole ma mettendo dei tre punti</li>
+        </ul>
+    </li>
+    <li><b>(word-warp: break-word;)</b> consente alle parole lunghe di essere spezzate e di andare a capo sulla riga successiva che altrimenti uscirebbe dalla casella
+        <ul>VALORI:
+            <li><b>keep-all:</b> fa andare a capo solamente le parole normali e quelle con i trattini (-) mentre se sono troppo lunghe escono dalla casella</li>
+            <li><b>break-all:</b> spezza tutte le parole perchè lui cerca di riempire tutto lo spazio del contenitore</li>
+        </ul>
+    </li>
+    <li><b>writing-mode:</b> permette di scegliere le modalità di scrittura delle parole
+        <ul>VALORI:
+            <li><b>horizontal-tb:</b> è la scrittura di default, viene tutto scritto in orizzontale</li>
+            <li><b>vertical-rl:</b> permette di scrivere la parole in verticale</li>
+        </ul>
+    </li>
+ </ul>
+
+ <h1>BOX SIZING</h1>
+ <br><b>(box-sizing: border-box;):</b> permette di rendere la lunghezza e grandezza totali di un elemento (quini se si imposta es. 300 pixel la larghezza questa sarà totale tra la somma del contenuto, padding e bordo e non solo del contenuto)
+
+ <h1><i>CSS AVANZATO</i></h1>
+
+ <h1>INTRO</h1>
+
+
+
+
+</body>

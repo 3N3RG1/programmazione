@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+
+<script>
+
+    // trovare la stringa più lunga tra due stringhe salvate in 2 variabili, stamparla in output con l'aggiunta del messaggio 'la stringa più lunga è:'
+
+    // 1° MODO
+
+    let stringa1 = 'digitazon'
+    let stringa2 = 'alunni'
+    let più_lunga = 'la stringa più lunga è: '
+    let uguali = 'le due stringhe sono uguali'
+
+    let messaggio_finale
+
+    if ( stringa1.length > stringa2.length ) {
+        messaggio_finale = più_lunga + stringa1
+    }
+    
+    else if ( stringa2.length > stringa1.length ) {
+        messaggio_finale = più_lunga + stringa2
+    }
+
+    else {
+        messaggio_finale = uguali
+    }
+
+    console.log( messaggio_finale )
+
+    // 2° MODO
+
+    if ( stringa1.length > stringa2.length ) {
+        console.log( più_lunga + stringa1 )
+    }
+    
+    else if ( stringa2.length > stringa1.length ) {
+        console.log( più_lunga + stringa2 )
+    }
+
+    else {
+        console.log( uguali )
+    }
+
+    // crea una variabile stringa con un vlore a piacere e stampare i suoi caratteri invertiti separati da -, su un'unica riga
+
+    // 1° MODO
+
+    let stringa3 = 'ciao'
+
+    console.log( stringa3.charAt(3) + '-' + stringa3.charAt(2) + '-' + stringa3.charAt(1) + '-' + stringa3.charAt(0) )
+
+    // 2° MODO
+
+    let space = '-'
+    let result
+
+    result = stringa3.charAt(3) + space + stringa3.charAt(2) + space + stringa3.charAt(1) + space + stringa3.charAt(0)
+
+    console.log( result )
+
+    
+    // date due variabili con valori 'kiwi' e 'banana', stampa in output il seguente risultato (la prima e la terza lettera della prima stringa concatenata ad un underscore e alla seconda stringa maiuscola): kw_BANANA
+
+    let kiwi = 'kiwi'
+    let banana = 'banana'
+    let underscore = '_'
+
+    let macedonia
+
+    macedonia = kiwi.charAt(0) + kiwi.charAt(2) + underscore + banana.toUpperCase()
+
+    console.log ( macedonia )
+
+    // prove personale
+
+    const x = 5
+
+    if (x > 0) {
+        const x = 6
+        console.log( x )
+    }
+
+    console.log( x )
+
+    let y = 1
+
+    if ( x > 0 ) {
+        let y = 2
+        console.log( y )
+    }
+
+    console.log( y )
+
+    let z;         // Now x is undefined
+    z = 5;         // Now x is a Number
+    z = "John";    // Now x is a String
+
+</script>
+
+</body>
+</html>

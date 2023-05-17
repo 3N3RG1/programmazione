@@ -1,0 +1,116 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_1</title>
+</head>
+<body>
+
+    <div id="box" style="width: 300px; height: 100px; color: green; background-color: blue;"></div>
+
+<script>
+
+    const a1 = [] // new Array(10).fill(4)
+    console.log( a1 );
+
+    // 1 la produzione di una Map vuota
+    const m1 = new Map()
+
+    // 2 impostazione delle sue entry (elementi)
+    m1.set( 'name', 'Luigi' )
+    m1.set( 'lastname', 'Verdi' )
+    m1.set( 'skills', ['js', 'php', 'py'] )
+
+    // 3 stampa
+    console.log( m1 );
+
+    // 4 recupero
+    console.log( m1.get('lastname') );
+
+    const keyToFind = 'lastname'
+
+    if( m1.has(keyToFind) )
+        console.log( m1.get(keyToFind) );
+    else
+        console.log( 'la chiave ' +keyToFind+ ' non esiste in questa mappa' );
+
+    // 5 inizializzazione con setting
+    const m2 = new Map([
+        ['height', '100px'],
+        ['width', '300px'],
+        ['background-color', 'blue']
+    ])
+    m2.set('color', 'green')
+
+    console.log( m2 );
+
+    const box = document.getElementById('box')
+    box.style.width = m2.get('width')
+    box.style.height = m2.get('height')
+    box.style.color = m2.get('color')
+    box.style.backgroundColor = m2.get('background-color')
+
+    let mapCounter = 0
+    function m2Fn(v, k) {
+        console.log( mapCounter++ );
+        console.log( k );
+        console.log( v );
+        console.log('------------');
+    }
+
+    m2.forEach( m2Fn )
+
+    let a = 15
+    let b = --a + 5
+    let c = ++b
+
+    console.log( c );
+
+    // ----------------------
+
+    let x = -4
+    let y = x++ - 4 - x
+    let z = y++ + y
+
+    console.log( --z + z++ );
+
+    // 1 + 2
+
+</script>
+
+<script>
+    let s1 = new Set()
+    s1.add(10)
+    s1.add(20)
+    s1.add(30)
+    s1.add(40)
+
+    console.log( s1 );
+
+    s1.forEach( function(v) {
+        console.log(v);
+    } )
+
+    const iterateOverS1 = function(v) { console.log( v + 10 ) }
+    s1.forEach(iterateOverS1)
+
+    const iterateOverSet = function(s) {
+        if( !(s instanceof Set) ) {
+            console.log('errore!');
+            return
+        }
+
+        console.log('Iterazione sul set ' + s);
+        s.forEach( function(v) {
+            console.log(v)
+        })
+    }
+
+    iterateOverSet( s1 )
+    iterateOverSet( new Set([17, 5, 87]) )
+    iterateOverSet('ciao')
+
+</script>
+    
+</body>
+</html>

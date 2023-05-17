@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem 0.5rem 1.2rem;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+}
+
+.svg {
+    width: 24px;
+    filter: opacity(85%);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.svg:hover {
+    background-color: rgb(0, 0, 0, 10%);
+}
+
+.logo {
+    width: 95px;
+    cursor: pointer;
+}
+
+.profile {
+    width: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header > div:first-child .svg, header > div:last-child .svg {
+    margin-right: 1rem;
+}
+
+header > div:last-child img:first-child {
+    margin-right: 0.7rem
+}
+
+header div:nth-child(2) > div {
+    border: 1px solid rgb(0, 0, 0, 25%);
+    border-radius: 40px;
+    margin-right: 0.7rem;
+}
+
+header div:nth-child(2) > div div {
+    padding: 0 27rem 0 1rem;
+    color: rgb(0, 0, 0, 60%);
+    cursor: text;
+}
+
+header span {
+    font-size: 14px;
+}
+
+header div:nth-child(2) > div img {
+    border-left: 1px solid rgb(0, 0, 0, 25%);
+    padding: 0.4rem 1.2rem;
+    background-color: rgb(0, 0, 0, 5%);
+    border-radius: 0 20px 20px 0;
+}
+
+header div:nth-child(2) > div .svg {
+    filter: opacity(60%); 
+}
+
+/* dovrei risolvere la cosa anche con uno z-index */
+/* rimuovi il bordo sotto */
+
+/* SECTION-MAIN */
+body > section {
+    display: flex;
+}
+
+/* ASIDE */
+aside {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 800px;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.1rem;
+}
+
+/* larghezza della barra totale */
+aside::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+/* barra effettiva che si scrolla */
+aside::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 4px;
+}
+
+aside:hover::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0, 45%);
+}
+
+aside section > div {
+    display: flex;
+    align-items: center;
+    margin: 0.3rem 0.7rem 0.3rem 0.5rem;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+}
+
+aside section > div:hover {
+    background-color: rgb(0, 0, 0, 7%);
+    cursor: pointer;
+}
+
+.not-hover:hover {
+    background-color: white;
+    cursor: default;
+}
+
+.not-hover {
+    margin: 0.1rem 0.7rem 0 0.5rem;
+}
+
+.not-margin-top {
+    margin: 0.1rem 0.7rem 0.3rem 0.5rem;
+}
+
+aside section > div img, aside section > div span {
+    margin: 0 1rem 0 0.5rem;
+}
+
+aside > section img {
+    width: 24px;
+    filter: opacity(90%);
+}
+
+aside section:nth-child(3) img {
+    width: 25px;
+    border-radius: 50%;
+    filter: opacity(100%);
+}
+
+aside section hr {
+    margin: 0.5rem 0.5rem 0.2rem 0.5rem;
+    border: none;
+    border-top: 1px solid rgb(0, 0, 0, 15%);
+
+}
+
+aside section > div > div {
+    font-size: 14px;
+}
+
+aside section:first-child > div:first-child {
+    background-color: rgb(0, 0, 0, 7%);
+    font-weight: 500;
+}
+
+aside section:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+aside section:last-child div {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0.4rem;
+}
+
+aside section:last-child div:hover {
+    background-color: white;
+    cursor: default;
+}
+
+aside section:last-child div span:hover {
+    cursor: pointer;
+}
+
+aside section:last-child div:first-child {
+    margin: 0.7rem 0.7rem 0.5rem 0.5rem;
+}
+
+aside section:last-child div:last-child {
+    margin: 0.6rem 0.7rem 1rem 0.5rem;
+}
+
+aside section:last-child div span {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(0, 0, 0, 65%);
+}
+
+aside section:last-child div:last-child span {
+    font-size: 12px;
+    color: rgb(0, 0, 0, 45%);
+    cursor: text;
+}
+
+/* usa position fixed per mantenere la stessa posizione anche se la pagina viene scrollata */
+/* metti la grandezza 100% dell'aside in modo che anche se allarghi e accorci la pagina rimnga uguale */
+/* metta la roba dei 3 punti quando le parole non ci stanno più */
+
+/* SECTION (MAIN) */
+body > section > section {
+    width: 85%;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    /* flex-wrap: wrap; */
+    padding: 0.7rem 0.5rem 0.8rem 1.1rem;
+    position: sticky;
+    top: 54.4px;
+    background-color: white;
+}
+
+nav div {
+    padding: 0.3rem 0.7rem;
+    margin: 0 0 0 0.8rem;
+    border-radius: 0.4rem;
+    background-color: rgb(0, 0, 0, 6%);
+    font-size: 14px;
+    color: rgb(0, 0, 0, 80%);
+}
+
+nav div:hover {
+    background-color: rgb(0, 0, 0, 8%);
+    cursor: pointer;
+}
+
+nav div:first-child {
+    background-color: rgb(0, 0, 0, 85%);
+    color: white;
+}
+
+/* fai in modo che accorciando lateralmente la pagina i tag spariscono */
+/* sistema il padding sinistro della nav in base alla grandezza dei video sotto */
+
+/* MAIN */
+main > section:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* metti i paddin al main per sistemare */
+
+/* SECTION VIDEO */
+main > section:first-child > div {
+    max-width: 384px;
+    min-width: 324px;
+    margin: 0 0.4rem 1.9rem 0.4rem;
+}
+
+main > section:first-child > div > img {
+    border-radius: 11px;
+    cursor: pointer;
+    /* max-width: 384px;
+    min-width: 324px;
+    object-fit: cover;
+    max-width: 100%;
+    height: auto; */
+}
+
+main > section:first-child > div > img:hover {
+    border-radius: 0;
+    transition: 0.4s;
+}
+
+.author-profile {
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.titol {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(0, 0, 0, 80%);
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.verified {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+
+.author {
+    font-size: 14px;
+    font-weight: 450;
+    color: rgb(0, 0, 0, 60%);
+    margin: 0 0.2rem 0 0;
+}
+
+.verified img {
+    width: 15px;
+}
+
+.visual {
+    font-size: 14px;
+    font-weight: 450;
+    color: rgb(0, 0, 0, 60%);
+    cursor: pointer;
+}
+
+main section:first-child > div > section {
+    margin: 0.8rem 0.5rem 0 0.2rem;
+}
+
+main section:first-child > div > section > div:last-child {
+    margin: 0 0 0 0.8rem;
+}
+
+/* sistema la max e min width */
+/* fai qualcosa con lhover dei video, vedi anche foglio */
+/* risolvi il problema del wrap */
+/* sistema immagini, profili, titoli, nomi, visualizzazioni */
+/* sistema lo space between con qualcosaltro */
+
+
+/* SECTION VIDEO */
+main > section:first-child > div {
+    display: flex;
+    flex-direction: column;
+}
+
+main > section > div > section {
+    display: flex;
+}
+
+/* SECTION SHORTS */
+
+/* SECTION SHORT (VIDEO) */
+main > section > section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* rendi le parole accorciabili con i tre puntini ... sia nellìaside che nai tag e anche nei titoli di YT */

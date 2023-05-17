@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+
+<script>
+
+    /*  ES: 1
+        creare una variabile che contenga il seguente array: [ 40, 50, 60, 70 ]
+        crea l'algoritmo necessario per stampare in output: 70 - 60 - 50 - 40
+    */
+
+    let array1 = [ 40, 50, 60, 70, ]
+
+    // prima costruisco la mio "funzione" base
+    for( let i = 0; i < array1.length; i++ ) {
+        console.log( array1[i] )
+    }
+
+    // poi costruisco il procedimento contrario
+    for( let i = 0; i < array1.length; i++ ) {
+        console.log( array1[array1.length - (i+1)] )
+    }
+
+    // poi la sistemo nel migliore dei modi
+    for( let i = array1.length - 1; i >= 0; i-- ) {
+        console.log( array1[i] )
+    }
+    /*
+        1. per capire questo procedimento la prima domanda da chiedersi è:
+        come posso partire rapprensentano l'ultimo elemento => i = array.lenght - 1
+        2. da qui comincio a costruire pensando a cosa verrà dopo la i = 4 - 1 = 3
+        Voglio che ci sia il 2 quindi dovrò sottrarre 1 alla 1 quindi scriverò i = i - 1 = i--
+        3. la mia funzione sarà valida per tutti gli elementi se i < arrey1.length ?
+        Sì ma è valida ad esempio anche per -1, -2, ecc quindi dobbiamo trovare un'altra soluzione:
+        i >= 0 oppure i > -1 (In questo caso sono validi anche per 5, 6, ecc ma noi facendo partire la i da 3 eliminiamo alla base questo problema)
+    */
+
+    /*  ES: 2
+        creare una variabile che contenga il seguente array: [ 'mario', 'luigi', 'peach', 'daisy' ]
+        stampare in output tutti i valori dell'array che NON terminano con la lettera 'o'
+    */
+
+    let array2 = [ 'mario', 'luigi', 'peach', 'daisy' ]
+
+    for( let i = 0; i < array2.length; i++ ) {
+        if( array2[i].charAt(array2[i].length - 1) != 'o' ) {
+            console.log( array2[i] );
+        }
+    }
+
+    // oppure
+    for( let i = 0; i < array2.length; i++ ) {
+        let  j = array2[i]
+        if( j.charAt(j.length - 1) != 'o' ) console.log(j);
+    }
+
+    /* ES: 3
+        creare una variabile che contenga il seguente array: [ 'mario', 'luigi', 'peach', 'daisy' ]
+        stampare in output: DY - PH - LI - MO
+        (la prima e l'ultima lettera di ogni valore dell'array in senso invertito)
+    */
+    
+    let array3 = [ 'mario', 'luigi', 'peach', 'daisy' ]
+
+    for( let i = array3.length - 1; i >= 0; i-- ) {
+        console.log( array3[i].charAt(0).toUpperCase() + array3[i].charAt(array3[i].length - 1).toUpperCase() )
+    }
+
+    /* ES: 4
+        creare una variabile che contenga il seguente array: [ 'mario', 'stefania', 'luca', 'lee' ]
+        stampare in output SOLO il nome più lungo tra quelli presenti nell'array (se i valori dell'array cambiano, anche il risultato cambia senza alterare l'algoritmo)
+    */
+
+    let array4 = [ 'mario', 'stefania', 'luca', 'sono8let', 'lee', 'riccardo' ]
+    let x = ''
+    let z = ''
+    let w = ''
+
+    for( let i = 0; i < array4.length; i++ ) {
+        if( array4[i].length > x.length ) {
+            x = array4[i]
+        }
+        else if( array4[i].length == x.length) {
+            z = x + array4[i]
+            console.log( z )
+            x = array4[i]
+            w = z + x
+            console.log( w )
+        }
+    }
+
+    console.log( x );
+
+    /*  ES: 5
+        creare una variabile che contenga il seguente array: [17, 5, 87, 14]
+        stampa in output la somma totale di tutti i numeri contenuti nell'array nella modalità più modulare
+    */
+
+    let array5 = [ 17, 5, 87, 14 ]
+    let y = 0
+
+    for( let i = 0; i < array5.length; i++ ) {
+        y = y + array5[i]
+        // y += array[1]
+    }
+
+    console.log( y )
+
+    /*  ES: 6
+        Dato un array con 4 elementi a piacere, stampare in output quante degli elementi realizzati iniziano con la lettera 'a'
+    */
+
+    let array6 = [ 'banana', 'ananas', 'cetriolo', 'anguria' ]
+    let a = 0
+
+    for( let i = 0; i < array6.length; i++ ) {
+        if( array6[i].charAt(0) == 'a' ) {
+            a = a + 1
+            // a += 1
+        }
+    }
+
+    console.log( a )
+
+</script>
+
+</body>
+</html>

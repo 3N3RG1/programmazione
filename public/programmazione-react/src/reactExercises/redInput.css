@@ -1,0 +1,8 @@
+.red {
+    border: 1px solid red;
+}
+  
+.red:focus {
+    border: 0px;
+    outline: 3px solid red;
+}

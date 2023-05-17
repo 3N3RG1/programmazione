@@ -1,0 +1,53 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_2</title>
+</head>
+<body>
+
+<div id="add">add to set</div>
+<input type="text" id="set-value">
+
+<script>
+    
+const s1 = new Set()
+console.log( s1 );
+
+s1.add( 10 )
+s1.add( 20 )
+s1.add( 30 )
+s1.add( 40 )
+s1.add( 40 )
+s1.add( 40 )
+
+console.log( s1 );
+console.log( s1.size );
+console.log( s1.has(30) );
+
+function iterateOverSet(v) {
+    console.log( v );
+}
+
+if( s1 instanceof Set )
+    s1.forEach( iterateOverSet )
+
+s1.delete(20)
+console.log( s1 );
+console.log( typeof s1 );
+
+let s2 = new Set([30, 40, 'ciao', 'x', 'ciao'])
+console.log( s2 );
+
+//let count = 1
+const setValue = document.getElementById('set-value')
+document.getElementById('add').addEventListener('click', function() {
+    //s2.add( 'nuovo valore ' + count++ )
+    s2.add( setValue.value )
+    console.log( s2 );
+})
+
+</script>
+    
+</body>
+</html>

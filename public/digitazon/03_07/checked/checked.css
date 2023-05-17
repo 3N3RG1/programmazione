@@ -1,0 +1,58 @@
+/* .plain {
+    background-color: aqua;
+} */
+
+/* div div:not(.plain) {
+    background-color: red;
+}
+
+#div-grande {
+    padding: 10px;
+} */
+
+/* 1 */
+a {
+    color: black;
+}
+
+a[href*="/the-one-ring"] {
+    color: gold;
+}
+
+a[href*="/melange"] {
+    color: red;
+}
+
+/* 2 */
+div span {
+    font-style: italic;
+}
+
+div span span::after {
+    content: "\00AB";
+}
+
+div > span::after {
+    content: "\00BB"
+}
+
+div span span {
+    font-style: normal;
+    font-weight: bolder;
+}
+
+/* 3 */
+input[type=checkbox]:checked + span::after {
+    content: "❤";
+}
+
+/* 4 */
+button:hover {
+    opacity: 0;
+    /* display: none;
+    visibility: hidden; */
+}
+
+main div:first-child {
+    background-color: red;
+}

@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+}
+
+.page {
+    margin: 100px 100px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    border: 1px solid;
+}
+
+.inputs {
+    text-align: center;
+}
+
+input {
+    margin: 5px 10px;
+    width:150px;
+    padding: 3px 7px;
+    border-radius: 5px;
+    border: 2px solid;
+}
+
+.output {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+
+.fine {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.fine:first-child {
+    margin: auto 0;
+    gap: 10px;
+}
+
+.spans {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    overflow-y: scroll;
+    height: 200px;
+    width: 200px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding-bottom: 7px;
+}
+
+.span {
+    width: 100px;
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 3px 20px;
+    margin: 7px auto 0 auto;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.number {
+    font-size: 18px;
+    font-weight: 800;
+    border: 1px solid;
+    border-radius: 50px;
+    padding: 5px 20px;
+    margin: 10px 70px;
+}
+
+button {
+    background-color: white;
+    padding: 7px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: silver;
+    color: white;
+    font-weight: 600;
+    border: 2px solid grey;
+    cursor: pointer;
+}

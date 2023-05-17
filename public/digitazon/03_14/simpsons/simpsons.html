@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simpsons</title>
+    <link rel="stylesheet" href="simpsons.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');    
+    </style>
+</head>
+<body>
+
+<!-- FIRST BAR -->
+<section>
+    <p>Paga alla consegna. Spedizione direttamente a casa tua in 24/48 h !</p>
+</section>
+
+<!-- NAVBAR -->
+<nav>
+
+    <!-- LEFT -->
+    <section class="left">
+        <img class="svg" src="assets/menu.png" alt="menu">
+        <div>
+            <input type="search" placeholder="Cerca">
+            <img class="svg" src="assets/search.png" alt="search">
+        </div>
+    </section>
+
+    <!-- CENTER -->
+    <section class="center">
+        <img src="assets/the_simpsons.png" alt="the-simpsons">
+    </section>
+
+    <!-- RIGHT -->
+    <section class="right">
+
+        <!-- CHECKBOX -->
+        <input type="checkbox" id="login_signup_person">
+        <label for="login_signup_person" class="login_signup">
+            <img class="profile" src="assets/profile.png" alt="login">
+            <div>Log in</div>
+        </label>
+        
+        <!-- POP-UP -->
+        <section class="section_pop_up">
+
+            <div class="pop_up">
+
+                <!-- X -->
+                <label for="login_signup_person"><img src="assets/close.png" alt="close"></label>
+
+                <input type="checkbox" id="login_signup_button">
+                <label for="login_signup_button">Log in</label>
+                <label for="login_signup_button">Sign up</label>
+                
+                <!-- form per il login -->
+                <form class="form_login" action="https://lazys.requestcatcher.com/">
+
+                    <input type="text" placeholder="username">
+                    <input type="password" placeholder="password">
+                    <button>Log in</button>
+                </form>
+
+                <!-- form per il sing up -->
+                <div class="form_signup">
+                    <form action="https://lazys.requestcatcher.com/">
+                        
+                        <input type="text" placeholder="porcoschifo">
+                        <input type="password" placeholder="form2">
+                        <button>Log in</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </section>
+
+        <img class="svg" src="assets/bag.png">
+    </section>
+
+</nav>
+
+</body>
+</html>

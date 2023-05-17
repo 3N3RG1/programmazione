@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-size: 16px;
+}
+
+.agenda {
+    display: flex;
+    padding: 30px;
+    gap: 20px;
+}
+
+.check {
+    width: 50%;
+    border: 1px solid;
+}
+
+.title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type:none;
+}

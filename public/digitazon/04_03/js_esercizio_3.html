@@ -1,0 +1,67 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_3</title>
+</head>
+<body>
+
+<script>
+
+    function sum( x, y ) {
+        return x + y
+    }
+
+    function diff( x, y ) {
+        return x - y
+    }
+
+    function doOperation( ope ) {
+        const result = ope(10, 4)
+        console.log( result ) 
+    }
+
+    console.log( sum(sum(10, 4), diff(4, 5)) )
+
+    const x = 10
+    const s = 'ciao'
+    const fn = function(x, y) {
+        console.log( x + ' ' + y );
+    }
+
+    fn('ciao', 'javascript')
+
+    doOperation( sum )
+    doOperation( diff )
+    doOperation( function(x, y) { return x * y } )
+
+    const multiply = function(x, y) { return x * y }
+    multiply(10, 20)
+
+    function fn2() {
+        console.log( 'fn' );
+        return
+    }
+    const r1 = fn2()
+    console.log( r1 );
+
+    function divide(x, y) {
+        if( typeof x != 'number' || typeof y != 'number' ) {
+            return 'Errore! Devi passarmi 2 numeri'
+        }
+
+        if( y == 0 ) {
+            return 'Errore! La divisione non può essere per 0'
+        }
+
+        return x / y
+    }
+
+    console.log( divide() );
+    console.log( divide(10, 0) );
+    console.log( divide(10, 4) );
+
+</script>
+    
+</body>
+</html>

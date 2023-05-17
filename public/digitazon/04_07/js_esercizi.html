@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+    
+<script>
+
+/*  Ex 1
+    creare una funzione formatDate che, presi in ingresso un numero, una stringa e un numero, stampi una data formattata.
+    Il primo numero rappresenta l'anno, la stringa il nome del mese e il secondo numero il giorno.
+    es: formatDate(2023, 'maggio', 17)   stampa "17-05-2023"
+*/
+{
+function formatDate(year, month, day) {
+    const array = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'settembre', 'ottobre', 'novembre', 'dicembre']
+    if(typeof month === 'string') {
+        for(let i = 0; i < array.length; i++) {
+            if(month == array[i]) month = '0' + (i + 1)
+        }
+    }
+    console.log(year + '-' + month + '-' + day)
+}
+formatDate(2023, 'maggio', 17)
+}
+console.log('----------')
+
+/*  Ex 2
+    creare una funzione cmpDate che prende in ingresso 2 stringhe che rappresentano 2 date formattate nel formato americano visto a lezione.
+    La funzione estrapola l'anno da entrambe le date e restituisce 1 se il primo anno è maggiore del secondo, -1 viceversa e 0 se sono pari.
+    Chiamare la funzione 3 volte con valori a piacere.
+*/
+{
+function cmpDate(a, b) {
+    if(a.getFullYear() > b.getFullYear()) return 1
+    else if(a.getFullYear() < b.getFullYear()) return -1
+    else return 0
+}
+const date1 = new Date("2023-05-13")
+const date2 = new Date("2024-03-09")
+console.log(cmpDate(date1, date2))
+}
+console.log('----------')
+
+/*  Ex 3
+    creare una funzione getDateDay che prende in ingresso una data formattata nel formato americano visto a lezione e restituisce il giorno della settimana relativo, in parola.
+    Chiamare la funzione con 3 date a piacere.
+    es: getDateDay('2023-05-17')  -> 'mercoledì'
+*/
+{
+function getDateDay(a) {
+    const array = ['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica']
+    return array[a.getDay() - 1]
+}
+const date = new Date("2023-05-17")
+console.log(getDateDay(date))
+}
+console.log('----------')
+
+/*  Ex 4
+dato il seguente JSON:
+[
+    {
+        "name": "mario",
+        "active": true,
+        "feat": {
+            "role": "protagonist"
+        }
+    },
+    {
+        "name": "luigi",
+        "active": true,
+        "feat": {
+            "role": "protagonist"
+        }
+    },
+    {
+        "name": "wario",
+        "active": false,
+        "feat": {
+            "role": "antagonist"
+        }
+    },
+    {
+        "name": "yoshi",
+        "active": false,
+        "feat": {
+            "role": "protagonist"
+        }
+    }
+]
+creare una funzione getInfo che, preso in ingresso l'array di oggetti ottenuto dal JSON, mi dice:
+- quanti protagonisti ci sono nell'array
+- quanti protagonisti attivi ci sono nell'array
+- quanti antagonisti ci sono nell'array
+*/
+{
+const arrayDiOggetti = [
+    {
+        "name": "mario",
+        "active": true,
+        "feat": {
+            "role": "protagonist"
+        }
+    },
+    {
+        "name": "luigi",
+        "active": true,
+        "feat": {
+            "role": "protagonist"
+        }
+    },
+    {
+        "name": "wario",
+        "active": false,
+        "feat": {
+            "role": "antagonist"
+        }
+    },
+    {
+        "name": "yoshi",
+        "active": false,
+        "feat": {
+            "role": "protagonist"
+        }
+    }
+]
+function getInfo(array) {
+    let a = 0, b = 0, i
+    for(i = 0; i < array.length; i++) {
+        if(array[i].feat.role == 'protagonist') {
+            a++
+            if(array[i].active == true) b++
+        }
+    }
+    return `Ci sono ${a} protagonisti, ${b} protagonisti attivi e ${i - a} antagonisti`
+}
+console.log(getInfo(arrayDiOggetti))
+}
+console.log('----------')
+
+/*  Ex 5
+    creare uno script a piacere in cui si dimostra l'uso di:
+    - array di array
+    - array di oggetti
+    - mappe
+    - set
+    - funzione che accetta una funzione
+    - this
+*/
+{
+
+}
+console.log('----------')
+
+</script>
+
+</body>
+</html>

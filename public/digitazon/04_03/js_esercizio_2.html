@@ -1,0 +1,61 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_2</title>
+    <style>
+        .flexCont {
+            display: flex;
+            gap: 10px;
+        }
+
+        #actionOpen, #actionClose {
+            width: 100px;
+            background-color: blue;
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #actionOpen:hover, #actionClose:hover {
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="flexCont">
+        <div id="actionOpen">Apri cancello</div>
+        <div id="actionClose">Chiudi cancello</div>
+    </div>
+
+    <div id="door"></div>
+
+<script>
+
+    const actionOpen = document.getElementById( 'actionOpen' )
+    const actionClose = document.getElementById( 'actionClose' )
+    const door = document.getElementById( 'door' )
+
+    const txtDoorOpen = 'Cancello Aperto!'
+    const txtDoorClose = 'Cancello Chiuso!'
+    const txtAlreadyOpen = 'Il cancello è gia aperto!'
+
+    actionOpen.addEventListener('click', function() {
+        const txt = door.innerHTML.trim()
+
+        if( txt != txtDoorOpen && txt != txtAlreadyOpen )
+            door.innerHTML = txtDoorOpen
+        else
+            door.innerHTML = txtAlreadyOpen
+    })
+
+    function onActionClosefunction() {
+        door.innerHTML = txtDoorClose
+    }
+    actionClose.addEventListener('click', onActionClosefunction)
+
+</script>
+    
+</body>
+</html>

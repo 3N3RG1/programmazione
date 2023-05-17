@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+{
+// Find and replace
+function replaceWord(str1, str2, str3) {
+    let finalString = ''
+    for(let i = 0; i < str1.length;) {
+        if((str1[i-1] == undefined || str1[i-1] == ' ') && str1[i] == str2[0]) {
+            let correctWord = ''
+            for(let j = 0; j < str2.length; j++) correctWord += str1[j+i]
+            if(correctWord == str2 && (str1[i+str2.length] == undefined || str1[i+str2.length] == ' ')) {
+                finalString += str3
+                i += str2.length
+            }
+        } else finalString += str1[i++]
+    }
+    return finalString
+}
+let string1 = 'alberto zaccagni è il miglior insegnante di js'
+let string2 = 'js'
+let string3 = 'sempre'
+console.log(replaceWord(string1, string2, string3))
+}
+
+{
+// Find and replace
+function newArray(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        arrayObject = Object.keys(arr[i])
+        if(arr[i].type == 'boolean') arr[i][arrayObject[0]] = false
+        else if(arr[i].type == 'string') arr[i][arrayObject[0]] = ''
+        else if(arr[i].type == 'number') arr[i][arrayObject[0]] = 0
+        else if(arr[i].type == 'array') arr[i][arrayObject[0]] = []
+        else if(arr[i].type == 'object') arr[i][arrayObject[0]] = {}
+    }
+    return arr
+}
+let array = [
+    {
+        'maggiorenne': null,
+        type: 'boolean'
+    },
+    {
+        nome: null,
+        type: 'string'
+    },
+    {
+        cognome: 'rossi',
+        type: 'string'
+    }
+]
+console.log(newArray(array))
+}
+
+{
+// L'albero del Re
+// const obj = {
+//     'value': 'Arwen',
+//     'left': {
+//         'value': 'Earendil',
+//         'left': {'value': 'Nimloth the Fair', 'left': null, 'right': null},
+//         'right': {
+//             'value': 'Galadriel',
+//             'left': {'value': 'Eowyn', 'left': null, 'right': null},
+//             'right': null
+//         }
+//     },
+//     'right': {'value': 'Shelob', 'left': null, 'right': null}
+// }
+
+const obj = {
+    'value': 'Nimloth the Fai',
+    'left': {
+        'value': 'Nimloth the Fai',
+        'left': {'value': 'Nimloth the Fai', 'left': null, 'right': null},
+        'right': {
+            'value': 'Galadriel',
+            'left': {'value': 'Nimloth the Fai', 'left': null, 'right': null},
+            'right': null
+        }
+    },
+    'right': {'value': 'Nimloth the Fair', 'left': null, 'right': null}
+}
+
+/*
+let cnt = 0
+function recur(n) {
+    if(n.value == 'Nimloth the Fair') return cnt
+    if(n.left === null) {
+        if(n.right === null) return
+        recur(n.right)
+        // if(n.right.value != 'Nimloth the Fair') return
+    }
+    cnt++
+    recur(n.left)
+    if(n.left.value == 'Nimloth the Fair') return cnt //cnt--
+    cnt--
+    if(n.right === null) return
+    recur(n.right)
+}
+console.log(recur(obj))
+*/
+
+let cnt = 0
+function recur(n) {
+    if(n.value == 'Nimloth the Fair') return true
+    if (n.left !== null) {
+        cnt++
+        let c = recur(n.left)
+        if (c) return true
+        cnt--
+    }
+    if (n.right !== null) {
+        cnt++
+        let c = recur(n.right)
+        if (c) return true
+        cnt--
+    }
+}
+if (recur(obj))
+console.log(cnt)
+}
+
+{
+let array = [1,3,7,9,11,13,15]
+
+let start = array[0]
+let end = array[array.length-1]
+let half
+
+function target(arr, n) {
+    half = Math.round(start+end/2)
+    if(arr[half] == n) return half
+    if(arr[start] == arr[end]) return half
+    if(arr[half] > n) {
+        end = half
+        // end = half-1
+        target(arr, n)
+        return half
+    }
+    if(arr[half] < n) {
+        start = half
+        // start = half+1
+        target(arr, n)
+        return half
+    }
+}
+// console.log(target(array, 6))
+}
+
+let a = new Boolean()
+console.log(typeof a)
+if(NaN) {
+    console.log(5)
+}
+</script>
+
+</body>
+</html>

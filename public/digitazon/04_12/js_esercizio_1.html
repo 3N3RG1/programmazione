@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_1</title>
+</head>
+<body>
+    
+<script>
+
+// funzione che dato un array somma tutti i numeri dell'array
+
+function somma(arr){
+    let tot = 0
+    for (let i = 0; i < arr.length; i++) {
+        tot += arr[i]    
+    }
+    return tot
+}
+
+function sottrazione(arr){
+    let tot = 0
+    for (let i = 0; i < arr.length; i++) {
+        tot -= arr[i]    
+    }
+    return tot
+}
+
+function moltiplicazione(arr){
+    let tot = 0
+    for (let i = 0; i < arr.length; i++) {
+        tot *= arr[i]    
+    }
+    return tot
+}
+
+let a1 = [2,4,6,8,10]
+
+// soluzione migliore
+
+function reduce(arr,op){
+    let tot = 0
+    for (let i = 0; i < arr.length; i++) {
+        tot = op(arr[i],tot)   
+    }
+    return tot
+}
+
+function sum(b, c){
+    return b + c
+}
+function sub(b, c){
+    return b - c
+}
+function mul(b, c){
+    return b * c
+}
+function concat(a, b) {
+    return a + ", " + b
+}
+function arr(a, b) {
+    return [a, b]
+}
+
+console.log(reduce(a1, sum))
+console.log(reduce(a1, sub))
+console.log(reduce(a1, mul))
+console.log(reduce(a1, concat))
+console.log(reduce(a1, arr))
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+}
+
+header div:last-child {
+    /* background-color: red; */
+    margin-left: auto;
+}
+
+header span {
+    margin: 0.5rem;
+}
+
+div > div {
+    display: flex;
+    border: 1px solid;
+    padding: 0.5rem;
+}
+
+div div div:first-child {
+    font-weight: bolder;
+    border-right: 1px solid;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.flex-grow-2 {
+    flex-grow: 2;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+    
+<script>
+
+// scrivere una funzione che prenda in ingresso una stringa e ritorni il numero di occorrenze di ogni singolo carattere della stringa
+{
+let stringa = 'abaco'
+
+function occorrenze(string) {
+    let map = new Map()
+    for(let i = 0; i < string.length; i++) {
+        if(!map.has(string[i])) map.set(string[i], 1)
+        else map.set(string[i], map.get(string[i])+1)
+    }
+    return map
+}
+
+console.log(occorrenze(stringa))
+}
+
+// scrivere una funzione che data in ingresso una stringa rimuove tutti i caratteri duplicati
+{
+let stringa = 'albertonumberone'
+
+function onlyOneChar(string) {
+    return new Set(string)
+}
+
+console.log(onlyOneChar(stringa))
+}
+
+// perchè il set itera su ogni carattere e non considera la stringa come un valore
+// stessa cosa funziona per gli array dove ogni elemento viene preso singolarmente
+// mentre non funziona sugli array di array
+//ovvero funziona solo quando è in grado di iterare su quel dato
+</script>
+
+</body>
+</html>

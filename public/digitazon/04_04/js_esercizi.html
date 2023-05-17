@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+    
+<script>
+
+/*  Ex 1
+    creare una funzione compareMap che accetta in ingresso due mappe.
+    La funzione restituisce true SE le due mappe sono mappe, SE hanno lo stesso numero di elementi e per le stesse chiavi, gli stessi valori. 
+    Testare il funzionamento di compareMap passando due mappe diverse nella prima chiamata, e due mappe uguali nella seconda chiamata
+*/
+{
+function compareMap(map1, map2) {
+    let a = false, b = '', c = '';
+
+    map1.forEach(function (v, k) {
+        b += k + v
+    })
+    map2.forEach(function (v, k) {
+        c += k + v
+    })
+
+    if(map1 instanceof Map && map2 instanceof Map && map1.size == map2.size && b == c) a = true
+    console.log(a)
+}
+const m1 = new Map()
+m1.set('name', 'mario')
+m1.set('lastname', 'rossi')
+
+const m2 = new Map()
+m2.set('name', 'mario')
+m2.set('lastname', 'rossi')
+
+compareMap(m1, m2)
+
+const m3 = new Map()
+m3.set('name', 'mario')
+m3.set('lastname', 'rossi')
+
+const m4 = new Map()
+m4.set('name', 'luigi')
+m4.set('surname', 'rossi')
+
+compareMap(m3, m4)
+
+console.log('----------')
+}
+
+/*  Ex 2
+    creare una funzione compareSet che accetta in ingresso due set.
+    La funzione restituisce true SE i due set sono set, SE hanno lo stesso numero di elementi e gli stessi valori. 
+    Testare il funzionamento di compareSet passando due set diversi nella prima chiamata, e due set uguali nella seconda chiamata
+*/
+{
+function compareSet(set1, set2) {
+
+    if (set1.size !== set2.size)
+        return false;
+
+    for(let i of set1.values()) {
+        if (!set2.has(i))
+            return false;
+    }
+    return true
+
+    // let a = false, b = '', c = '';
+    // set1.forEach(function (v) {
+    //     b += v
+    // })
+    // set2.forEach(function (v) {
+    //     c += v
+    // })
+
+    // if(set1 instanceof Set && set2 instanceof Set && set1.size == set2.size && b == c) a = true
+    // console.log(a)
+}
+
+const s1 = new Set()
+s1.add(20)
+s1.add(10)
+
+const s2 = new Set()
+s2.add(10)
+s2.add(20)
+
+console.log(compareSet(s1, s2))
+
+const s3 = new Set()
+s3.add(10)
+s3.add(20)
+s3.add(20)
+
+const s4 = new Set()
+s4.add('cane')
+s4.add(20)
+
+console.log(compareSet(s3, s4))
+
+console.log('----------')
+}
+
+/*  Ex 3
+    realizzare la funzione uniqueArray che prende in ingresso un array e rimuove tutti gli elementi duplicati, restituendo un nuovo array privo quindi di valori duplicati.
+    Chiamare la funzione con il valore [10, 'ciao', 20, 'ciao', 'javascript', 10] e stampare in output il nuovo valore
+*/
+{
+function uniqueArray(a) {
+    let set = new Set(a), arraynuovo = []
+
+    /*
+    for(let i = 0; i < a.length; i++) {
+        set.add(a[i])
+    }
+    */
+    set.forEach(function (v) {
+        arraynuovo.push(v)
+    })
+
+    console.log(arraynuovo)
+}
+let array = [10, 'ciao', 20, 'ciao', 'javascript', 10]
+uniqueArray(array)
+console.log('----------')
+}
+
+/* Ex 4
+    realizzare due istanze di Map che rappresentano due studenti che abbiano la seguente struttura:
+    - name, lastname, rates 
+    dove name e lastname sono stringhe e rates è un array di 5 numeri
+    assegnare valori a piacere per ogni chiave, es mario rossi 4, 5, 6, 4, 3 e luigi verdi 8, 7, 4, 9, 9
+    creare la funzione bestStudent, che prende in ingresso due mappe che rappresentano uno studente, e restituisce il nome e il cognome dello studente che ha la media voto migliore tra i due.
+    Richiamare questa funzione passando le due mappe create precedentemente
+*/
+{
+function bestStudent(map1, map2) {
+
+    let a = map1.get('rates'), b = 0
+    for(let i = 0; i < b.length; i++) {
+        b += a[i]
+    }
+
+    let c = map2.get('rates'), d = 0
+    for(let j = 0; j < c.length; j++) {
+        d += c[j]
+    }
+
+    if(b / map1.get('rates').length > d / map2.get('rates').length) {
+        console.log(map1.get('name') + map1.get('lastname'))
+    } else if(b / map1.get('rates').length < d / map2.get('rates').length) {
+        console.log(map2.get('name') + map2.get('lastname'))
+    } else 
+        console.log(map1.get('name') + map1.get('lastname') + 'e' + map2.get('name') + map2.get('lastname')+ 'hanno la stessa media')
+}
+const m1 = new Map()
+m1.set('name', 'mario')
+m1.set('lastname', 'rossi')
+m1.set('rates', [4, 5, 6, 4, 3])
+
+const m2 = new Map()
+m2.set('name', 'mario')
+m2.set('lastname', 'rossi')
+m2.set('rates', [8, 7, 4, 9, 9])
+
+bestStudent(m1, m2)
+}
+
+</script>
+
+</body>
+</html>

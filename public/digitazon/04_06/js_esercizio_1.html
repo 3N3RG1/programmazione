@@ -1,0 +1,74 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_1</title>
+</head>
+<body>
+
+<script>
+
+    const obj = {
+        // proprietà
+        name: 'Luigi',
+        lastname: 'Verdi',
+        skills: ['js', 'php', 'py'],
+        age: 40,
+        
+        // metodi
+        greet: function() {
+            console.log('ciao, sono ' + this.name + ' ' + this.lastname);
+        },
+
+        // oggetti
+        colors: {
+            first: 'blue',
+            second: 'green'
+        }
+    }
+
+    console.log(obj);
+
+    console.log( obj.name + ' ' + obj.lastname );
+
+    obj.greet()
+
+    console.log(
+        obj.colors.first + ' ' + obj.colors.second
+    );
+
+    // const box = document.getElementById('box')
+    // box.style.backgroundColor = 'red'
+
+    const p1 = {
+        name: 'Mario',
+        lastname: 'Rossi',
+        printFullname: function() {
+            console.log('ciao, sono ' + this.name + ' ' + this.lastname)
+        }
+    }
+
+    const p2 = {
+        name: 'Luigi',
+        lastname: 'Verdi',
+        printFullname: function() {
+            console.log('ciao, sono ' + this.name + ' ' + this.lastname)
+        }
+    }
+
+    //p1.printFullname()
+    //p2.printFullname()
+
+    function fn( o ) {
+        console.log( 'Queste sono le info di ' + o.name );
+        o.printFullname()
+        console.log('----------------------------------');
+    }
+
+    fn( p1 )
+    fn( p2 )
+
+</script>
+    
+</body>
+</html>

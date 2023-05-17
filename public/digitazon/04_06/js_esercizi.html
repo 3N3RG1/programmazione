@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+
+<script>
+
+/*  Ex 1
+    Dato il seguente JSON:
+    [
+        {
+            "fullname": "Yoshi", "rate": [4, 5, 4, 6]
+        },
+        {
+            "fullname": "Wario", "rate": [4, 9, 6, 7]
+        },
+        {
+            "fullname": "Toad", "rate": [8, 9, 9, 8]
+        }
+    ]
+    salvarlo in un template string, parsarlo con l'apposita strategia e stabilire algoritmicamente chi è lo studente migliore e chi è il peggiore.
+*/
+{
+const jsonString = 
+`
+[
+    {
+        "fullname": "Yoshi", "rate": [4, 5, 4, 6]
+    },
+    {
+        "fullname": "Wario", "rate": [4, 9, 6, 7]
+    },
+    {
+        "fullname": "Toad", "rate": [8, 9, 9, 8]
+    }
+]
+`
+const jsonObj = JSON.parse(jsonString)
+
+function mediaPiùAlta(a) {
+
+    let b = 0, c = 0, d = 0, e = 0
+    for(let i = 0; i < a.length; i++) {
+
+        for(n = 0; n < a[i].rate.length; n++) {
+            b += a[i].rate[n]
+        }
+        c = b / a[i].rate.length
+        if(c > d) {
+            d = c
+            e = i
+        }
+    }
+    return 'lo studente migliore è: ' + a[e].fullname
+}
+console.log(mediaPiùAlta(jsonObj))
+}
+console.log('----------')
+
+/*  Ex 2
+    Creare una funzione parseShape che prende in ingresso un oggetto che abbia questo template:
+    { x: number, y: number, name: string }
+    e produca un ouput relativo ad area e perimetro, in base al valore della proprietà name che stabilisce il tipo di figura geometrica in uso.
+    Richiamare la funzione due volte con:
+
+    const quadrato = {x: 4, y:4, shape: 'square'}
+    const rettangolo = {x: 5, y:4, shape: 'rectangle'}
+    per stampare area e perimetro di quadrato e rettangolo.
+*/
+{
+function parseShape(a) {
+    if(a.shape != 'square' && a.shape != 'rectangle') return 'l/oggetto non è ne un quadrato ne un rettangolo'
+    area = a.x * a.y
+    perimetro = a.x * 2 + a.y * 2
+    return 'l\'oggetto rappresenta un ' + a.shape + ' di area: ' + area + ' banane e perimetro: ' + perimetro + ' banane^2 '
+
+}
+const quadrato = {x: 4, y:4, shape: 'square'}
+const rettangolo = {x: 5, y:4, shape: 'rectangle'}
+const b = {x: 5, y:4}
+console.log(parseShape(quadrato))
+console.log(parseShape(rettangolo))
+console.log(parseShape(b))
+}
+console.log('----------')
+
+/*  Ex 3
+    creare, a piacere, due letterali oggetto, che descriveranno rispettivamente:
+    - uno studente (avrà nome, cognome, età, voti, un metodo per calcolare e stampare la sua media voti, un metodo per stabilire se è maggiorenne o meno)
+    - un'automobile (avrà modello, marca, prezzo e tipoMotore. tipoMotore a sua volta avrà cilindrata, tipo (benzina, diesel o elettrico) e cv. L'automobile avrà un metodo printInfo che stampa in modo correttamente formattato e leggibile le sue feature
+    richiamare i metodi dei due oggetti per stampare in output i risultati
+*/
+{
+const studente = {
+    nome: "carlos",
+    cognome: "eltopoqhegira",
+    età: 32,
+    voti: [6, 9, 3, 8, 5],
+    media: function() {
+        let a = 0, b
+        for(let n = 0; n < this.voti.length; n++) {
+            a += this.voti[n]
+        }
+        b = a / this.voti.length
+        console.log('la media dei voti è: ' + b)
+    },
+    maggiorenne: function() {
+        if(this.età >= 18) console.log(this.nome + ' è maggiorenne')
+        else console.log(this.nome + ' è minorenne')
+    }
+}
+studente.media()
+studente.maggiorenne()
+
+const macchina = {
+    modello: "F1",
+    marca: "Ferrari",
+    prezzo: "3M",
+    tipoMotore: {
+        cilindrata: "12 renne di babbo natale",
+        tipo: "benzina",
+        cv: "745"
+    },
+    printInfo: function() {
+        console.log('la macchina è una ' + this.marca + ' modello ' + this.modello + ' dal prezzo di ' + this.prezzo + ' , un motore con una cilindrata di ben ' + this.tipoMotore.cilindrata + ' a ' + this.tipoMotore.tipo + ' e ' + this.tipoMotore.cv + ' cavalli vapore')
+    }
+}
+macchina.printInfo()
+}
+console.log('----------')
+
+/*  Ex 4
+    creare un array di oggetti, che rappresentano le dimensioni dei lati di un rettangolo, e avranno proprietà base e altezza.
+    Nell'array inserire 5 oggetti con questo template e valori a piacere.
+    Creare una funzione parseRectangles che prende in ingresso un array di oggetti con la struttura descritta e restituisca l'indice del rettangolo con l'area maggiore.
+*/
+{
+const array = [
+    {x: 10, y: 20},
+    {x: 5, y: 2},
+    {x: 7, y: 32},
+    {x: 25, y: 6},
+    {x: 12, y: 11}
+]
+
+parseRectangles(array)
+function parseRectangles(a) {
+    let area = 0, b = 0, maxArea
+    for(let i = 0; i < a.length; i++) {
+        area = a[i].x * a[i].y
+        if(area > b) {
+            maxArea = i
+            b = area
+        }
+    }
+    console.log(maxArea)
+}
+}
+console.log('----------')
+
+/*  Ex 5
+    creare un array di oggetti, che rappresentano il contenuto di un parola, e avranno proprietà text. 
+    Es { text: 'ciao' }, { text: 'javascript' }
+    Nell'array inserire 5 oggetti con questo template e valori a piacere.
+    Creare una funzione parseStrings che prende in ingresso un array di oggetti con la struttura descritta e restituisca quante stringhe contengono la lettera 'x'.
+*/
+{
+const array = [
+    {text: "carlox"},
+    {text: "el"},
+    {text: "topo"},
+    {text: "quex"},
+    {text: "gira"},
+]
+
+function parseStrings(a) {
+    let c = 0
+    for(let i = 0; i < a.length; i++) {
+        let b = 0
+        for(let j = 0; j < a[i].text.length; j++) {
+            if(a[i].text[j] == 'x') b++
+        }
+        if(b > 0) c++
+    }
+    return 'gli oggetti contenenti stringhe con la lettera x sono: ' + c
+}
+console.log(parseStrings(array))
+}
+console.log('----------')
+
+</script>
+
+</body>
+</html>

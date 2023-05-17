@@ -1,0 +1,80 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* NAV */
+ul {
+    text-align: center;
+    background-color: rgb(237, 29, 36);
+    padding: 0;
+    margin: 0;
+}
+
+ul a {
+    color: white;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border: 0.15rem solid rgb(255, 255, 255);
+    border-radius: 0.7rem;
+    margin: 0.7rem 0.6rem;
+}
+
+li:hover {
+    scale: 1.2;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin: 0;
+}
+
+header h1, header h4, header p, header hr {
+    margin: 0.5rem 10rem 0rem;
+}
+
+header h4 {
+    margin: 0;
+}
+
+header hr {
+    margin: 1.5rem 16rem;
+}
+
+/* MAIN */
+
+/* SECTION1 */
+section  h2, section p, section div {
+    margin: 0.5rem 4rem 0rem;
+}
+
+section {
+    background-color: rgb(204, 0, 0, 90%);
+    color: white;
+    padding: 0 0 1rem;
+}
+
+section h2 {
+    border: 50px black;
+    padding: 1rem 0 0;
+}
+
+#div1section1 {
+    margin: 1rem 4rem 0rem;
+    /*chiedi perchè il colore mi da questo problem*/
+    background-color: rgb(204, 0, 0, 60%);
+    color: white;
+    border: 0.15rem solid white;
+    border-radius: 0 0.7rem 0.7rem;
+}
+
+blockquote {
+    margin: 0.3rem 1rem;
+}
+
+/* fai la barra sopra sticky +/

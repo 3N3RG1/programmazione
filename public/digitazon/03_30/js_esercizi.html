@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+
+<script>
+
+/*  ES. 1
+    Dato un array di 4 stringhe a piacere, stampare ogni valore stringa invertito (es 'ciao' diventa 'oaic', ...)
+*/
+
+{
+const array = [ 'primo', 'secondo', 'terzo', 'quarto' ]
+let b = ''
+
+for( let i = 0; i < array.length; i++ ) {
+    let a = ''
+
+    for( let j = array[i].length - 1; j >= 0; j-- ) {
+        // voglio che mi prenda la lettera dell'array alla posizione j
+        a = a + array[i].charAt(j)
+    }
+    b = b + ' ' + a
+}
+console.log( b )
+}
+
+/* ES. 2
+    dato un array di 10 numeri a piacere, stampare quanti sono i numeri positivi, quelli negativi, quelli dispari e quelli pari (per trovare il resto di una divisione utilizzare l'operatore %)
+*/
+
+{
+const array = [ 12, -27, 4, 9, -96, 34, 53, -2, -17, 5, 0]
+let pari = 0
+let dispari = 0
+let pos = 0
+let neg = 0
+let zero = 0
+
+for( let i = 0; i < array.length; i++ ) {
+
+    if( array[i] % 2 == 0 ) pari++
+    else dispari++
+
+    if( array[i] > 0 ) pos++
+    else if ( array[i] < 0 ) neg++
+    else zero++
+}
+console.log( pari, dispari, pos, neg, zero )
+}
+
+
+/*  ES. 3
+    Dato un array di 3 stringhe a piacere, stampare quante di queste stringhe iniziano con il valore 'a' e terminano con il valore '_'
+*/
+
+{
+const array = [ 'antonio_', 'marco', 'alberto_' ]
+let a = ''
+
+for ( let i = 0; i < array.length; i++) {
+
+    if ( array[i].charAt(0) == 'a' && array[i].charAt(array[i].length - 1) == '_' ) {
+        a++
+    }
+}
+console.log( a )
+}
+
+/*  ES. 4
+    Data una stringa a piacere, SE questa contiene una vocale, un underscore, un dollaro e un numero, stampare 'password OK', altrimenti, stampare 'password NOT OK'
+*/
+
+{
+const stringa = 'eòùàèa_$5yfvsjk'
+let a = false, b = false, c = false, d = false;
+
+for ( let i = 0; i < stringa.length; i++ ) {
+    
+    if( stringa[i] == 'a' || stringa[i] == 'e' || stringa[i] == 'i' || stringa[i] == 'o' || stringa[i] == 'u' ) {
+        a = true
+    }
+    else if ( stringa[i] == '_' ) {
+        b = true
+    }
+    else if ( stringa[i] == '$' ) {
+        c = true
+    }
+    else if ( stringa[i] >= 0 ) {
+        d = true
+    }
+}
+if( a == true && b == true && c == true && d == true) {
+    console.log( 'password OK' )
+} else {
+    console.log( 'password NOT OK' )
+}
+}
+
+/*  ES. 5
+    dato un array di 5 valori ETEROGENEI a piacere, stabilire:
+    - quante stringhe ci sono
+    - quanti numeri ci sono
+    - quanti booleani ci sono
+    - qual è il tipo di dato maggiormente presente nell'array
+*/
+
+{
+const array = [ 60, 'cristiana', true, 90, false, 12 ]
+let a = 0, b = 0, c = 0;
+
+for ( let i = 0; i < array.length; i++ ) {
+    
+    if( typeof array[i] == 'number' ) {
+        a++
+    }
+    else if (typeof array[i] == 'string') {
+        b++
+    }
+    else if (typeof array[i] == 'boolean') {
+        c++
+    }
+
+}
+
+if ( a > b && a > c) {
+    console.log( 'number' )
+} else if ( b > c ) {
+    console.log( 'string' )
+} else {
+    console.log( 'boolean' )
+}
+}
+
+</script>
+
+</body>
+</html>

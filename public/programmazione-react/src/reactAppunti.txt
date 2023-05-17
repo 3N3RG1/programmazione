@@ -1,0 +1,48 @@
+<- REACT ->
+JSX = è un preprocessore che interpreta react e lo trasforma in javascript native, in modo che il browser sia in grado di interpretare html e javascript
+
+DOM: document object model
+document. <- fa riferimento al dom ovvero alla struttura ad albero dell'html
+document.getElementById('root')  <- prendi l'elemento che ha come ID il valore root
+
+!!()  <- mi porta sempre nel mondo dei boolena
+
+// ALERT
+function ButtonAlert() {
+  function handleClick() {
+    alert("You clicked me!")
+  }
+  return <button onClick={handleClick}>Click me</button>
+}
+
+Concetti
+- FILTER / REDUCE / MAP / JOIN
+- FETCH
+- useState
+- useEffect
+- destructuring
+- props
+- JSX
+- spread operator
+- DOM
+- shadow dom react- test and to and
+- react return 
+- redux: è come una sorta di flow che ti permette di passare le props a tutta la pagina
+- rendering
+- librerie
+- react data attributes
+
+di React abbiamo tolto i test and to and (sono test che controllano la funzionalità della nostra applicazione) e react return che è un componente che permette di avere applicazione che saltano da un componente all'altro
+
+Ripassiamo gli es fatti
+Studiamo la teoria fatta con qualche dettaglio in più
+Facciamo gli ultimi es e qualcuno di nuovo
+Studio più approofonditos
+
+es:
+- ruota della fortuna
+- forza 4
+- toDoList migliorata dove ci si possono aggiungere anche le cose da fare utilizzando anche la libreria router quindi devo trovare qualcosa da mettere in una seconda pagina ed eventualmente in una terza
+
+css query
+github

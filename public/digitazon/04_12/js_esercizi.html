@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+    
+<script>
+
+// cosa stampa?
+for (let i = 0; ; i++) {
+  console.log(i)
+  if (i > 10) break
+}
+// 0-1-2-3-4-5-6-7-8-9-10-11
+
+// cosa stampa?
+let n = 0
+if ((n && true) || false) {
+  console.log('Say. My. Name.')
+} else {
+  console.log("... you're Heisenberg...")
+}
+// ... you're Heisenberg...
+
+// cosa stampa?
+let i
+for (i = 0; i < 1; i++) {
+    console.log(i)
+}
+console.log(i)
+// 0-1
+
+// gotta love Functional Programming
+// su questo sono uscito un po' dal tracciato per dare possibilita' anche a quelli che gia' 
+// programmavano, o che vogliono una sfida leggermente piu' avanzata, per cimentarsi
+function T() { return true }
+function F() { return false }
+
+function and(sx, dx) {
+  return function() { return sx() && dx() }
+}
+
+function or(sx, dx) {
+  return function() { return sx() || dx() }
+}
+
+console.log(and(or(F, T), T)())
+// true
+
+</script>
+
+</body>
+</html>

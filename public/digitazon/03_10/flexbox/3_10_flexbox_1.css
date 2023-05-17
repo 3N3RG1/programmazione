@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    margin: 0 2rem 1.5rem 2rem;
+}
+
+.logo {
+    width: 100px;
+    height: 120px;
+}
+
+ol {
+    display: flex;
+}
+
+li {
+    margin: 0 1rem;
+    list-style-type: none;
+}
+
+img {
+    margin: 0 0.3rem;
+    width: 150px;
+    height: 200px;
+}
+
+.center div {
+    margin: 1rem 15rem 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.center span {
+    display: none;
+}
+
+.photo-1:hover ~ div .sentence-1, .photo-2:hover ~ div .sentence-2, .photo-3:hover ~ div .sentence-3, .photo-4:hover ~ div .sentence-4, .photo-5:hover ~ div .sentence-5, .photo-6:hover ~ div .sentence-6, .photo-7:hover ~ div .sentence-7 {
+    display: initial;
+}
+
+/* opacity */
+/* initial dice qualsiasi cosa tu eri */
+
+/* capisci lo spazio laterale delle immagini
+- essendo dei caratteri vengono viste come delle parole e lasciano dello spazio */
+
+/* capisci bene la grandezza delle immagini:
+- le immagini vengono flexate dentro il flex ma se al container viene dato un align-items allora non si strcchano più */

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript_basi_3</title>
+</head>
+<body>
+
+<script>
+
+    // creazione di variabili
+    var x = 10, y = 10;
+    console.log( x );
+    console.log( typeof x );
+    
+    // riassegnamento/modifica del valore alla variabile
+    x = -150
+    console.log( x );
+    console.log( typeof x );
+    
+    // riassegnamento del valore di x ad un tipo di dato differente
+    x = 'ciao javascript'
+    console.log( x );
+    console.log( typeof x );
+
+    // operazioni matematiche
+    var z = (10 + 4) * 2
+    console.log( z / 7 );
+
+    var word = 'Corso'
+    var word2 = '!'
+    console.log( word + ' Javascript' + word2 );
+
+    var a = 'sole',
+        b = a + ' o pioggia'
+    console.log( b );
+
+    x = 10
+    y = 5
+    if( x > y ) {
+        console.log( 'blue' );
+    }
+    else {
+        console.log( 'red' );
+    }
+
+    /*
+                V V | V F | F F
+        AND     V     F     F
+        OR      V     V     F
+    */
+
+    // AND
+    if( x >= y && y > 0 ) {
+        console.log('green');
+    }
+
+    // OR
+    if( x < y || y > 0 ) {
+        console.log( 'pink');
+    }
+
+    // = -> operatore di assegnamento
+    // == -> operatore di comparazione
+
+    if( x > 0 ) {
+        console.log( 'x è maggiore di 0' );
+
+        y = 1
+        if( y > 4 ) {
+            console.log( 'y è maggiore di 4' );
+        }
+        else {
+            console.log( 'y è minore di 4' );
+        }
+        if( y == 1 ) {      // controlla che y è uguale a 1
+            console.log( 'y è 1' );
+        }
+    }
+
+    console.log('----------------------------------------');
+
+    // app
+    const admin_Role = 'admin'
+    const user_Role = 'user'
+    const guest_Role = 'guest'
+
+    // admin_Role = 'paperino'
+
+    var userName = 'Riccardo'
+    var userLastname = 'Degni'
+    var userRole = user_Role
+
+    if( userRole == 'admin' ) {
+        console.log( 'Benvenuto/a ' + userName + ' ' + userLastname );
+        console.log('Hai i privilegi di admin!');
+    }
+    else if( userRole == 'user' ) {
+        console.log( 'Benvenuto/a ' + userName + ' ' + userLastname );
+        console.log('NON sei un Admin, niente privilegi!');
+    }
+    else if( userRole == 'guest' ) {
+        console.log( 'Benvenuto/a ' + userName + ' ' + userLastname );
+        console.log('Sei un guest, niente privilegi!');
+    }
+
+    // let scope
+    x = 10
+
+    let student = 'Luigi Verdi'
+
+    if( x == 10 ) {
+        let c = 'tastiera'
+        var d = 'mouse'
+        console.log( student );
+    }
+
+    console.log(c);
+    console.log(d);
+    
+</script>
+
+</body>
+</html>

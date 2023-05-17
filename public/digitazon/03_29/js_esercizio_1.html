@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi_1</title>
+</head>
+<body>
+
+<div id="box">il risultato è: 110</div>
+
+<script>
+
+    /*
+        =   -> operatore di assegnamento
+        ==  -> operatore di comparazione per valore
+        === -> operatore di comparazione per valore e tipo
+    */
+
+    if( 10 === '10' ) {
+        console.log( 'blue' );
+    }
+
+    /* 
+        FALSE VALUES:
+        0
+        false
+        null
+        undefined
+        ''
+    */
+
+    let x = 10
+    if( x == 0 ) {
+        console.log('red');
+    }
+
+    const b1 = true
+    console.log( typeof b1 );
+
+   // --------------------
+
+    let a = 20
+    let b = 10
+    let c = 1000
+
+    b = -100
+
+    // short circuit
+    console.log( (c = b - a) && (c == true) )
+    // perchè mi stampa false ?
+  
+
+    // ----------------------------------------
+    const fruits = [ 'kiwi', 'banana', 'apple', 'peach' ]
+    
+    console.log( fruits );
+    console.log( fruits[0] + ' ' + fruits[1] );
+
+    console.log( fruits.length );
+
+    const array1 = [ 10, 'kiwi', true, null ]
+    console.log( array1 );
+
+    // push: aggiunge in coda
+    fruits.push( 'strawberry' )
+    console.log( fruits );
+
+    let swap1 = fruits[1]
+    let swap2 = fruits[3]
+
+    fruits[1] = swap2
+    fruits[3] = swap1
+
+    console.log( fruits );
+
+    const valoreTolto = fruits.pop()
+    console.log( valoreTolto );
+    console.log( fruits );
+
+    /*
+        for( primo segmento; secondo segmento; terzo segmento )
+
+        for( creazione contatore; condizione di uscita dal ciclo; modifica del contatore )
+    */
+
+    // cicla su tutti gli elementi
+    for( 
+        let i = 3; 
+        i < fruits.length; 
+        i++     // i = i + 1 
+    ) {
+        console.log( "siamo all'indice " + i + " e il suo valore è: " + fruits[i] );
+    }
+    // perchè la prima i non la stampa come un 4 e stessa cosa per fruits[i] perchè mi stampa banana che è il terzo elemento (3)?
+
+    console.log('--------------------------------------------------');
+
+    // cicla solo sugli elementi che stanno agli indici pari
+    for( let i = 0; i < fruits.length; i += 2 ) {
+        console.log( "siamo all'indice " + i + " e il suo valore è: " + fruits[i] );
+    }
+
+    const colors = [
+        ['red', 'blue', 'green', 10],        // 0
+        ['black', 'white', 20],              // 1
+        ['pink', 'gray', 30]                 // 2
+    ]
+
+    console.log( colors );
+
+    console.log('--------------------------------------------------');
+
+    for( let i = 0; i < colors.length; i++ ) {
+
+        console.log( 'Riga ' + i );
+
+        for( let j = 0; j < colors[i].length; j++ ) {
+            const el = colors[i][j]
+
+            if( typeof el  == 'string' )
+                console.log( 'el: ' + el.toUpperCase() );
+            else if( typeof el == 'number' )
+                console.log( 'el: ' + el );
+        }
+
+    }
+
+    console.log( colors[1][1] );
+
+    /*
+    const values = [
+        'ciao',
+        10,
+        [
+            [10, 20, 30],
+            [40, [50, -100, 10]]
+        ]
+    ]
+    */
+
+</script>
+
+</body>
+</html>

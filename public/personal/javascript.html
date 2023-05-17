@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript</title>
+    <style>
+        * {
+            /* margin: 0; */
+            /* border: 0; */
+            /* padding: 0; */
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JAVASCRIPT</h1>
+
+    <b>VARIABILI / SCOPE</b>
+    <p>Le Variabili sono locazioni di memoria ovvero conservano dei dati.<br>La variabile nel suo contesto è costituita dalla dichiarazione della variabile (var stessa + identificatore) e dal suo assegnamento.<br>è possibile non assegnare subito un tipo di dato ad una variabile per poi farlo in seguito.<br>Gli identificatori delle variabili possono contenere lettere, numeri, underscore, e $, ma non devono mai iniziare con un numero; javascript è case sensitive (le keywords di javascript non possono essere utilizzate).<br>Bisogna fare attenzione che il concetto di scoop vale solo per la dichiarazione di una variabile ma non per l'assegnazione (es. dichiaro una variabile nelle scope globale e poi in uno scope locale la ridichiaro, nello scope globale l'assegnazione della mia variabile sarà relativa ancora all'assegnazione globale e non a quella locale; al contrario se riassegno la variabile globale nello scope locale allora nello scope globale l'assegnazione della mia variabile sarà relativa all'assegnazione locale appunto perchè il concetto di scope vale solo per la dichiarazione e non per l'assegnamento).</p>
+    <ul>
+        <li><b>Var: </b>raggiunge qualsiasi livello di scope, sia dall'esterno verso l'interno che viceversa, è possibile ridichiarare e riassegnare la variabile</li>
+        <li><b>Let: </b>raggiunge qualsiasi livello di scope, solamente dall'esterno verso l'interno, è possibile riassegnare la variabile e anche ridichiararla a patto che si trovi in uno scope differente</li>
+        <li><b>Const: </b>raggiunge qualsiasi livello di scope, solamente dall'esterno verso l'interno, non è possibile riassegnare la variabile (nemmeno in scpe differenti) ma è possibile ridichiararla a patto che si trovi in uno scope differente</li>
+    </ul>
+
+    <hr>
+
+    <b>OPERATORI / PRECEDENZE</b>
+    <ul>
+        <li><b>Operatori Aritmetici: </b>+, -, *, /, ** ( produce lo stesso risultato di Math.pow(x,y) ), %, ++, --.
+            <ul>
+                <li><b>Operatore di Pre Incremento/Decremento: </b>++x / --x -> Incrementa prima l'identificatore e in seguito l'identificatore stesso viene considerato</li>
+                <li><b>Operatore di Post Incremento/Decremento: </b>x++ / x-- ->Prima viene considerato l'identificatore stesso e poi vieni incrementato</li>
+            </ul>
+        </li>
+        <li><b>Operatori di assegnamento: </b>=, +=, -=, *=, /=, **=, %= (es x += 1 -> x = x + 1). Ci sono anche gli operatori di assegnamento Shift, Bitwise, Logical.</li>
+        <li><b>Operatori di comparazione: </b></li>
+        <li>String Operators</li>
+        <li>Logical Operators</li>
+        <li>Bitwise Operators</li>
+        <li>Ternary Operators</li>
+        <li>Type Operators</li>
+        <li><b>Precedenza degli operatori </b><a href="https://www.w3schools.com/js/js_precedence.asp" target="blank">(https://www.w3schools.com/js/js_precedence.asp)</a> : le esponenziali sono eseguite prima delle moltiplicazioni, molt. e div. prima di somma e sott.</li>
+    </ul>
+
+    <hr>
+
+    <b>TIPI DI DATO</b>
+    <p>I data types sono fondamentali perchè se il computer non fosse in grado di leggere le informazioni relative alle variabili non sarebbe in grado di risolvere operazioni, funzioni ecc.</p>
+    <ul>
+        <li><b>Stringa: </b> serve ad immagazzinare un tipo di dato che corrisponde ad una seria di caratteri (testo) racchiusi tra virgolette singole ( ' ' ) o doppie virgolette ( " " ) e per determinate necessità con il back-slash ( ` ` alt+96).<br>Si utilizza il back-slash ( \ ) per evitare che javascript interpreti "erroneamente" eventuali apostrofi, virgolette e back-slash all'interno della stessa stringa ( \', \", \\).<br>Le stringhe possono essere anche create come oggetti se implementare in questo modo ( let x = new String( 'ciao' )) ma complicano il codice e diminuiscono la velocità, inoltre possono produrre risultati inaspettati in quanto sono oggetti e non stringhe.
+        <br>Proprietà:
+        <ul>
+            <li><b>.length: </b> mostra la lunghezza della stringa</li>
+        </ul>
+        Metodi | dato let x, il metodo si applica così -> x.metodo (per i metodi completi vedi: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String</a>):
+        <ul>
+            <li><b>.at(x): </b>ha lo stesso principio di [], quindi restutuisce undefined nel caso di caratteri ancora non esistenti nella posizione presa in considerazione, ma se vengono inseriti numeri negativi .at() partirà a contare dalla fine della stringa</li>
+            <li><b>.charAt(x): </b>restituisce il carattere alla posizione indicata (l'index del carattere relativo alla stringa), x è appunto il numero relativo alla posizione che vogliamo prendere in considerazione</li>
+            <li><b>[]: </b>ha lo stesso principio di .charAt() ma interpreta la stringa come un array per questo nel caso venisse preso in considerazione la posizione di un carattere inesistente mi darebbe come output undefined mentre .charAt() una string vuota.</li>
+            <li><b>.charCodeAt(): </b>ha lo stesso principio di .charAt ma resituisce invece del carattere un intero che rappresenta il codice UTF-16 del carattere stesso</li>
+            <li><b>.codePointAt(): </b>ha lo stesso principio di .charCodeAt ma resituisceun intero che rappresenta l'unicod del carattere stesso</li>
+            <li><b>.concat(x, y, ' ', ...): </b>ha lo stesso principio del + e permette di concatenare più stringhe unite anche a spazi se inseriti in .concat e tutto quello che scegliamo di inserire</li>
+            <li><b>.endsWith(x): </b>mi ritorna un booleano se la stringa presenta come ultimi caratteri i caratteri inseriti al posto della x (è possibile anche scrivere .endWith(x, y) e in questo caso y rappresenta il numero di caratteri selezionati partendo da zero, la porzione di stringa selezionara termina con x allora il metodo mi ritorneà true)</li>
+            <li><b>.fromCharCode(x): </b>serve a convertire gli unicode nei rispettivi caratteri, x si sostituisce appunto con l'unicode</li>
+            <li><b>.includes(x): </b>controlla se la stringa contiene quei caratteri che noi abbiamo messo al posto di x, ritorna un booleano anche in questo caso possiamo scrivere .includes(x, y) come .endsWith(x, y)</li>
+            <li><b>.length: </b>ritorna la lunghezza della stringa</li>
+            <li><b>.padStart(x, y): </b>praticamente spazia a sinistra la stringa. x si riferisce alla lunghezza che la stringa deve raggiungere e y a ciò che vogliamo iterare affinche la nostra stringa raggiunga la lunghezza x (y verrà iterata n = x - string.length / es. let string = 'ciao', x = 10, y = 'z', -> 'zzzzzzciao')</li>
+            <li><b>.padEnd(x, y): </b>ha lo stesso principio di .pasStart() ma itera y n volte alla fine della stringa e non all'inizio</li>
+            <li><b>.repeat(x): </b>crea un nuovo array che è la concatenazione della stringa presa in considerazione per il numero di volte x, ovviamente in un nuova stringa, non modifica quella di partenza</li>
+            <li><b>.replace(x, y): </b>x corrisponde alla porzione di stringa che vogliamo prendere in considerazione (dobbiamo proprio riportarla scrivendola) mentre y corrisponde a ciò con cui vogliamo sostituire x (.raplce non modifica la stringa di partenza ma ne crea una nuova e nel caso avessi più parole che corrispondono alla x verrà presa in considerazione e sostituita solo la prima)</li>
+            <li><b>.replaceAll(x, y): </b>ha lo stesso principio di .raplace ma sostituisce tutte le parole che corrispondo alla x</li>
+            <li><b>.slice(x, y): </b>estrai una porzione della stringa e la ritorna in una nuova stringa (non modifica la stringa di partenza). x e y corrispondono alla posizione d'inizio e fine della porzione di stringa che vogliamo prendere (la posizione di fine non è inclusa). Se si omitte y la porzione di stringa presa in considerazione sarà da x alla fine della stringa. Se x e y sono impostati negativamente il conto avverrebbe dall fine della stringa.</li>
+            <li><b>.split('x'): </b>permette di convertire una stringa in array ma come viene vengono separati gli elementi ? x può essere qualsiasi cosa e corrisponde all'elemento che costituisce l'elemento separatore dell'array (es. let string = 'c5i5a5o', string.split('5') -> l'array risulterà così: [c, i, a, o] )</li>
+            <li><b>.startsWith(): </b>ha lo stesso principio di .endsWith() solamente che ritorna un booleano se la porzione di testo inizia con la x inserita, anche in questo cosa funziona .startsWith(x, y)</li>
+            <li><b>.substr(x, y): </b>ha lo stesso principio di .slice ma il secondo parametro identifica la lunghezza della porzione presa in considerazione da estrarre. Per questo motivo è possibile assegnare un valore negativo alla x perchè partirà dalla fine della stringa ma non alla y perchè non esiste una lunghezza negativa</li>
+            <li><b>.substring(x, y): </b>ha lo stesso principio di .slice ma i valori negativi di x e y vengono interpretati come '0'</li>
+            <li><b>.toLowerCase(): </b>trasforma la stringa tutta in lower-case</li>
+            <li><b>.toUpperCase(): </b>trasforma la stringa tutta in upper-case</li>
+            <li><b>.toString(): </b>converte un oggetto stringa in un oggetto</li>
+            <li><b>.trim(): </b>rimuove gli spazi sia a destra che a sinistra di una stringa</li>
+            <li><b>.trimStart(): </b>rimuove solamente gli spazi a sinistra di una stringa</li>
+            <li><b>.trimEnd(): </b>rimuove gli spazi solamente a destra di una stringa</li>
+            <li><b>.valueOf(): </b></li>
+        </ul>
+        </li>
+        <li>Numeri</li>
+        <li>Bigint</li>
+        <li>Booleani</li>
+        <li>Undefined</li>
+        <li>Null</li>
+        <li>Simboli</li>
+        <li>Oggetti: gli Object possono contenere altri Object, Array e Date</li>
+    </ul>
+
+    <b>FUNZIONI</b>
+    
+</body>
+</html>

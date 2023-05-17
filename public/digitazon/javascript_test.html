@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript_test.html</title>
+</head>
+<body>
+    
+<script>
+
+{
+let str = 
+`
+Cancelleria
+500
+40
+60
+
+Servizi igienici
+1000
+1
+200
+
+Vendite
+0
+`
+let arr = str.split('\n')
+let map = new Map()
+let mag = 0, repMag = '', min = 0, repMin = ''
+
+for(let i = 0, j, n = 0; i < arr.length; i++) {
+    if(arr[i] === '' && arr[i+1] !== undefined) {
+        map.set(arr[i+1], n)
+        i = i+2
+        j = i-1
+    }
+    if(map.has(arr[j]))
+        n += parseInt(arr[i],10)
+    if(arr[i+1] === '') {
+        map.set(arr[j], n)
+        if(n > mag || (n === 0 && mag === 0)) {
+            mag = n
+            repMag = arr[j]
+        }
+        if(n < min || (n === 0 && min === 0)) {
+            min = n
+            repMin = arr[j]
+        }
+        n = 0
+    }
+}
+
+let array = [{
+    'reparto': repMag,
+    'spesa': mag
+},
+{
+    'reparto': repMin,
+    'spesa': min
+}]
+console.log(array)
+
+// for(let i = 0, j, n = 0; i < arr.length; i++) {
+//     if(arr[i] == '' && arr[i+1]) {
+//         map.set(arr[i+1],'')
+//         i = i+2
+//         j = i-1
+//     }
+//     if(map.has(arr[j])) {
+//         n += parseInt(arr[i])
+//     }
+//     if(arr[i+1] == '') {
+//         map.set(arr[j], n)
+//         n = 0
+//     }
+// }
+// let spesaMaggiore = 0, repartoSpesaMaggiore = '', spesaMinore = 0, repartoSpesaMinore = ''
+// let spesaMaggiore = 0
+// let spesaMinore = 0
+// let repartoSpesaMaggiore = ''
+// let repartoSpesaMinore = ''
+// map.forEach(function(v,k) {
+//     if(v > spesaMaggiore || (v == 0 && v > spesaMaggiore)) {
+//         spesaMaggiore = v
+//         repartoSpesaMaggiore = k
+//     }
+//     if(v < spesaMinore || v == 0) {
+//         spesaMinore = v
+//         repartoSpesaMinore = k
+//     }
+// })
+// console.log(`Il reparto che ha speso di più è stato: ${repartoSpesaMaggiore} con una spesa di ${spesaMaggiore}, mentre il reparto che ha speso di meno è stato: ${repartoSpesaMinore} con una spesa di ${spesaMinore}`)
+}
+
+{
+function pazza(str) {
+    if(str.includes('Church') || str.includes('mare')) return 'La stringa è sana'
+    if(!str.includes('Lui') && !str.includes('Lei') && !str.includes('Egli') && !str.includes('Ella')) return 'La stringa è pazza'
+    if(str[str.length-3] === '?' && str[str.length-2] === '!' && str[str.length-1] === '?') return 'La stringa è pazza'
+    if(str.includes('Cthulhu')) return 'La stringa è pazza'
+    if(str[0] == ',' || str[0] == '.' || str[0] == '!' || str[0] == '?' || str[0] == ':' || str[0] == ';' || str[0] == '-' || str[0] == '~') return 'La stringa è pazza'
+    let arr = str.split(' '), x, y
+    for(let i = arr[0].length-1; i >= 0; i--) {
+        x = arr[0][i-2] + arr[0][i-1] + arr[0][i]
+        if(arr[0].charCodeAt(i) < 97 || arr[0].charCodeAt(i) > 122) continue
+        (x === 'are' || x === 'ere' || x === 'ire') ? x = true : x = false
+        break
+    }
+    for(let j = arr[arr.length-1].length-1; j >= 0; j--) {
+        y = arr[arr.length-1][j-2] + arr[arr.length-1][j-1] + arr[arr.length-1][j]
+        if(arr[arr.length-1].charCodeAt(j) < 97 || arr[arr.length-1].charCodeAt(j) > 122) continue
+        (y === 'are' || y === 'ere' || y === 'ire') ? y = true : y = false
+        break
+    }
+    if(x === true && y === true) return 'La stringa è pazza'
+    return 'La stringa è sana'
+}
+console.log(pazza('Mangire.?.) Lui, litigore!!'))
+
+// function pazza(str) {
+//     if(str.includes('Church') || str.includes('mare')) return 'La stringa non è pazza'
+//     if(str[str.length-3] == '?' && str[str.length-2] == '!' && str[str.length-1] == '?') return 'La stringa è pazza'
+//     if(str.includes('Cthulhu')) return 'La stringa è pazza'
+//     if(str[0] == ',' || str[0] == '.' || str[0] == '!' || str[0] == '?' || str[0] == ':' || str[0] == ';' || str[0] == '-' || str[0] == '~') return 'La stringa è pazza'
+//     arr = str.split(' ')
+//     if((arr[0][arr[0].length-3] + arr[0][arr[0].length-2] + arr[0][arr[0].length-1] == 'are' || arr[0][arr[0].length-3] + arr[0][arr[0].length-2] + arr[0][arr[0].length-1] == 'ere' || arr[0][arr[0].length-3] + arr[0][arr[0].length-2] + arr[0][arr[0].length-1] == 'ire') && (arr[arr.length-1][arr[arr.length-1].length-3] + arr[arr.length-1][arr[arr.length-1].length-2] + arr[arr.length-1][arr[arr.length-1].length-1] == 'are' || arr[arr.length-1][arr[arr.length-1].length-3] + arr[arr.length-1][arr[arr.length-1].length-2] + arr[arr.length-1][arr[arr.length-1].length-1] == 'ere' || arr[arr.length-1][arr[arr.length-1].length-3] + arr[arr.length-1][arr[arr.length-1].length-2] + arr[arr.length-1][arr[arr.length-1].length-1] == 'ire')) return 'La stringa è pazza'
+//     if(str.includes('Lui') || str.includes('Lei') || str.includes('Egli') || str.includes('Ella')) return 'La stringa non è pazza'
+//     return 'La stringa è pazza'
+// }
+}
+
+{
+let map = new Map([
+    ['1', 'I'],
+    ['5', 'V'],
+    ['10', 'X'],
+    ['50', 'L'],
+    ['100', 'C'],
+    ['500', 'D'],
+    ['1000', 'M']
+])
+function romano(n) {
+    n = n.toString()
+    let zero = '', str = ''
+    for(let i = n.length-1; i >= 0; i--) {
+        /*
+        if(zero === '000' && n[i] < 4)
+            for(j = n[i]; j > 0; j--)
+                str = map.get('1'+zero) + str
+        if(n.length > 3) {
+            if(n[i] < 4) 
+                for(j = n[i]; j > 0; j--)
+                    str = map.get('1'+zero) + str
+            else if()
+        }
+        */
+        if(zero === '000')
+            for(j = n[i]; j > 0; j--)
+                str = map.get('1'+zero) + str
+        else if(n[i] > 0 && n[i] < 9 && n[i] != 4) {
+            for(let j = n[i]; n[i] < 4 ? j > 0 : j > 5; j--)
+                str = map.get('1'+zero) + str
+            if(n[i] > 4) str = map.get('5'+zero) + str
+        } else if(n[i] == '4' || n[i] == '9')
+            str = map.get('1'+zero) + map.get((n[i] == '4' ? '5' : '10')+zero) + str
+        zero += '0'
+    }
+    return str
+}
+console.log(romano(1000)) // metti i numeri sopra il 3999
+}
+</script>
+
+</body>
+</html>

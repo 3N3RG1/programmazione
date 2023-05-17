@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+
+<script>
+
+/*  ES 1
+    creare una funzione 'ope' che prende in ingresso una stringa e due numeri.
+    controlla il valore della stringa dei due numeri
+    Se è '+' restituisci la somma dei due numeri
+    Se è '/' restituisci la divisione
+    Se è '*' o 'x' restituisci la moltiplicazione dei due numeri
+    Se è '-' restituisci la differenza dei due numeri
+    altrimenti restituisci 0
+*/
+{
+function ope( a, b, c ) {
+   if( a == '+' ) {
+    return b + c
+   } else if( a == '-' ) {
+    return b - c
+   } else if( a == '*' || a == 'x' ) {
+    return b * c
+   } else if( a == '/' ) {
+    return b / c
+   } else {
+    return 0
+   }
+}
+console.log( ope('+', 65, 78) )
+console.log( ope('-', 65, 78) )
+console.log( ope('*', 65, 78) )
+console.log( ope('/', 65, 78) )
+console.log( ope('ciao', 65, 78) )
+}
+
+/*  ES 2
+    creare una funzione 'invertString' che prende in ingresso una stringa e la restituisce invertita.
+    Chiamare la funzione con i seguenti valori e stampare i risulati in console:
+    - javascript
+    - console
+    - anna
+    - 100
+    Nota: se il valore non è una stringa, ma un numero, stampa il numero moltiplicato per 10.
+    Se il valore non è una stringa ne un numero, stampa 'errore'
+*/
+{
+function ivertString ( a ) {
+    if( typeof a == 'string' ) {
+        let b = ''
+        for( let i = a.length - 1; i >= 0; i-- ) {
+            b = b + a[i]
+        }
+        return b
+    } else if( typeof a == 'number' ) {
+        return a * 10
+    } else if( typeof a != 'string' || typeof a != 'number' ) {
+        return 'errore'
+    }
+}
+console.log( ivertString( 'javascript' ) )
+console.log( ivertString( 'console' ) )
+console.log( ivertString( 'anna' ) )
+console.log( ivertString( 100 ) )
+console.log( ivertString( true ) )
+}
+
+/*  ES 3
+    crea una funzione 'xRayArray' che prende in ingresso un array e mi stampa:
+    - la lunghezza dell'array
+    - se l'array contiene SOLO numeri o meno
+    - se l'array è vuoto
+    - se è un array oppure un altro tipo di dato
+    La funzione NON restituisce nessun valore.
+    Chiamare la funzione con i seguenti valori:
+    - [10, 20, 30]
+    - []
+    - ['ciao', 100]
+    - 'ciao'
+*/
+{
+function xRayArray( a ) {
+    console.log( a.length )
+    x = 0
+    for( let i = 0; i < a.length; i++ ) {
+
+        if( typeof a[i] != 'number' ) {
+            x++
+        }
+    }
+
+    if( x ) { 
+        console.log( 'l\'array non contiene solo numeri')
+    } else {
+        console.log( 'l\'array contiene solo numeri' )
+    }
+
+    if( !a.length )
+        console.log( 'l\'array è vuoto' )
+    
+    if( Array.isArray(a) )
+        console.log( 'è un array' )
+}
+xRayArray( [ 10, 20, 30 ] )
+xRayArray( [] )
+xRayArray( ['ciao', 100] )
+xRayArray( ['ciao'] )
+xRayArray( ['dsdi', 893, 493] )
+}
+
+/*  ES 4
+    crea una funzione 'isPalindrome' che prende una stringa in ingresso e mi dice se è palindroma.
+    Chiamare la funzione con i seguenti valori:
+    - anna
+    - itopinonavevanonipoti
+    - ugo
+*/
+{
+function isPalindrome ( a ) {
+
+    // for( let i = 0; i < Math.trunc(a.length / 2); i++ ) {
+    //     if( a[i] != a[a.length - 1 - i] ) {
+    //         console.log( 'la parola '+a+' non è palindroma' )
+    //         return
+    //     }
+    // }
+    // console.log( 'la parola '+a+' è palindroma' )
+
+    // -- senza Math.trunc --
+
+    for( let i = 0; i < a.length / 2 - 0.5; i++ ) {
+        if( a[i] != a[a.length - 1 - i] ) {
+            console.log( 'la parola '+a+' non è palindroma' )
+            return
+        }
+    }
+    console.log( 'la parola '+a+' è palindroma' )
+}
+isPalindrome( 'anna' )
+isPalindrome( 'itopinonavevanonipoti' )
+isPalindrome( 'ugo' )
+isPalindrome( 'yamamay' )
+}
+
+/*  ES 5
+    creare una funzione 'evenInMatrix' che mi restituisce un contatore che tiene traccia di tutti i numeri pari presenti in una matrice passata in ingresso (controllare tutti gli array di un array).
+    Chiamare la funzione con i seguenti valori:
+    - 
+    [
+    [1, 3, 3],
+    [2, 3, 3],
+    [4, 9, 8]
+    ]
+    - 
+    [
+    [2, 1, 6],
+    [3, 4, -10],
+    [9, 9, 240]
+    ]
+*/
+{
+function evenInMatrix ( a ) {
+    let b = 0
+    for( let i = 0; i < a.length; i++ ) {
+        for( let j = 0; j < a[i].length; j++ ) {
+            if( a[i][j] % 2 == 0 ) {
+                b++
+            }
+        }
+    }
+    console.log( b )
+}
+evenInMatrix( [ [1, 3, 3], [2, 3, 3], [4, 9, 8] ] )
+evenInMatrix( [ [2, 1, 6], [3, 4, -10], [9, 9, 240] ] )
+}
+
+</script>
+
+</body>
+</html>

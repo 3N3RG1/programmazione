@@ -1,0 +1,82 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_3</title>
+</head>
+<body>
+
+<script>
+
+    // step 1: dichiaraz. della funzione
+    function welcome( username, start, end ) {
+        if( typeof username == 'string' ) {
+            console.log( 'Benvenuto nella App ABC!' );
+            console.log( 'Il tuo username è: ' + username + '!' );
+            for(let i = start; i <= end; i++) {
+                console.log(i);
+            }
+        }
+        else {
+            console.log('Warning! Username deve essere una stringa!');
+        }
+    }
+
+    // step 2: chiamata della funzione
+    welcome( 'lverdi', 1, 4 )
+
+    if( true ) {}
+
+    welcome( 'ciao' )
+
+    // for() {}
+
+    welcome( 'daisy', 5, 8 )
+
+    /* ... */
+
+    welcome( 'peach', 10, 20 )
+
+    const x = 'ciao'
+    console.log( x.charAt(0) );
+
+    function sum(x, y) {
+        return x + y
+    }
+
+    const r1 = sum(10, 4)
+    console.log( 'il risultato è: ' + r1 );
+    console.log( 'il risultato è: ' + sum(- 100, 200) );
+
+    function getVowels() {
+        return ['a', 'e', 'i', 'o', 'u']
+    }
+
+    for( let i = 0; i < getVowels().length; i++ ) {
+        console.log( getVowels()[i] );
+    }
+
+    /*
+        crea una funzione che prende in ingresso una stringa e la restituisce
+        avviluppata dalla stringa '###'. controlla che il valore sia una stringa altrimenti
+        errore
+    */
+
+    function wrapString( s ) {
+        if(typeof s == 'string') {
+            console.log( '###' + s + '###' );
+        }
+        else {
+            console.log('Errore! Il parametro deve essere una stringa');
+        }
+    }
+
+    wrapString( 10 )
+    wrapString( 'javascript' )
+    wrapString( 'php' )
+    wrapString( [] )
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript_basi_1</title>
+</head>
+<body>
+
+<script>
+
+    // trovare e stampare il maggiore tra 3 numeri interi 
+    // salvati in 3 costanti differenti
+
+    const a = 10
+    const b = 20
+    const c = 30
+
+    let max
+
+    // 1° SOLUZIONE
+
+    if ( a > b && a > c ) {
+        max = a
+    }
+    
+    else if ( b > c ) {
+        max = b
+    }
+    
+    else {
+        max = c
+    }
+
+    console.log(max);
+
+    // 2° SOLUZIONE
+
+    if( a > b ) {
+        if( a > c ) {
+            max = a
+        }
+        else {
+            max = c
+        }
+    }
+
+    else {
+        if( b > c ) {
+            max = b
+        }
+        else {
+            max = c
+        }
+    }
+
+    console.log(max);
+
+    // 3° SOLUZIONE
+
+    max = c
+
+    if( a > b ) {
+        if( a > c ) {
+            max = a
+        }
+    }
+
+    else {
+        if( b > c ) {
+            max = b
+        }
+    }
+
+    console.log(max);
+
+    // 4° SOLUZIONE
+
+    if ( a > b ) {
+        max = a
+    }
+
+    else {
+        max = b
+    }
+
+    if ( c > max ) {
+        max = c
+    }
+
+    console.log(max);
+
+</script>
+
+</body>
+</html>

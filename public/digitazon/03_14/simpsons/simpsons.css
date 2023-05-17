@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+/* FIRST BAR */
+body > section:first-child {
+    background-color: rgb(255, 255, 0);
+    padding: 1px 0;
+    text-align: center;
+    font-weight: 500;
+}
+/* potrei allargare anche leggermente la barra */
+/* fai che le frasi scorrono da destra verso sinistra */
+
+/* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 50px 2px 40px;
+    border-bottom: 1px solid black;
+}
+/* sistema il logo dei simpson che deve rimanere fermo */
+
+nav > section, nav > .left div, section:last-child > label {
+    display: flex;
+    align-items: center;
+}
+
+nav .svg {
+    width: 26px;
+    filter: opacity(85%);
+    cursor: pointer;
+}
+
+/* LEFT */
+.left div {
+    border: 1px solid rgb(0, 0, 0, 50%);
+    border-radius: 20px;
+    padding: 0 0 0 10px;
+    margin-left: 20px;
+}
+
+.left input {
+    border: 0;
+    outline: none;
+    padding: 3px 0 3px 5px;
+    margin-right: 10px;
+    width: 150px;
+    transition: 0.3s;
+}
+
+.left input:focus {
+    width: 250px;
+    transition: 0.3s;
+}
+
+.left div .svg {
+    border-radius: 0 20px 20px 0;
+    padding: 3px 15px;
+    border-left: 1px solid rgb(0, 0, 0, 50%);
+    filter: opacity(65%);
+}
+
+.left div .svg:hover {
+   background-color: rgb(0, 0, 0, 7%);
+}
+
+/* CENTER */
+.center img {
+    width: 110px;
+    cursor: pointer;
+}
+/* fai che se clicchi sull'immagine torni alla home */
+
+/* RIGHT */
+
+/* CHECKBOX */
+#login_signup_person {
+    display: none;
+}
+
+.login_signup {
+    margin-right: 30px;
+}
+
+.profile {
+    width: 35px;
+    filter: opacity(85%);
+    cursor: pointer;
+}
+
+.profile:hover {
+    width: 37px;
+    filter: opacity(100%);
+    transition: 0.1s;
+}
+
+.profile:hover + div {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.login_signup  div {
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.login_signup  div:hover {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* POP-UP */
+#login_signup_person:checked ~ .section_pop_up {
+    display: block;
+}
+
+.section_pop_up {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 80%);
+}
+
+.pop_up {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+
+/* LOGIN / SING UP */
+#login_signup_button {
+    display: none;
+}
+
+.form_signup {
+    display: none;
+}
+
+/* prova */
+#login_signup_button:checked ~ .form_login {
+    display: none;
+}
+
+#login_signup_button:checked ~ .form_signup {
+    display: block;
+}
+
+/* poi devo fare anche che quando clicco il background rosso sparisce tutto */
+
+
+/* è davvero possibile collegare più label ad un solo input */
+/* capisci bene cosa ci si mette dentro gli input tipo name e altro e anche nei form */
+/* ccs pseudo classi che ce ne sono un botto e potrebbero essermi utili, ma comunque css in generale */
+/* che cosè lo z-index */
+/* capisci cosa sono i webkit e come si utilizzano */
+
+
+/* utilizza il colore giallo giusto dei simpson per la section sopra */
+/* metti tutti gli hover */
+/* cambia colore alla x del search */
+/* sistema anche la parola cerca e il colore del bordo */
+/* elimnina il bordo della nav */
+/* sistema la nav in modo che quando uso un hover non mi si sposti tutto il resto */
+/* metti gli hover anche all'icona del menu e del carrello */

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi</title>
+</head>
+<body>
+
+<script>
+
+/*  Ex 1
+    creare la funzione diffArray che prende in ingresso due array.
+    Gli array dovranno contenere da 3 a 8 numeri.
+    All'interno della funzione trovare il numero più grande del primo array e il numero più piccolo del secondo array.
+    La funzione restituisce la differenza tra il primo numero e il secondo. 
+    Stampare il risultato in output.
+*/
+{
+function difArray(a, b) {
+
+    for(let i = 0; i < a.length; i++) {
+        if(isNaN(a[i])) return false
+    }
+    for(let j = 0; j < b.length; j++) {
+        if(isNaN(b[j])) return false
+    }
+
+    if(a.length < 3 || a.length > 8 || b.length < 3 || b.length > 8) return false
+
+    let c = a[0], d = b[0]
+    for(let i = 1; i < a.length; i++) {
+        if(a[i] > c) c = a[i]
+    }
+    for(let j = 1; j < b.length; j++) {
+        if(b[j] < d) d = b[j]
+    }
+
+    console.log(c - d)
+}
+array1 = [0, 3, 17, -8, 234, -64]
+array2 = [7, -9, 12, 145, -79, 5, -2]
+difArray(array1, array2)
+}
+console.log('----------')
+
+/*  Ex 2
+    creare la funzione countVowels che prende in ingresso una stringa, e restituisce una mappa che avrà per chiavi tutte le vocali alfabetiche e per rispettivi valori il numero di occorrenze di ogni vocale nella stringa
+    es 'ciao a tutti' produce { a => 2, e => 0, i => 2, o => 1, u => 1 }
+*/
+{
+function countVowels(a) {
+
+    b = 0, c = 0, d = 0, e = 0, f = 0
+    for(let i = 0; i < a.length; i++) {
+        if(a[i] == 'a') b++
+        else if(a[i] == 'e') c++
+        else if(a[i] == 'i') d++
+        else if(a[i] == 'o') e++
+        else if(a[i] == 'u') f++
+    }
+    
+    let m = new Map()
+    m.set('a', b)
+    m.set('e', c)
+    m.set('i', d)
+    m.set('o', e)
+    m.set('u', f)
+
+    console.log(m)
+}
+stringa = 'ciao a tutti'
+countVowels(stringa)
+}
+console.log('----------')
+
+/*  Ex 3
+    creare la funzione invertCase che prende in ingresso una stringa.
+    Se la stringa è in lower case, restituisce la stringa in upper case.
+    Se la stringa è in upper case restituisce la stringa in lower case.
+    Assumere che sia in una forma o l'altra.
+*/
+{
+function invertCase(a) {
+    if(a.toUpperCase() != a && a.toLowerCase() != a) return false
+    if(a.toUpperCase() == a) a = a.toLowerCase()
+    else a = a.toUpperCase()
+    console.log(a)
+}
+stringa = 'CIAO A TUTTI'
+invertCase(stringa)
+console.log('----------')
+}
+
+/*  Ex 4
+    creare una mappa che rappresenta 5 stili CSS a piacere e stamparla in output.
+    Creare la funzione showCSS che prende in ingresso la precedente mappa e stampa tutti i suoi elementi.
+*/
+{
+function showCSS(a) {
+    for(let x of a.entries()) {
+        console.log(x)
+    }
+}
+const m = new Map()
+m.set('width', '100px')
+m.set('height', '100px')
+m.set('background-color', 'blue')
+m.set('border', '1px')
+m.set('border-color', 'black')
+showCSS(m)
+}
+console.log('----------')
+
+/*  Ex 5
+    creare una funzione cmpArr che prende in ingresso 2 array e restituisce:
+    1 se il primo ha dimensioni maggiori del secondo
+    -1 se il secondo ha dimensioni maggiori del primo
+    0 se hanno dimensioni uguali
+    Testare in output il comportamento di tutte e 3 le casistiche.
+*/
+{
+function cmpArr(a, b) {
+    if(a.length > b.length) return 1
+    else if(a.length < b.length) return -1
+    else return 0
+}
+array1 = ['hola', 12, 'b', 'c', 345, -12]
+array2 = ['ciao', 56, 'a', -12]
+array3 = ['hello', 56, 'd', 46]
+console.log(cmpArr(array1, array2))
+console.log(cmpArr(array2, array1))
+console.log(cmpArr(array2, array3))
+}
+console.log('----------')
+
+</script>
+
+</body>
+</html>

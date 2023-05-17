@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+{
+/* PIRAMIDE PAROLE DI LUNGHEZZA PARI */
+function pyramidEven(str) {
+    let stamp = '', space = ''
+    for(let i = str.length/2-1; i >= 0; i--) {
+        if(i == str.length/2-1) console.log(space.padStart(i*2+1, ' ') + str[i])
+        stamp = str[i] + ' ' + stamp + str[str.length-i-1] + ' '
+        console.log(space.padStart(i*2, ' ') + stamp)
+    }
+}
+// pyramidEven('javascript')
+
+function pyramidEvenBetter(str) {
+    // 1. Dichiaro una variabile vuota(stamp) che sarà quello che stamperò ciclicamente e assegno ad un altra variabile(space) lo spazio relativo alla prima lettera che devo stampare utilizzando .padStart e la stringa vuota che già ho(stamp)
+    // 2. Creo un ciclo che parte dal carattere al centro-sinistra (essendo il centro due caratteri) e che retroceda verso il primo carattere
+    // 3. Stampo lo spazio più il primo carattere solo al primo ciclo con un if in modo da creare la punta della piramide e poi prendo con slice lo spazio e lo taglio togliendo un carattere spazio ' ' (perchè alla stampa successiva mi serve una spazio più corto di 1)
+    // 4. Riassegno la variabile stamp come il carattere preso in considerazione + spazio + la stampa precedente + il carattere successivo all'ultimo carattere della stampa precedente + spazio
+    // 5. stampo il tutto
+    // 6. riassegno alla variabile stamp un valore che equivale allo slice dello spazio precedente tolti due spazi perchè ad ogni nuova stampa devo togliere due spazi allo spazio totale della stampa precedente
+    let stamp = '', space = stamp.padStart((str.length/2-1)*2+1, ' ') // 1
+    for(let i = str.length/2-1; i >= 0; i--) { // 2
+        if(i == str.length/2-1) {
+            console.log(space + str[i]) // 3
+            space = space.slice(1, space.length)  // 3
+        }
+        stamp = str[i] + ' ' + stamp + str[str.length-i-1] + ' ' // 4
+        console.log(space + stamp) // 5
+        space = space.slice(2, space.length) // 6
+    }
+}
+pyramidEvenBetter('javascript')
+}
+
+{
+/* PIRAMIDE PAROLE DI LUNGHEZZA DISPARI */
+function pyramidOdd(str) {
+    let stamp = '', space = ''
+    for(let i = str.length/2-1.5; i >= 0; i--) {
+        if(i == str.length/2-1.5) {
+            console.log(space.padStart(i*2+2, ' ') + str[i+1])
+            stamp = str[i+1] + ' '
+        }
+        stamp = str[i] + ' ' + stamp + str[str.length-i-1] + ' '
+        console.log(space.padStart(i*2, ' ') + stamp)
+    }
+}
+// pyramidOdd('alberto')
+
+function pyramidOddBetter(str) {
+    if(str.length == 1) return console.log(str)
+    let stamp = '', space = stamp.padStart((str.length/2-1)*2+1, ' ')
+    for(let i = str.length/2-1.5; i >= 0; i--) {
+        if(i == str.length/2-1.5) {
+            console.log(space + str[i+1])
+            stamp = str[i+1] + ' '
+            // space = space.slice(2, space.length)
+        }
+        space = space.slice(2, space.length)
+        stamp = str[i] + ' ' + stamp + str[str.length-i-1] + ' '
+        console.log(space + stamp)
+        // space = space.slice(2, space.length)
+    }
+}
+pyramidOddBetter('alberto')
+}
+
+{
+/* PIRAMIDE COMPLETA */
+function pyramid(str) {
+    if(str.length == 1) return console.log(str)
+    let stamp = '', space = ''
+    for(let i = Math.round(str.length/2-1.5); i >= 0; i--) {
+        if(i == Math.round(str.length/2-1.5) && str.length % 2 == 0) console.log(space.padStart(i*2+1, ' ') + str[i])
+        else if(i == Math.round(str.length/2-1.5) && str.length % 2 != 0) console.log(space.padStart(i*2+2, ' ') + (stamp = str[i+1] + ' '))
+        stamp = str[i] + ' ' + stamp + str[str.length-i-1] + ' '
+        console.log(space.padStart(i*2, ' ') + stamp)
+    }
+}
+// pyramid('javascript')
+
+function pyramidBetter(str) {
+    if(str.length == 1) return console.log(str)
+    let stamp = '', space = stamp.padStart((str.length/2-1)*2+1, ' ')
+    for(let i = Math.round(str.length/2-1.5); i >= 0; i--) {
+        if(i == Math.round(str.length/2-1.5) && str.length % 2 == 0) {
+            console.log(space + str[i])
+            space = space.slice(1, space.length)
+        } else if(i == Math.round(str.length/2-1.5) && str.length % 2 != 0) {
+            console.log(space + str[i+1])
+            stamp = str[i+1] + ' '
+            space = space.slice(2, space.length)
+        }
+        stamp = str[i] + ' ' + stamp + str[str.length-i-1] + ' '
+        console.log(space + stamp)
+        space = space.slice(2, space.length)
+    }
+}
+// pyramidBetter('123456789')
+
+function pyramidBest(str) {
+    // la stringa ovviamente non ha senso che sia vuota
+    if(str.length == 1) return console.log(str)
+    let stamp = '', space = stamp.padStart((str.length/2-1)*2+1, ' '), i = Math.round(str.length/2-1.5)
+    if(str.length % 2 == 0) {
+        console.log(space + str[i])
+        space = space.slice(1, space.length)
+    } else {
+        console.log(space + str[i+1])
+        stamp = str[i+1] + ' '
+        space = space.slice(2, space.length)
+    }
+    for(i; i >= 0; i--) {
+        stamp = str[i] + ' ' + stamp + str[str.length-i-1] + ' '
+        console.log(space + stamp)
+        space = space.slice(2, space.length)
+    }
+}
+pyramidBest('123456789')
+}
+
+console.log('- - - - - - - - - -')
+
+{
+/* CLESSIDRA */
+// sistema il caso con una stringa lunga 1 e 2
+function clessidra(str) {
+    // 1. Dichiaro tre variabili: stamp = la stampa che farò ad ogni ciclo (esclusi gli spazi a sinistra), arr = l'array che mi conserverà gli spazi + le stampe ad ogni ciclo, space = lo spazio che mi servirà ad ogni ciclo (si potrebbe trovare un modo per farlo ancora più velocemente scomponendo a metà la stringa in continuazione e una volta che si arriva ad una singolo carattere gli si mette a destra un spazio e la stringa risultante sarà la concatenazione di tutti i caratteri più gli spazi | oppure già facendo un i-esimo che parte dall'inizio e uno che parte dalla fine e si incontrano a metà)
+    // 2. Faccio un ciclo per mettere ad ogni carattere della stringa uno spazio a destra in modo da ottenere la mia stringa con gli spazi e la stampo
+    // 3. Aggiungo al mio array la stamp appena fatta che mi servirà all'ultima stampa della clessidra
+    // 4. Faccio un ciclo per stampare la prima metà della mia clessidra (metà compresa), i funziona con stringhe sia pari sia dispari (es.pari: (10-1)/2 = 4.5 => Math.floor(4.5) = 4, le stampe saranno da 0 a 4(escluso) => 4) - (es.dispari: (9-1)/2 = 4, le stampe stampe da 0 a 4(escluso) => 4)
+    // 5. Riassegno ad ogni ciclo stamp = allo slice della stampa precedente che parte dalla posizione 2 (carattere compreso) alla posizione della lunghezza totale -2 (non compreso)
+    // 6. Riassegno space = allo space precedente più due spazi '  '
+    // 7. Stampo gli spazi + la stamp
+    // 8. Salvo tutto nel mio array che mi servirà per stampare l'altra metà della clessidra
+    // 9. Faccio un ciclo che prende in considerazione l'array e parte stampando dalla penultima posizione fino alla fine, non stampo l'ultima posizione perchè corrisponde al centro della clessidra e non la voglio stampare due volte
+    let stamp = '', arr = [], space = '' // 1
+    for(let i = 0; i < str.length; i++) stamp += str[i] + ' ' // 2
+    console.log(stamp)
+    arr.push(stamp) // 3
+    for(let i = 0; i < Math.floor((str.length-1)/2); i++) { // 4
+        stamp = stamp.slice(2, stamp.length-2) // 5
+        space += '  ' // 6
+        console.log(space + stamp) // 7
+        arr.push(space + stamp) // 8
+    }
+    // Questo lho aggiunto nel caso si volesse mettere il centro della clessidra come un solo carattere anche per le stringhe di lunghezza pari
+    // Stampiamo lo spazio precedente + ' ' + la parola al centro-sinistra (appunto perchè il centro è costituito da due caratteri)
+    // Pushamo nell'array di nuovo l'utima stampa (ma in realtà andrebbe bene qualsiasi cosa) in modo che rappresenti l'ultima posizione dell'array e ci permetta di stampare nuovamente il nostro vecchio centro composto da due caratteri
+    if(str.length % 2 == 0) {
+        console.log(space + ' ' + str[str.length/2-1])
+        arr.push(stamp)
+    }
+    for(let i = arr.length-2; i >= 0; i--) console.log(arr[i]) // 9
+}
+clessidra('javascript')
+}
+
+{
+function cicle(n) {
+    // let stamp = '', arr = []
+    // for(let i = 0; i < n; i++) {
+    //     stamp += 'X'
+    //     console.log(stamp)
+    //     arr.push(stamp)
+    // }
+    // for(let i = arr.length-2; i >= 0; i--) console.log(arr[i])
+
+    // STESSO PRINCIPIO MA CON UN SOLO CICLO (IN REALTà DURA 2 VOLTE n-1) - FATTO PER DIVERTIMENTO -
+    let stamp = ''
+    for(let i = 0, count; i >= 0 && i < n;) {
+        if(i == 0 || count == +1) {
+            count = +1
+            stamp += 'X'
+            console.log(stamp)
+        }
+        if(i == n-1 || count == -1) {
+            count = -1
+            stamp = stamp.slice(0, stamp.length-1)
+            console.log(stamp)
+        }
+        i += count
+        if(i == 0) return
+    }
+}
+cicle(5)
+}
+    
+</script>
+    
+</body>
+</html>

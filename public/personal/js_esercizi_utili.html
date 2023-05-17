@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizi_utili</title>
+</head>
+<body>
+<script>
+
+// You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots.
+// Given an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.
+
+//  Example 1:
+// Input: flowerbed = [1,0,0,0,1], n = 1
+// Output: true
+
+// Example 2:
+// Input: flowerbed = [1,0,0,0,1], n = 2
+// Output: false
+
+// Constraints:
+
+// 1 <= flowerbed.length <= 2 * 104
+// flowerbed[i] is 0 or 1.
+// There are no two adjacent flowers in flowerbed.
+// 0 <= n <= flowerbed.length
+
+function canPutFlowers(a, n) {
+    for(let i = 0; i < a.length; i++) {
+        if(!a[i] && !a[i-1] && !a[i+1]) {
+            i++
+            n--
+        }
+    }
+    return n <= 0
+}
+console.log(canPutFlowers([0,0,1,0,0,0,0,0,0,1], 3))
+
+// ------------------------------------------------------------- //
+
+/* VAR */
+var a = 1
+a = 1.1
+console.log(a)
+{
+    var a = 1.2
+    console.log(a)
+}
+console.log(a)
+
+{
+    d = 0 // questa d si attacca allo scope documento è come se ci fosse scritto windows
+    console.log(d)
+}
+console.log(d)
+
+{
+    var e = 10
+    console.log(e)
+}
+console.log(e)
+
+/* LET */
+let b = 2
+b = 2.1
+console.log(b)
+{
+    let b
+    b = 2.2
+    console.log(b)
+}
+console.log(b)
+// let b = 6
+// console.log(d)
+
+/* CONST */
+const c = 3
+// c = 2
+console.log(c)
+{
+    const c = 3
+    console.log(c)
+}
+// const c = 3
+
+// ----------------------------------------------------------- //
+
+// 6 - functional fill in the blanks
+{
+function calc(op, n, m) {
+  return op(n, m)
+}
+console.log(calc(function(a, b) { return a + b }, 1, 2)) /* deve dare 3 */
+console.log(calc(function(a, b) { return a - b }, 4, 3)) /* deve dare 1 */
+}
+console.log('----')
+// 7 - what will be printed?
+function x(n) {
+    return function() { return ++n }
+}
+let y = x(0)
+console.log(y()) // 1
+console.log(y()) // 2
+console.log(y()) // 3
+
+// gotta love Functional Programming
+// su questo sono uscito un po' dal tracciato per dare possibilita' anche a quelli che gia' 
+// programmavano, o che vogliono una sfida leggermente piu' avanzata, per cimentarsi
+function T() { return true }
+function F() { return false }
+
+function and(sx, dx) {
+  return function() { return sx() && dx() }
+}
+
+function or(sx, dx) {
+  return function() { return sx() || dx() }
+}
+
+console.log(and(or(F, T), T)())
+// true
+
+// funzione di funzione
+let a1 = [2,4,6,8,10]
+
+function reduce(arr,op){
+    let tot = 0
+    for (let i = 0; i < arr.length; i++) {
+        tot = op(arr[i],tot)   
+    }
+    return tot
+}
+
+function sum(b, c){
+    return b + c
+}
+function sub(b, c){
+    return b - c
+}
+function mul(b, c){
+    return b * c
+}
+function concat(a, b) {
+    return a + ", " + b
+}
+function arr(a, b) {
+    return [a, b]
+}
+
+console.log(reduce(a1, sum))
+console.log(reduce(a1, sub))
+console.log(reduce(a1, mul))
+console.log(reduce(a1, concat))
+console.log(reduce(a1, arr))
+
+// ---------------------------------------------------------------- //
+
+</script>
+</body>
+</html>

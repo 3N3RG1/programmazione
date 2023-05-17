@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_esercizio_1</title>
+    <style>
+        #box {
+            border: 2px solid;
+            width: 100px; height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box">il risultato è: 110</div>
+
+<!-- primo script -->
+<script>
+
+    /*
+        numero + numero = numero
+        stringa + stringa = stringa
+        stringa + numero = STRINGA
+    */
+
+    let firstNumber = 90
+    let secondNumber = 20
+    let result1 = firstNumber + secondNumber
+    const output1 = 'il risultato è: ' + result1
+
+    console.log( typeof result1 );
+    console.log( typeof output1 );
+    console.log( output1 );
+
+    const elBox = document.getElementById('box')
+    elBox.innerHTML = output1
+    /* nomeVariabile.nomeFunzionalità */
+
+    if( 10 == 10 ) {
+        let y = 10
+    }
+</script>
+
+<!-- secondo script -->
+<script>
+
+    const s1 = 'aiuola'
+    const s1Maiuscola = s1.toUpperCase()
+
+    console.log( s1Maiuscola )
+
+    console.log( s1 );
+
+    console.log( s1.charAt(0).toUpperCase() );
+    console.log( s1.charAt(1) );
+    console.log( s1.charAt(2).toUpperCase() );
+    console.log( s1.charAt(3) );
+
+    const primoCarattereDis1 = s1.charAt(0)
+    const ultimoCarattereDis1 = s1.charAt( s1.length - 1 )
+
+    const separator = '____'
+
+    console.log(
+        primoCarattereDis1 + separator +
+        s1.charAt(1) + separator +
+        s1.charAt(2) + separator +
+        s1.charAt(3) + separator +
+        s1.charAt(4) + separator +
+        ultimoCarattereDis1
+    )
+
+</script>
+
+</body>
+</html>
