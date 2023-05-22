@@ -1,0 +1,129 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkblue;
+    color: white;
+    position: sticky;
+    top: 0;
+    padding: 0 40px;
+    box-sizing: border-box;
+    height: 10%;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.elements {
+    display: flex;
+    gap: 5px;
+}
+
+.elements input {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border: 1px solid;
+    outline: none;
+    width: 220px;
+    color: darkblue;
+    padding: 0 5px;
+}
+
+.elements button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: white;
+    padding: 2px 8px;
+    border: 1px solid;
+    border-radius: 0;
+    color: darkblue;
+    cursor: pointer;
+}
+
+.elements button:hover {
+    color: white;
+    background-color: darkblue;
+}
+
+/* SEARCH */
+
+.search {
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    transform: translate(-49%);
+    background-color: darkblue;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 300px;
+    padding: 0 20px 10px 20px;
+    box-sizing: border-box;
+}
+
+.search a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* CART */
+
+.cart {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    height: 90%;
+    width: 25%;
+    background-color: white;
+    box-sizing: border-box;
+    border-left: 2px solid darkblue;
+    padding: 10px 10px 30px 10px;
+    overflow-y: scroll;
+
+}
+
+.cartImg {
+    width: 200px;
+    height: 100px;
+}
+
+.cartImg img {
+    width: 100%;
+    height: 100%;
+}
+
+.cartProducts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.delete {
+    display: flex;
+    gap: 15px;
+    flex-direction: row-reverse;
+    cursor: pointer;
+}
+
+.lastDiv {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.total {
+    font-weight: 600;
+    font-size: 15px;
+    color: darkblue;
+}
+
+.lastDiv div:last-child {
+    text-align: center;
+}

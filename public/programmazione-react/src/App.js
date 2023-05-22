@@ -6,7 +6,8 @@ import './App.css';
 // import Router from './routerLibrary/Router';
 // import Personal from './personal/Personal';
 // import ChatGPT from './chatGPT/ChatGPT'
-import ReactRouter from './reactRouter/ReactRouter'
+// import ReactRouter from './reactRouter/ReactRouter'
+import Store from './esameReact/Store'
 
 function App() {
   return (
@@ -34,7 +35,8 @@ function App() {
       {/* <Router /> */}
       {/* <Personal /> */}
       {/* <ChatGPT /> */}
-      <ReactRouter />
+      {/* <ReactRouter /> */}
+      <Store />
     </>
   );
 }
