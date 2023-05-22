@@ -1,0 +1,93 @@
+.open {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.aside {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 20%;
+    border-left: 2px solid silver;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.close {
+    align-self: start;
+    padding: 4px 18px 4px 15px;
+    border: 1px solid rgb(128, 128, 128, 50%);
+    border-radius: 0 15px 15px 0;
+    background-color: rgb(128, 128, 128, 50%);
+    color: white;
+    margin-top: 10px;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.asideElement {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.asideInput {
+    border: 1px solid;
+    outline: none;
+    width: 140px;
+    padding: 2px 5px;
+}
+
+.asideButton {
+    padding: 2px 8px;
+    border: 1px solid black;
+    border-radius: 0;
+    background-color: rgb(128, 128, 128, 25%);
+}
+
+.asideButton:hover {
+    background-color: rgb(128, 128, 128, 90%);
+    color: white
+}
+
+.asideLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    overflow-y: scroll;
+    max-height: 180px;
+    margin-top: 6px;
+}
+
+.asideLinks::-webkit-scrollbar {
+    display: none;
+}
+
+.asideLink {
+    color: white;
+    text-decoration: none;
+    width: 120px;
+    text-align: center;
+    background-color: rgb(128, 128, 128, 50%);
+    padding: 6px 15px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.asideLink:hover {
+    background-color: rgb(128, 128, 128, 90%);
+}

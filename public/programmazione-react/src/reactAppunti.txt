@@ -45,4 +45,26 @@ es:
 - toDoList migliorata dove ci si possono aggiungere anche le cose da fare utilizzando anche la libreria router quindi devo trovare qualcosa da mettere in una seconda pagina ed eventualmente in una terza
 
 css query
-github
+<> github
+email
+ripasso scheda google
+router studia
+variabili d'ambiente (l'env)
+
+
+realizzare un router come quello della prova ma con un solo post come pagina:
+- ripassa la pagina router di
+- guarda la pagina router di w3school con outlet
+
+- togli browser router dall'index e mettilo solo nell'app
+- migliora la fetch call
+- guarda anche quello che matteo ti ha inviato in chat privata
+- sistema meglio i componenti
+- sistema includes
+- sistama la nav e l'aside e metti nell'aside anche la ricerca dei titoli
+- fai anche le css query
+- guarda la video lezione di sabato-
+ 
+
+- sistemare chatgpt
+- Array(n).fill("")

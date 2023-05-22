@@ -4,7 +4,9 @@ import './App.css';
 // import Components from './components/Components';
 // import ReactExercises from './reactExercises/ReactExercises';
 // import Router from './routerLibrary/Router';
-import Personal from './personal/Personal'
+// import Personal from './personal/Personal';
+// import ChatGPT from './chatGPT/ChatGPT'
+import ReactRouter from './reactRouter/ReactRouter'
 
 function App() {
   return (
@@ -30,7 +32,9 @@ function App() {
       {/* <Components /> */}
       {/* <ReactExercises /> */}
       {/* <Router /> */}
-      <Personal />
+      {/* <Personal /> */}
+      {/* <ChatGPT /> */}
+      <ReactRouter />
     </>
   );
 }
