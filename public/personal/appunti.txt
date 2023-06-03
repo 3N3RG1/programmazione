@@ -465,7 +465,7 @@ JSON.parse (parsing): serve a convertire un tipo di dato in un altro tipo di dat
 <> equazioni di ricorrenza per calcolare l'efficienza di un codice ricorsivo
 <> async function (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/)
 <> Expression statement (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/Expression_statement)
-<> espressioni regolari
+<> espressioni regolari (rejex)
 ----------
 
 OBJECT

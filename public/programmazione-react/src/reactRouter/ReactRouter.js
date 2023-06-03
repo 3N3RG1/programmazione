@@ -25,7 +25,6 @@ export default function ReactRouter() {
 // - sistema la navbar e trova un modo per non fargli fare tutto il fetch
 
 // chiedi ad alberto se conviene caricare subito tutti i post oppure no? (ci sarebbe il problema dei link)
-// metti il link della pagina di react router
 // controlla react appunti
 // metti il goback
 

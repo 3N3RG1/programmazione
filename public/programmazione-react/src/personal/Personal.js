@@ -1,9 +1,7 @@
-// import FortuneWheel from './fortuneWheel/FortuneWheel'
-import Forum from './forum/Forum';
+import Tris from './tris/Tris'
 
 export default function Personal () {
     return (
-        // <FortuneWheel />
-        <Forum />
+        <Tris />
     )
 }

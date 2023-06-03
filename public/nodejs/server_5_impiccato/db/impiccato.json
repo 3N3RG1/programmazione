@@ -1,0 +1,26 @@
+{
+  "1": {
+    "initialPhase": {
+      "user": {
+        "name": "Alberto",
+        "surname": "Zaccagni"
+      },
+      "word": "paypal",
+      "session": "ciao"
+    },
+    "phases": {
+      "1": {
+        "user": {
+          "name": "edfrg",
+          "surname": "hfadsg"
+        },
+        "word": "y",
+        "session": "ciao"
+        }
+    },
+    "end": {
+      "error": 0,
+      "word": "--y---"
+    }
+  }
+}

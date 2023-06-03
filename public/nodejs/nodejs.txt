@@ -1,0 +1,27 @@
+node js è un database che lavora in single threaded, ovvero aspetta che la corrente richiesta da parte di un client venga terminata prima di partire con un'altra richiesta, per questo motivo l'efficienza lato database è importantissima e si preferisce l'efficienza dell'algoritmo rispetto alla sua leggibilità sempre nel minomo comprensibile.
+
+SEMVER: semantic versioning
+Il semver ci permette di capire quando siamo ad un determinata versione di capire le differenze della nostra versione piuttosto di un'altra
+2.30.0 > major 2 - minor 30 - patch 0
+quando c'è un bug di piccola importanza ma che vogliomo che abbiano tutti aumentiamo la patch di uno
+Mettiamo che troviamo un problema con una funzione che da una soluzione sbagliata a causa di x motivazioni allora aumentiamo il minor di uno per definire che c'è stato un cambio di una certa entità
+Mettiamo che abbiamo rivisto totalmente la libreria e abbiamo spaccato un sacco di cose non permettendo più la retrocompatibilità allora modifichiamo la semver a 3.0.0
+
+Rest: è una specifica (insieme di regole) tramite le quali esponi le operazioni di crud su una risorsa
+
+CRUD: create - read - update - delete
+Quando una persona fa una richiesta get relativa ad un URL utilizza la parte read del crud perchè vuole "leggere" tutto ciò che è presente all'interno dell'url specificato
+
+Status Code: è un numero che rappresenta un concetto
+200 -> risposta avvenuta con successo da parte del server ad una richiesta del client
+404 -> errore da parte del client nella richiesta perchè ha richiesto al server un endpoint (risorsa) che non esiste
+500 -> errore da parte del server, il programmatore non ha previsto la gestione di quella determinata richiesta da parte del client
+
+"type": "module" (da mettere in package.json) -> To load an ES module, set "type": "module" in the package.json or use the .mjs extension
+
+import bodyParser from 'body-parser' // serve a prendere e gestire il body di una request put(update) e post(create) -> link: https://expressjs.com/en/5x/api.html#req.body
+app.use(bodyParser.json()) // una volta preso il body ce lo restituisce secondo il costrutto json
+
+axios è una libreria di node (anche del front-end) e mi permette di utilizzare i verbi put - post - delete che non sono esprimibili attraverso il browser (la stessa cosa che facevamo con post-man)
+
+.end(): termina la comunicazione client-server ovvero chiude iil "tubo" e non permette più il passaggio delle informazioni ma non termina l'esecuzione della funzione che una volta terminata la chiamata potrebbe continuare a svolgere altri lavori

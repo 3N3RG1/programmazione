@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "insegnante": "Maria Rossi",
+        "classi": ["a", "c", "m"],
+        "materieInsegnate": ["Italiano", "Letteratura"]
+    },
+    {
+        "id": 2,
+        "insegnante": "Paolo Bianchi",
+        "classi": ["d", "i", "b"],
+        "materieInsegnate": ["Scienze", "Fisica"]
+    },
+    {
+        "id": 3,
+        "insegnante": "Laura Verdi",
+        "classi": ["e", "l", "g"],
+        "materieInsegnate": ["Arte", "Tecnologia"]
+    },
+    {
+        "id": 4,
+        "insegnante": "Luigi Neri",
+        "classi": ["f", "h", "a"],
+        "materieInsegnate": ["Educazione Fisica"]
+    },
+    {
+        "id": 5,
+        "insegnante": "Chiara Gialli",
+        "classi": ["b", "g", "e"],
+        "materieInsegnate": ["Informatica",  "Elettronica"]
+    },
+    {
+        "id": 6,
+        "insegnante": "Marco Azzurri",
+        "classi": ["c", "g", "d", "a"],
+        "materieInsegnate": ["Matematica",  "Geometria"]
+    },
+    {
+        "id": 7,
+        "insegnante": "Federica Rosa",
+        "classi": ["l", "i", "b", "e"],
+        "materieInsegnate": ["Economia",  "Diritto"]
+    },
+    {
+        "id": 8,
+        "insegnante": "Simone Verde",
+        "classi": ["a", "e", "f", "m"],
+        "materieInsegnate": ["Geografia",  "Politica"]
+    },
+    {
+        "id": 9,
+        "insegnante": "Giulia Celeste",
+        "classi": ["l", "h"],
+        "materieInsegnate": ["Biologia",  "Chimica", "Scienze"]
+    },
+    {
+        "id": 10,
+        "insegnante": "Lorenzo Marroni",
+        "classi": ["i", "c"],
+        "materieInsegnate": ["Storia",  "Filosofia"]
+    },
+    {
+        "id": 11,
+        "insegnante": "Silvia Blu",
+        "classi": ["d", "f"],
+        "materieInsegnate": ["Matematica",  "Informatica"]
+    }
+]

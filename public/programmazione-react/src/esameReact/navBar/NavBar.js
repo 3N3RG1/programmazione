@@ -31,6 +31,7 @@ export default function NavBar({products, cart, setCart}) {
                 {array.map((el, i) => (
                     <div key={i}>
                         <a
+                            {...console.log('#products'+el.id)}
                             href={'#product'+el.id} // sistema
                             onClick={() => {
                                 setArray([])

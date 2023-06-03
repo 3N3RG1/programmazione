@@ -5,7 +5,7 @@ DOM: document object model
 document. <- fa riferimento al dom ovvero alla struttura ad albero dell'html
 document.getElementById('root')  <- prendi l'elemento che ha come ID il valore root
 
-!!()  <- mi porta sempre nel mondo dei boolena
+!!()  <- mi porta sempre nel mondo dei booleni
 
 // ALERT
 function ButtonAlert() {
@@ -45,10 +45,6 @@ es:
 - toDoList migliorata dove ci si possono aggiungere anche le cose da fare utilizzando anche la libreria router quindi devo trovare qualcosa da mettere in una seconda pagina ed eventualmente in una terza
 
 css query
-<> github
-email
-ripasso scheda google
-router studia
 variabili d'ambiente (l'env)
 
 
@@ -68,3 +64,6 @@ realizzare un router come quello della prova ma con un solo post come pagina:
 
 - sistemare chatgpt
 - Array(n).fill("")
+
+Data Attributes: https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+  permettono di passare dati ad esempio da js a css o da react a css perchè sono memorizzazioni di dati che non hanno una rappresentazione visiva

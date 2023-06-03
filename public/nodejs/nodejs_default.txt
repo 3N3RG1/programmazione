@@ -1,0 +1,32 @@
+QUANDO SALVIAMO IN UN FILE UNA VARIABILE E LE ASSEGNAMO LA PATH DI UN FILE IL PERCORSO INCOMINCIA DA DOVE ABBIAMO LANCIATO L'ESEGUIBILE DI NODE.JS E NON DALLA CARTELLA CHE CONTIENE IL FILE IN CUI SALVIAMO LA VARIABILE
+
+QUANDO IMPORTIAMO UNA ROTTA IN UN FILE AD ESEMPIO QUELLA DI UN DATABASE NON DOBBIAMO IMPORTARLA DALLA NOSTRA FILE IN CUI SIAMO PRESENTI MA DOBBIAMO UTILIZZARE COME RIFERIMENTO LA CARTELLA DALLA QUALE ABBIAMO LANCIATO L'ESEGUIBILE DI NODEJS
+
+
+await:
+- chiamata al file system (che noi stiamo usando come db)
+- una connessione col db
+- chiamata http (get, post ecc)
+
+query: è un oggetto che contiene tutte le k-v che passiamo dopo il search?
+
+.send({
+    data: {},
+    error: true,
+    message: 'user not found'
+})
+
+express-session
+header
+
+{
+    "3-1": {
+      "idu": "3",
+      "idt": "1",
+      "completed": true
+    }
+}
+
+let [a, b, ...params] = process.argv // decostructoring?
+process.argv è un array: ['PathDellaNostraMacchina', 'PathDeiNostriFile', qualcosaChePassiamoNelTerminale, qualcosaChePassiamoNelTerminale, ...] -> contiene tutti i dati che passiamo quando runniamo il nostro scipts
+process è un oggetto

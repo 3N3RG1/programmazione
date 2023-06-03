@@ -1,0 +1,50 @@
+[
+    {
+      "film": "Titanic",
+      "id": 1,
+      "annoProduzione": 1997,
+      "casaProduzione": 1
+    },
+    {
+      "film": "Il Signore degli Anelli: La Compagnia dell'Anello",
+      "id": 2,
+      "annoProduzione": 2001,
+      "casaProduzione": 2
+    },
+    {
+      "film": "Forrest Gump",
+      "id": 3,
+      "annoProduzione": 1994,
+      "casaProduzione": 5
+    },
+    {
+      "film": "Il Padrino",
+      "id": 4,
+      "annoProduzione": 1972,
+      "casaProduzione": 4
+    },
+    {
+      "film": "Pulp Fiction",
+      "id": 5,
+      "annoProduzione": 1994,
+      "casaProduzione": 3
+    },
+    {
+      "film": "Interstellar",
+      "id": 6,
+      "annoProduzione": 2014,
+      "casaProduzione": 2
+    },
+    {
+      "film": "Il Cavaliere Oscuro",
+      "id": 7,
+      "annoProduzione": 2008,
+      "casaProduzione": 4
+    },
+    {
+      "film": "Schindler's List",
+      "id": 8,
+      "annoProduzione": 1993,
+      "casaProduzione": 6
+    }
+]

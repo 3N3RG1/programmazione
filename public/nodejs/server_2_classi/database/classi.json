@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1,
+        "sezione": "a",
+        "alunni": ["Mario Rossi", "Giulia Bianchi", "Luca Verdi", "Sara Neri", "Francesco Gialli", "Alessia Marroni", "Lorenzo Azzurri", "Elena Rosa", "Fabio Viola", "Camilla Verde", "Davide Celeste", "Chiara Rosso", "Paolo Blu", "Marta Gialli", "Simone Arancioni"],
+        "materie": ["Matematica", "Italiano", "Storia", "Scienze", "Geografia"]
+    },
+    {
+        "id": 2,
+        "sezione": "b",
+        "alunni": ["Giovanni Marroni", "Laura Arancioni", "Marco Fabbri", "Silvia Rossi", "Filippo Verdi", "Valentina Celeste", "Gabriele Neri", "Elisa Gialli", "Riccardo Marroni", "Francesca Bianchi", "Antonio Verdi", "Federica Rosso", "Roberto Blu", "Michela Marroni", "Andrea Gialli"],
+        "materie": ["Inglese", "Arte", "Musica", "Educazione Fisica", "Religione"]
+    },
+    {
+        "id": 3,
+        "sezione": "c",
+        "alunni": ["Valerio Gialli", "Simona Verdi", "Giacomo Bianchi", "Chiara Rossi", "Andrea Neri", "Lorenza Blu", "Fabrizio Arancioni", "Martina Marroni", "Daniele Celeste", "Claudia Rosa", "Paolo Viola", "Elisabetta Azzurri", "Marco Marroni", "Silvia Celeste", "Ludovico Rosso"],
+        "materie": ["Fisica", "Chimica", "Tecnologia", "Filosofia", "Informatica"]
+    },
+    {
+        "id": 4,
+        "sezione": "d",
+        "alunni": ["Francesco Celeste", "Alice Neri", "Matteo Arancioni", "Elena Verdi", "Riccardo Gialli", "Carolina Bianchi", "Simone Viola", "Giulia Celeste", "Gabriele Rosso", "Chiara Blu", "Alessandro Marroni", "Silvia Rosa", "Lorenzo Azzurri", "Valentina Verde", "Filippo Celeste"],
+        "materie": ["Economia", "Psicologia", "Sociologia", "Letteratura", "Politica"]
+    },
+    {
+        "id": 5,
+        "sezione": "e",
+        "alunni": ["Luigi Verde", "Beatrice Celeste", "Mattia Marroni", "Eleonora Blu", "Giorgio Arancioni", "Federica Rosso", "Riccardo Neri", "Elisa Gialli", "Davide Marroni", "Elena Bianchi", "Alessandro Verdi", "Martina Rosa", "Simone Azzurri", "Francesca Verde", "Andrea Celeste"],
+        "materie": ["Scienze motorie", "Diritto", "Geometria", "Elettronica", "Teatro"]
+    },
+    {
+        "id": 6,
+        "sezione": "f",
+        "alunni": ["Lorenzo Celeste", "Valentina Marroni", "Gabriele Rosso", "Martina Gialli", "Francesco Arancioni", "Silvia Verdi", "Giorgio Celeste", "Carolina Bianchi", "Davide Viola", "Elena Rosa", "Alessandro Neri", "Chiara Blu", "Matteo Gialli", "Elisa Bianchi", "Simone Verde"],
+        "materie": ["Informatica", "Biologia", "Psicologia", "Arte", "Musica"]
+    },
+    {
+        "id": 7,
+        "sezione": "g",
+        "alunni": ["Filippo Arancioni", "Martina Marroni", "Riccardo Azzurri", "Elisa Verde", "Giorgio Celeste", "Francesca Neri", "Alessandro Verdi", "Valentina Rosa", "Giovanni Gialli", "Lorenza Marroni", "Simone Bianchi", "Chiara Rosso", "Fabio Celeste", "Sara Bianchi", "Marco Viola"],
+        "materie": ["Geografia", "Storia", "Italiano", "Scienze", "Matematica"]
+    },
+    {
+        "id": 8,
+        "sezione": "h",
+        "alunni": ["Mattia Azzurri", "Valentina Verde", "Lorenzo Rosso", "Francesca Marroni", "Filippo Celeste", "Silvia Bianchi", "Andrea Gialli", "Elisa Arancioni", "Riccardo Rosso", "Martina Verdi", "Davide Neri", "Giulia Blu", "Luca Gialli", "Carolina Rosa", "Simone Celeste"],
+        "materie": ["Inglese", "Chimica", "Fisica", "Biologia", "Educazione Fisica"]
+    },
+    {
+        "id": 9,
+        "sezione": "i",
+        "alunni": ["Marco Arancioni", "Elisa Verdi", "Lorenzo Celeste", "Silvia Marroni", "Filippo Azzurri", "Francesca Celeste", "Davide Viola", "Martina Rosa", "Giovanni Gialli", "Carolina Bianchi", "Alessandro Verdi", "Valentina Rosso", "Giorgio Blu", "Simona Marroni", "Matteo Celeste"],
+        "materie": ["Tecnologia", "Informatica", "Elettronica", "Filosofia", "Scienze motorie"]
+    },
+    {
+        "id": 10,
+        "sezione": "l",
+        "alunni": ["Riccardo Rosa", "Francesca Marroni", "Simone Arancioni", "Giulia Verdi", "Lorenzo Celeste", "Silvia Bianchi", "Andrea Gialli", "Elisa Arancioni", "Mattia Rosso", "Martina Verde", "Davide Neri", "Chiara Blu", "Luca Gialli", "Carolina Rosa", "Simone Celeste"],
+        "materie": ["Letteratura", "Storia dell'arte", "Musica", "Educazione Fisica", "Religione"]
+    },
+    {
+        "id": 11,
+        "sezione": "m",
+        "alunni": ["Alessandro Verdi", "Martina Rosso", "Simone Azzurri", "Francesca Verde", "Luigi Celeste", "Silvia Marroni", "Giovanni Celeste", "Carolina Bianchi", "Davide Viola", "Elisa Rosa", "Lorenzo Neri", "Valentina Blu", "Fabio Gialli", "Sara Verde", "Marco Celeste"],
+        "materie": ["Economia", "Politica", "Sociologia", "Geografia", "Matematica"]
+    }
+]
