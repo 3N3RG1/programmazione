@@ -4,17 +4,17 @@ Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili
 ```
 npm init
 ```
-```
-{<br>
-    "name": "server_default",<br>
-    "version": "1.0.0",<br>
-    "description": "",<br>
-    "main": "index.js",<br>
-    "scripts": {<br>
-        "test": "echo \"Error: no test specified\" && exit 1"<br>
-    },<br>
-    "author": "",<br>
-    "license": "ISC",<br>
+```ruby
+{
+    "name": "server_default",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
 }
 ```
 
