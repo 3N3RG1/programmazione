@@ -1,5 +1,5 @@
-<h1 text-align="center">Server Default<h1>
-### - package.json
+<h1 text-align="center">Server Default</h1>
+<h3>package.json</h3>
 Creiamo un package.json che contiene sia i metadata relativi al progetto utili agli sviluppatori sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
 npm init
@@ -151,3 +151,6 @@ YUICCUINCUVCEIOHCYB I iuvfisug igherpigsrèg srogi orifh'ug e7gh oih g g iog pdf
 
 
 scfnvfsnvfuin
+
+
+
