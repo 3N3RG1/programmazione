@@ -128,7 +128,7 @@ INFORMAZIONI AGGIUNTIVE:
 è un file che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare
 
 > package-lock.json: https://www.atatus.com/blog/package-json-vs-package-lock-json/
-Registra la versione esatta di ogni dipendenza installata, incluse le sue sotto-dipendenze e le loro versioni.
+Registra la versione esatta di ogni dipendenza installata, incluse le sue sotto-dipendenze e le loro versioni.\\
 Lo scopo è garantire che le stesse dipendenze vengano installate in modo coerente in ambienti diversi, ad esempio ambienti di sviluppo e produzione. Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti blocca la versione specifica di ciascuna dipendenza.
 Ad esempio nel momento di produzione quando uno sviluppatore clona il repository di un altro sviluppatore ili package-lock.json evita che vengano copiate versioni di dipendeze superiori a quelle originali evitando così problemi di conflitto.
 
