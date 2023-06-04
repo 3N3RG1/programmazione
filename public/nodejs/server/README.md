@@ -4,8 +4,8 @@ Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili
 ```
 npm init
 ```
+> Script presente nel file package.json:
 ```json
- - Questo è quello che dovrebbe essere presente nel vostro file package.json: -
 {
     "name": "server_default",
     "version": "1.0.0",
