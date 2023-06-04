@@ -1,13 +1,11 @@
 # Server Default
-### 1 package.json
+### 1  package.json
 Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili agli sviluppatori sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
 npm init
 ```
-    ciao
-*questo è quello che dovrebbe essere presente nel vostro file package.json*
+<sub><i>questo è quello che dovrebbe essere presente nel vostro file package.json<i></sub>
 ```ruby
-_questo è quello che dovrebbe essere presente nel vostro file package.json_
 {
     "name": "server_default",
     "version": "1.0.0",
@@ -21,7 +19,7 @@ _questo è quello che dovrebbe essere presente nel vostro file package.json_
 }
 ```
 
-### 2 - express
+### 2  express
 Installiamo la dipendenza `express` che ci semplifica il lavoro del CRUD che sarebbe molto più complicato da scrivere in node.js (default).
 ```
 npm install express
@@ -33,7 +31,7 @@ npm install express
 ```
 Andranno a crearsi anche i node_modules e il package-lock.json -> metterei i link in fondo
 
-### 3 - body-parser
+### 3  body-parser
 Installiamo la dipendenza `body-parser` che ci serve per parsare il req.body delle chiamate post e update che ci forniscono un payload (body) in json, senza il parse al server arriverebbe un messaggio che non è in grado di leggere.
 ```
 npm install body-parser
