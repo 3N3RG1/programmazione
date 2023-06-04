@@ -2,6 +2,7 @@
 ```
 npm init
 ```
+`
 {<br>
     "name": "server_default",<br>
     "version": "1.0.0",<br>
@@ -13,6 +14,7 @@ npm init
     "author": "",<br>
     "license": "ISC",<br>
 }
+`
 
 3. Installo la dipendenza express che mi servirà per poter utilizzare express che mi semplifica il lavoro del CRUD che sarebbe molto più complicato da scrivere in node.js (default).
 ```
