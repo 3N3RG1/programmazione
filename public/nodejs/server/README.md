@@ -2,16 +2,16 @@
 ```
 npm init
 ```
-{
-    "name": "server_default",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
+{<br>
+    "name": "server_default",<br>
+    "version": "1.0.0",<br>
+    "description": "",<br>
+    "main": "index.js",<br>
+    "scripts": {<br>
+        "test": "echo \"Error: no test specified\" && exit 1"<br>
+    },<br>
+    "author": "",<br>
+    "license": "ISC",<br>
 }
 
 3. Installo la dipendenza express che mi servirà per poter utilizzare express che mi semplifica il lavoro del CRUD che sarebbe molto più complicato da scrivere in node.js (default).
