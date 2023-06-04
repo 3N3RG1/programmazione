@@ -1,6 +1,6 @@
-# Server Deafult
+# <align="center">Server Default<>
 ### package.json
-1. Creiamo un package.json che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
+Creiamo un package.json che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
 npm init
 ```
