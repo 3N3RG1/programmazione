@@ -1,4 +1,4 @@
-# <align="center">Server Default<>
+# <div align="center">Server Default<div>
 ### package.json
 Creiamo un package.json che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
