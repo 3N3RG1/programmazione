@@ -59,7 +59,7 @@ dev: mi permette di runnare il server in modalità nodemon. Utilizzo '-w src' pe
 ```
 node_modules
 ```
-In questo modo quando andrò a committare e pushare il mio progetto, git ignorerà il file.
+In questo modo quando andrò a committare e pushare il mio progetto, git ignorerà la cartella node_modules.
 
 8. Creo la cartella src che server a contenere tutti i file relativi a routes e creo al suo interno il file index.js nel quale scrivo di default:
 ```
@@ -69,8 +69,8 @@ const app = express() // in questo modo posso utilizzare il crud
 import bodyParser from 'body-parser' // importo body-parser per poterlo utilizzare
 app.use(bodyParser.json()) // in questo modo il body dei payload verrà convertito in json in automatico
 
-app.get('/', (req, res) => {
-    res.send('Server_?')
+ap♠p.get('/', (req, res) => {
+    res.send('server_?')
 })
 
 app.listen(port, () => {
@@ -80,14 +80,9 @@ app.listen(port, () => {
 
 A questo punto ho tutto il necessario per poter lavorare ma posso necessitare ancora di due elementi molto utili ai file routes:
 
-9. Inserisco nei mei file routes per poter utilizzare async e await:
-```
-import fs from 'node:fs/promises'
-```
-'fs' è una libreria che non necessita di essere installata perchè fa già parte di Node.js, infatti hanno notato nel corso degli anni che era talmente utile che invece di costringere gli utenti ad installarla per ogni progetto l'hanno integrata direttamente.
-Ma perchè necessito async e await?
-In Nodejs nulla restituisce una promise, pensiamo ad una chiamata ad un database esterno che ha una natura asincrona, ecco questa non restituirà una promise ovvero la promessa che qulcosa arriverà.
-Pensiamo anche alla dicitura fs.writeFile(path, JSON.stringify(pathName, null, '  ')) che mi permette di sovrascrivere i dati relativi ad un database.
+9. In Node.js nulla restituisce una promise ciò significa che non è possibile utilizzre async e await per trasformare il funzionamento asincrono ad esempio di una chiamata esterna in un funzionamento sincrono.
+L'unico modo per farlo è trasformare la stessa natura asincrona in sincrona.
+Pensiamo anche alla dicitura fs.writeFile(path, JSON.stringify(pathName, null, '  ')) che mi permette di sovrascrivere i dati relativi ad un database(file).
 Questa operazione ha una natura asincrona ma non mi restituisce una promise ciò significa che non possiamo trattarla secondo un funzionamento sincrono ma dobbiamo convertire la sua natura asincrona in sincrona attraverso la dicitura fs.writeFileSync
 
 1 -> natura asincrona - non restiruisce una promise: la risposta avviene prima del completamento di fs
@@ -103,21 +98,41 @@ fs.writeFile(path, JSON.stringify(pathName, null, '  '), () => {
 fs.writeFileSync(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
 
-L'unico modo per evitare questo è permettere a Node.js di restituire delle promise attraverso la libreria.
-Questo ci permetterà di utilizzare aync e await che sono utilizzabili solo quando una chiamata restituisce una promise.
+L'unico modo per evitare questo è permettere a Node.js di restituire delle promise importando la libreria:
+```
+import fs from 'node:fs/promises'
+```
+'fs' è una libreria che non necessita di essere installata perchè fa già parte di Node.js, infatti hanno notato nel corso degli anni che era talmente utile che invece di costringere gli utenti ad installarla per ogni progetto l'hanno integrata direttamente.
 
 4 -> asincrona ma con un funzionamento sincrono - restituisce una promise: blocca l'esecuzioni di js finchè non termina la chiamata
 await fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
 
+Perchè preferire async - await se la stessa cosa possiamo farla con Sync ?
+
 10. Per poter fare la fetch di un URL ad esempio per i nostri scripts locali o per le chiamate a server esterni possiamo farlo direttamente attraverso javascript oppure anche tramite la libreria axios che ci permette di semplificare molto il lavoro anche se presenta determinati vantaggi-svantaggi:
 ```
 npm install axios
 ```
+Una volta installato basta importarlo nei file attraverso la dicitura:
+```
+import axios from 'axios'
+```
+Per utilizzarlo nelle chiamate esterno o nei nostri scripts basta utilizzare la dicitura:
+- await.CRUD(url)
 
-DOMANDE:
-- cosa sono i node_modules
-- cosè package-lock.json
-- perchè mi si installano quando installo express
-- perchè non mi si installano i node_modules quando faccio npm install
-- perchè preferire aync await a Sync
+
+INFORMAZIONI AGGIUNTIVE:
+
+> package.json:
+è un file che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare
+
+> package-lock.json: https://www.atatus.com/blog/package-json-vs-package-lock-json/
+Registra la versione esatta di ogni dipendenza installata, incluse le sue sotto-dipendenze e le loro versioni.
+Lo scopo è garantire che le stesse dipendenze vengano installate in modo coerente in ambienti diversi, ad esempio ambienti di sviluppo e produzione. Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti blocca la versione specifica di ciascuna dipendenza.
+Ad esempio nel momento di produzione quando uno sviluppatore clona il repository di un altro sviluppatore ili package-lock.json evita che vengano copiate versioni di dipendeze superiori a quelle originali evitando così problemi di conflitto.
+
+> node_modules:
+La cartella node_modules è come una cache per i moduli esterni da cui dipende il tuo progetto (librerie). Qunado fai npm install vengono scaricati dal Web e copiati nella cartella node_modules.
+Il motivo per il quale non ha senso committare i node_modules è duplice:
+1 - tutte le versioni relative alle dipendenze sono già presenti nel package-lock.json e chunque in qualsiasi momento può installare i node_modules che dipendono direttamente dalle versioni delle dipendenze quindi committarli sarebbe come avere la copia di qualcosa che si ha già, inoltre complicherebbe anche l'aggiornamento ad una versione più recente di tutti i moduli nel caso volessimo aggiornare la nostra applicazione.

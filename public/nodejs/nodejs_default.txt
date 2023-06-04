@@ -30,3 +30,30 @@ header
 let [a, b, ...params] = process.argv // decostructoring?
 process.argv è un array: ['PathDellaNostraMacchina', 'PathDeiNostriFile', qualcosaChePassiamoNelTerminale, qualcosaChePassiamoNelTerminale, ...] -> contiene tutti i dati che passiamo quando runniamo il nostro scipts
 process è un oggetto
+
+DOMANDE:
+- perchè in gitignore dopo node_modules devo mettere un /
+- se il tuo progetto non utilizzasse alcuna libreria potresti benissimo non utilizzare i node_modules
+- perchè mi si installano quando installo express -> perchè creo una dipendenza che necessita dei relativi
+- perchè non mi si installano i node_modules quando faccio npm install -> perchè non ho instllato alcuna dipendenza
+- perchè preferire aync await a Sync
+
+
+ALTRE INFORMAZIONI UTILI:
+
+- axios:
+import axios from 'axios'
+
+async function call() {
+    const res = await axios.post('http://localhost:3000/case-cinematografiche', {
+        name: "Universal Pictures",
+        fondazione: 1990,
+        stato: "Stati Uniti"
+    })
+    console.log(res.status)
+}
+call()
+
+- import:
+import film from './database/film.json' assert { type: 'json' }
+const DB_PATH = './db/users.json'
