@@ -1,6 +1,4 @@
-1. Creo una cartella che conterrà il mio progetto
-
-2. Creo un package.json che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
+1. Creiamo un package.json che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
 npm init
 ```
@@ -128,7 +126,7 @@ INFORMAZIONI AGGIUNTIVE:
 è un file che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare
 
 > package-lock.json: https://www.atatus.com/blog/package-json-vs-package-lock-json/
-Registra la versione esatta di ogni dipendenza installata, incluse le sue sotto-dipendenze e le loro versioni.\\
+Registra la versione esatta di ogni dipendenza installata, incluse le sue sotto-dipendenze e le loro versioni.
 Lo scopo è garantire che le stesse dipendenze vengano installate in modo coerente in ambienti diversi, ad esempio ambienti di sviluppo e produzione. Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti blocca la versione specifica di ciascuna dipendenza.
 Ad esempio nel momento di produzione quando uno sviluppatore clona il repository di un altro sviluppatore ili package-lock.json evita che vengano copiate versioni di dipendeze superiori a quelle originali evitando così problemi di conflitto.
 
@@ -138,4 +136,9 @@ Il motivo per il quale non ha senso committare i node_modules è duplice:
 1 - tutte le versioni relative alle dipendenze sono già presenti nel package-lock.json e chunque in qualsiasi momento può installare i node_modules che dipendono direttamente dalle versioni delle dipendenze quindi committarli sarebbe come avere la copia di qualcosa che si ha già, inoltre complicherebbe anche l'aggiornamento ad una versione più recente di tutti i moduli nel caso volessimo aggiornare la nostra applicazione.
 
 > xswpd
-- dmdfmd
+- dmdfmddnfjsd usqdv qsv sdv sif ihg sdiogh psdih suig sdfh skhòksdj gps ii sipf iuhghsp ahdgh g df idf df xv jvnjknvkjsr su sih sg suigh iug ughjeh eug.
+ng iur iu feg fgfiuge gfiugbe eg eug peug erpg nperguihih fugpdufhbdfu duihfbidfnbdfp ih e.
+YUICCUINCUVCEIOHCYB I iuvfisug igherpigsrèg srogi orifh'ug e7gh oih g g iog pdfgh egh eogh oigheuighe puig heiug peg pg ipug hwerèo
+
+
+ifregunfindjfn
