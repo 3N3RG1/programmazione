@@ -1,10 +1,10 @@
 # Server Default
-### 1  package.json
+### 1 > package.json
 Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili agli sviluppatori sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
 npm init
 ```
-<sub><i>questo è quello che dovrebbe essere presente nel vostro file package.json<i></sub>
+> Questo è quello che dovrebbe essere presente nel vostro file package.json
 ```ruby
 {
     "name": "server_default",
@@ -19,7 +19,7 @@ npm init
 }
 ```
 
-### 2  express
+### 2. express
 Installiamo la dipendenza `express` che ci semplifica il lavoro del CRUD che sarebbe molto più complicato da scrivere in node.js (default).
 ```
 npm install express
