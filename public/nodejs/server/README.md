@@ -1,8 +1,9 @@
+# Server Deafult
+### package.json
 1. Creiamo un package.json che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
 npm init
 ```
-`
 {<br>
     "name": "server_default",<br>
     "version": "1.0.0",<br>
@@ -14,7 +15,6 @@ npm init
     "author": "",<br>
     "license": "ISC",<br>
 }
-`
 
 3. Installo la dipendenza express che mi servirà per poter utilizzare express che mi semplifica il lavoro del CRUD che sarebbe molto più complicato da scrivere in node.js (default).
 ```
@@ -147,7 +147,7 @@ YUICCUINCUVCEIOHCYB I iuvfisug igherpigsrèg srogi orifh'ug e7gh oih g g iog pdf
 ### sddfairugs
 > dfuirguiergui:
 
-sdeubig
+    sdeubig
 
 
 scfnvfsnvfuin
