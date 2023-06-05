@@ -1,9 +1,8 @@
-# <h1 align="center">Node.js v20.2.0</h1>
-Node.js [download](https://nodejs.org/it/download/current)
+# Node.js v20.2.0 <sub>Node.js [download](https://nodejs.org/it/download/current)</sub>
 ## Inizia con il tuo primo server
 ### 1. package.json
 Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili allo sviluppatore sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
-```bash
+```
 npm init
 ```
 > Oggetto presente nel file package.json :
@@ -118,10 +117,10 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 ```
-*A questo punto abbiamo tutto il necessario per poter sviluppare ma potremmo necessitare ancora di due elementi utili ai file routes:*
+*Elementi aggiuntivi utili in un contesto locale:*
 
 ### 8. file system
-Il modulo `fs` di Node.js ci permette di interagire con il nostro file system e quindi sovrascrivere i nostri file locali.
+Il modulo `fs` di Node.js ci permette di interagire con il nostro file system e quindi sovrascrivere i nostri file locali (database).
 Facendo già parte di Node.js necessita solamente di essere importato:
 ```
 import fs from 'fs'
@@ -129,36 +128,34 @@ import fs from 'fs'
 
 Questo modulo presenta due funzioni per sovrascrivere i dati:
 - writeFile: che ha una natura asincrona
-- writeFileSync: che ha una natura sincrona
-
-1. natura asincrona - non restiruisce una promise: la risposta avviene prima del completamento di fs
+1. non restiruisce una promise - la risposta avviene prima del completamento di fs
 ```js
 fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
 ```
 
-2. natura asincrona - non restituisce una promise: la risposta (call-back) avviene dopo il completamento di fs
+2. non restituisce una promise - la risposta (call-back) avviene dopo il completamento di fs
 ```js
 fs.writeFile(path, JSON.stringify(pathName, null, '  '), () => {
     res.status(...)
 })
 ```
-
-3. natura sincrona - non restituisce una promise per via della natura sincrona: Sync blocca l'esecuzioni di js finchè non termina la chiamata
+- writeFileSync: che ha una natura sincrona
+3. Sync blocca l'esecuzioni di js finchè non termina la chiamata
 ```js
 fs.writeFileSync(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
 ```
 
-Come potete notare nelle didascalie precedenti le funzioni che hanno una natura asincrona in Node.js non restituiscono una promise, ciò significa che non è possibile utilizzre async e await per trasformare il funzionamento asincrono ad esempio di una chiamata ad un endpoint in un funzionamento sincrono.<br>
+Nelle didascalie precedenti le funzioni che hanno una natura asincrona in Node.js non restituiscono una promise, ciò significa che non è possibile utilizzre async e await per trasformare il funzionamento asincrono ad esempio di una chiamata ad un endpoint in un funzionamento sincrono.<br>
 L'unico modo per farlo è convertendo completamente la loro natura da asincrona a sincrona utilizzando appunto la seconda funzione del modulo fs.
 
-Per risolvere questa situazione e quindi permettere alle funzioni asincrone di restituire una promise è importando il modulo `fs/promises`:
+Per risolvere questa situazione, e quindi permettere alle funzioni asincrone di restituire una promise, bisogna importare il modulo `fs/promises` invece di quello precedente:
 ```
 import fs from 'fs/promises'
 ```
 
-4. asincrona ma con un funzionamento sincrono - restituisce una promise: blocca l'esecuzioni di js finchè non termina la chiamata
+4. asincrona ma con un funzionamento sincrono - restituisce una promise - blocca l'esecuzioni di js finchè non termina la chiamata
 ```js
 await fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
@@ -167,17 +164,40 @@ res.status(...)
 Perchè preferire async - await se la stessa cosa possiamo farla con Sync ?
 
 ### 9. axios
-Per poter fare la fetch di un URL ad esempio per i nostri scripts locali o per le chiamate a server esterni possiamo farlo direttamente attraverso javascript oppure anche tramite la libreria axios che ci permette di semplificare molto il lavoro anche se presenta determinati vantaggi-svantaggi:
+Per poter fare la [`fetch`]() di un endpoint possiamo utilizzare di default tutto quello cheh javascript già ci fornisce:
+```js
+// esempio di una post che a sua volta richiede informazioni con una get ad un endpoint
+const post = async (req, res) => {
+    const response = await fetch(URL, {
+        method: 'GET'
+        body: JSON.stringify()
+        // altre informazioni utili
+    })
+    const json = response.json()
+    ...
+}
+```
+
+Oppure possiamo usufruire di []`axios`](https://axios-http.com/) che è una libreri che ci permette di semplificare leggermente la sintassi anche se presenta determinati vantaggi-svantaggi:
 ```
 npm install axios
 ```
-Una volta installato basta importarlo nei file attraverso la dicitura:
+Una volta installato basta importarlo nei file dove ne necessitiamo:
 ```
 import axios from 'axios'
 ```
-Per utilizzarlo nelle chiamate esterno o nei nostri scripts basta utilizzare la dicitura:
-- await.CRUD(url)
+E utilizzarlo nel seguente modo:
+```js
+const post = async (req, res) => {
+    const response = await axios.get(URL, {
+        // altre informazioni utili
+    })
+    ...
+}
+```
+
 ---
+
 INFORMAZIONI AGGIUNTIVE:
 
 > package.json:

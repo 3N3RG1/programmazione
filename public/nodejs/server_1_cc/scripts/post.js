@@ -11,3 +11,16 @@ async function call() {
 call()
 
 // per eseguirlo: node scripts/post.js
+
+async function call() {
+    const res = await fetch('http://localhost:3000/case-cinematografiche', {
+        method: 'POST',
+        body: JSON.stringify({
+            name: "Universal Pictures",
+            fondazione: 1990,
+            stato: "Stati Uniti"
+        })
+    })
+    return await res.json()
+}
+call()
