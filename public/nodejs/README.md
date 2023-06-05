@@ -1,14 +1,10 @@
+# Node.js ^20.2.0 / [download](https://nodejs.org/it/download/current)
+Node.js è un **runtime** Javascript ovvero un **ambiente di esecuzione** che permette di eseguire codice javascript.
 
-<div display:"flex" flex-direction:"row">
-    <h1>Node.js v20.2.0</h1>
-    <h3>[download](https://nodejs.org/it/download/current)</h3>
-</div>
+Lavora in **single-threaded**, inviando la risposta ai relativi client in maniera **sincrona** ovvero in successione.
 
+Questo non significa che non sia in grado di lavorare su più risposte simultaneamente, infatti javascript utilizza una **programmazione asincrona** che permettte di eseguire determinate funzioni al di fuori del single-threaded evitando così blocchi dovuti ad elaborazinoi lunghe.
 
-# Node.js v20.2.0 [download](https://nodejs.org/it/download/current)
-Node.js è un runtime Javascript ovvero un ambiente di esecuzione che permette di eseguire codice javascript.
-Lavora in single threaded, inviando la risposta ai relativi client in maniera sincrona ovvero in successione.
-Questo non significa che non sia in grado di lavorare su più risposte simultaneamente, infatti javascript utilizza una programmazione asincrona che permettte di eseguire determinate funzioni al di fuori del single-threaded evitando così blocchi dovuti ad elaborazinoi lunghe.
 ## Inizia con il tuo primo server
 ### 1. package.json
 Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili allo sviluppatore sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
@@ -31,7 +27,7 @@ npm init
 ```
 
 ### 2. express
-Installiamo il framework [`express`](https://expressjs.com/en/starter/installing.html) che ci fornisce una serie di strumenti che ci semplificano le realizzazione di applicazioni basate su Node.js, in particolar modo ci semplifica il lavoro di mapping tra i metodi HTTP (post, get, put e delete) e le operazioni CRUD (Create, Read, Update, Delete).
+Installiamo il framework [`express`](https://expressjs.com/en/starter/installing.html) che fornisce una serie di strumenti che ci semplificano le realizzazione di applicazioni basate su node.js, in particolar modo semplifica il lavoro di mapping tra i metodi HTTP (post, get, put e delete) e le operazioni CRUD (Create, Read, Update, Delete).
 ```
 npm install express
 ```
@@ -41,13 +37,13 @@ npm install express
     "express": "^4.18.2"
 }
 ```
-In seguito dobbiamo importarlo e renderlo adoperabile* all'interno del nostro file index.js che andremo a configurare successivamente:<br>
-<sub>* Invochiamo la funzione express() che ci ritorna come assegnameto della variabile app una reference dell'oggetto che contiene l'API di express</sub>
+In seguito dobbiamo importare express e renderlo adoperabile* all'interno del nostro file index.js che andremo a configurare successivamente:<br>
+<sub>* Invochiamo la funzione express() che ritorna come assegnameto della variabile app una reference dell'oggetto che contiene l'API di express</sub>
 ```js
 import express from 'express'
 const app = express() // *
 ```
-Visto che abbiamo installato una dependencie andranno a crearsi in maniera automatica anche i node_modules e il package-lock.json -> metterei i link in fondo
+Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [`package-lock.json`](md#package-lockjson) e i [`node_modules`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules)
 
 ### 3. body-parser
 [`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload.<br>
@@ -205,8 +201,6 @@ const post = async (req, res) => {
     ...
 }
 ```
-
----
 
 ## Informazioni aggiuntive
 
