@@ -1,7 +1,9 @@
-# Node.js v20.2.0 - [download](https://nodejs.org/it/download/current)
+# <h1 align="center">Node.js v20.2.0</h1>
+Node.js [download](https://nodejs.org/it/download/current)
+## Inizia con il tuo primo server
 ### 1. package.json
 Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili allo sviluppatore sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
-```
+```bash
 npm init
 ```
 > Oggetto presente nel file package.json :
@@ -42,7 +44,7 @@ Visto che abbiamo installato una dependencie andranno a crearsi in maniera autom
 [`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload.<br>
 In particolar modo presenta 4 middleware che sono funzioni che elaborano le richieste in arrivo prima che raggiungano il server di destinazione, senza le quali al server arriverebbe un messaggio che non è in grado di "leggere".
 
-- Per quanto guarda le versioni precedenti alla v4.16.0 di express è necessario installare la libreria `body-parser`.
+- Per quanto guarda le versioni `precedenti alla v4.16.0` di express è necessario installare la libreria body-parser.
 ```
 npm install body-parser
 ```
@@ -59,7 +61,7 @@ import bodyParser from 'body-parser'
 app.use(bodyParser.json())
 ```
 
-- Per quanto riguarda invece le versioni di express a partire dalla v4.16.0 non è necessario installare la libreria body-parser perchè è stata implementata direttamente da express.<br>
+- Per quanto riguarda invece le versioni di express `a partire dalla v4.16.0` non è necessario installare la libreria body-parser perchè è stata implementata direttamente da express.<br>
 In questo caso quindi ci basterà utilizzarla nel nostro file index.js che andremo a configurare successivamente:
 ```
 app.use(express.json())
@@ -76,14 +78,14 @@ npm install --save-dev nodemon
     "nodemon": "^2.0.22"
 }
 ```
-Utilizziamo il flag `--save--dev` perchè non vogliamo installare nodemon come dipendenza di funzionamento, le quali servono al server per rispndere in maniera corretta alle chiamate, ma lo installiamo come dev dipendenza ovvero come dipendenza utile allo sviluppatore solo in fase di sviluppo.<br>
+Utilizziamo il flag `--save--dev` perchè non vogliamo installare nodemon come dipendenza di funzionamento, le quali servono al server per rispondere in maniera corretta alle chiamate, ma lo installiamo come dev dipendenza ovvero come dipendenza utile allo sviluppatore solo in fase di sviluppo.<br>
 In aggiunta inseriamo all'interno dell'oggetto scripts del file package.json le proprietà:
 ```json
 "start": "node src/index.js",
 "dev": "nodemon -w src src/index.js"
 ```
-> start: ci permette di runnare il server nella modalità di default
-> dev: ci permette di runnare il server in modalità nodemon.<br>
+> **star**t: ci permette di runnare il server nella modalità di default<br>
+> **dev**: ci permette di runnare il server in modalità nodemon.<br>
 Utilizziamo `-w src` perchè normalmente qualsiasi file salviamo, anche al di fuori della cartella stessa del server, nodemon mi rirunna il server mentre con questo tag solo ciò che salvo dentro la cartella src mi farà attivare nodemon.
 
 ### 5. import
@@ -92,7 +94,7 @@ Abbiamo deciso di utilizzare l'`import` di ECMAScript-6 (ES6) quindi dobbiamo ag
 "type": "module",
 ```
 
-### 6. .gitignore
+### 6. gitignore
 Creiamo il file `.gitignore` e inseriamo al suo interno:
 ```
 node_modules
@@ -100,7 +102,7 @@ node_modules
 In questo modo quando andremo a committare e pushare il nostro progetto, git ignorerà la cartella node_modules.
 perchè facciamo questa procedura -> link node_modules
 
-### 7. src & index.js
+### 7. index.js
 Creiamo la cartella `src` che server a contenere tutti i file relativi a routes e creiamo al suo interno il file `index.js` nel quale scriviamo di default:
 ```js
 const port = 3000                  // porta nella quale hosto localmente il server
@@ -116,37 +118,51 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 ```
-###
-A questo punto ho tutto il necessario per poter lavorare ma posso necessitare ancora di due elementi molto utili ai file routes:
+*A questo punto abbiamo tutto il necessario per poter sviluppare ma potremmo necessitare ancora di due elementi utili ai file routes:*
 
-### 8. promise
-In Node.js nulla restituisce una promise ciò significa che non è possibile utilizzre async e await per trasformare il funzionamento asincrono ad esempio di una chiamata esterna in un funzionamento sincrono.<br>
-L'unico modo per farlo è trasformare la stessa natura asincrona in sincrona.<br>
-Pensiamo anche alla dicitura fs.writeFile(path, JSON.stringify(pathName, null, '  ')) che mi permette di sovrascrivere i dati relativi ad un database(file).<br>
-Questa operazione ha una natura asincrona ma non mi restituisce una promise ciò significa che non possiamo trattarla secondo un funzionamento sincrono ma dobbiamo convertire la sua natura asincrona in sincrona attraverso la dicitura fs.writeFileSync
+### 8. file system
+Il modulo `fs` di Node.js ci permette di interagire con il nostro file system e quindi sovrascrivere i nostri file locali.
+Facendo già parte di Node.js necessita solamente di essere importato:
+```
+import fs from 'fs'
+```
 
-1 -> natura asincrona - non restiruisce una promise: la risposta avviene prima del completamento di fs
+Questo modulo presenta due funzioni per sovrascrivere i dati:
+- writeFile: che ha una natura asincrona
+- writeFileSync: che ha una natura sincrona
+
+1. natura asincrona - non restiruisce una promise: la risposta avviene prima del completamento di fs
+```js
 fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
+```
 
-2 -> natura asincrona - non restituisce una promise: la risposta (call-back) avviene dopo il completamento di fs
+2. natura asincrona - non restituisce una promise: la risposta (call-back) avviene dopo il completamento di fs
+```js
 fs.writeFile(path, JSON.stringify(pathName, null, '  '), () => {
     res.status(...)
 })
+```
 
-3 -> natura sincrona - non restituisce una promise in quanto ha natura asincrona e non per via di node.js: Sync blocca l'esecuzioni di js finchè non termina la chiamata
+3. natura sincrona - non restituisce una promise per via della natura sincrona: Sync blocca l'esecuzioni di js finchè non termina la chiamata
+```js
 fs.writeFileSync(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
-
-L'unico modo per evitare questo è permettere a Node.js di restituire delle promise importando la libreria:
 ```
-import fs from 'node:fs/promises'
-```
-'fs' è una libreria che non necessita di essere installata perchè fa già parte di Node.js, infatti hanno notato nel corso degli anni che era talmente utile che invece di costringere gli utenti ad installarla per ogni progetto l'hanno integrata direttamente.
 
-4 -> asincrona ma con un funzionamento sincrono - restituisce una promise: blocca l'esecuzioni di js finchè non termina la chiamata
+Come potete notare nelle didascalie precedenti le funzioni che hanno una natura asincrona in Node.js non restituiscono una promise, ciò significa che non è possibile utilizzre async e await per trasformare il funzionamento asincrono ad esempio di una chiamata ad un endpoint in un funzionamento sincrono.<br>
+L'unico modo per farlo è convertendo completamente la loro natura da asincrona a sincrona utilizzando appunto la seconda funzione del modulo fs.
+
+Per risolvere questa situazione e quindi permettere alle funzioni asincrone di restituire una promise è importando il modulo `fs/promises`:
+```
+import fs from 'fs/promises'
+```
+
+4. asincrona ma con un funzionamento sincrono - restituisce una promise: blocca l'esecuzioni di js finchè non termina la chiamata
+```js
 await fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
+```
 
 Perchè preferire async - await se la stessa cosa possiamo farla con Sync ?
 
