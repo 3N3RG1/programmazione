@@ -4,7 +4,7 @@ import fs from 'node:fs/promises'
 const DB_PATH = './db/impiccato.json'
 const arr = Object.keys(impiccato)
 
-export const create = async (req, res) => {
+export const session = async (req, res) => {
     let biggest = 0
     for(let i = 0; i < arr.length; i++) {
         if(impiccato[arr[i]].initialPhase.user.name === req.body.user.name &&

@@ -2,16 +2,18 @@ import express from 'express'
 const app = express()
 const port = 3000
 
-import bodyParser from 'body-parser'
-app.use(bodyParser.json())
+    // import bodyParser from 'body-parser'
+    app.use(express.json())
+    app.use(bodyParser.json())
 
 import * as impiccato from './impiccato-routes.mjs'
+import bodyParser from 'body-parser'
 
 app.get('/', (req, res) => {
     res.send('server_5_impiccato')
 })
 
-app.post('/session/create', impiccato.create)
+app.post('/session', impiccato.session)
 app.post('/session/phase', impiccato.phase)
 
 app.listen(port, () => {
@@ -60,7 +62,7 @@ app.listen(port, () => {
         }
         "end": {
             "error": 0,
-            "word": "pa-pa-",
+            "word": "------",
             ("win": true)
         }
     }

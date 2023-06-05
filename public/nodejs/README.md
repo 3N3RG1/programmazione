@@ -1,10 +1,10 @@
-# Server Default
+# Node.js v20.2.0 - [download](https://nodejs.org/it/download/current)
 ### 1. package.json
-Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili agli sviluppatori sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
+Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili allo sviluppatore sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
 npm init
 ```
-> Script presente nel file package.json:
+> Oggetto presente nel file package.json :
 ```json
 {
     "name": "server_default",
@@ -20,42 +20,65 @@ npm init
 ```
 
 ### 2. express
-Installiamo la dipendenza `express` che ci semplifica il lavoro del CRUD che sarebbe molto più complicato da scrivere in node.js (default).
+Installiamo il framework [`express`](https://expressjs.com/) che ci fornisce una serie di strumenti che ci semplificano le realizzazione di applicazioni basate su Node.js, in particolar modo ci semplifica il lavoro di mapping tra i metodi HTTP (post, get, put e delete) e le operazioni CRUD (Create, Read, Update, Delete).
 ```
 npm install express
 ```
-```ruby
+>  Proprietà dependencies e dipendenza express aggiunta all'oggetto presente nel file package.json :
+```json
 "dependencies": {
     "express": "^4.18.2"
 }
 ```
+In seguito dobbiamo importarlo e renderlo adoperabile all'interno del nostro file index.js che andremo a configurare successivamente:
+```js
+import express from 'express'
+const app = express()
+```
+
 Andranno a crearsi anche i node_modules e il package-lock.json -> metterei i link in fondo
 
 ### 3  body-parser
-Installiamo la dipendenza `body-parser` che ci serve per parsare il req.body delle chiamate post e update che ci forniscono un payload (body) in json, senza il parse al server arriverebbe un messaggio che non è in grado di leggere.
+[`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload.
+In particolar modo presenta 4 middleware che sono funzioni che elaborano le richieste in arrivo prima che raggiungano il server di destinazione, senza le quali al server arriverebbe un messaggio che non è in grado di "leggere".
+
+Per quanto guarda le versioni precedenti alla v4.16.0 di express è necessario installare la libreria `body-parser`.
 ```
 npm install body-parser
 ```
-```ruby
+> Proprietà body-parser aggiunta alla proprietà dependencies dell'oggetto presente nel file package.json :
+```json
 "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2"
 }
 ```
+In seguito dobbiamo importarla e utilizzarla nel nostro file index.js che andremo a configurare successivamente:
+```js
+import bodyParser from 'body-parser'
+app.use(bodyParser.json())
+```
+
+Per quanto riguarda invece le versioni di express a partire dalla v4.16.0 non è necessario installare la libreria body-parser perchè è stata implementata direttamente da express.
+In questo caso quindi ci basterà utilizzarla e non importarla in quanto è già stata importata implicitamente quando abbiamo importato express nel nostro file index.js che andremo a configurare successivamente:
+```
+app.use(express.json())
+```
 
 ### 4. nodemon
-Installiamo la dipendenza `nodemon` che mi permetterà ad ogni salvataggio di non dover rirunnare il server perchè lo fa in automatico.
+Installiamo il tool `nodemon` che mi permetterà ad ogni salvataggio di non dover rirunnare il server perchè lo fa in automatico.
 ```
 npm install --save-dev nodemon
 ```
-```
+> Proprietà devDependencies e dipendenza nodemon aggiunta all'oggetto presente nel file package.json :
+```json
 "devDependencies": {
     "nodemon": "^2.0.22"
 }
 ```
 Utilizziamo il flag `--save--dev` perchè non vogliamo installare nodemon come dipendenza di funzionamento, le quali servono al server per rispndere in maniera corretta alle chiamate, ma lo installiamo come dev dipendenza ovvero come dipendenza utile allo sviluppatore solo in fase di sviluppo.
 In aggiunta inserisco all'interno dell'oggetto scripts di package.json le proprietà:
-```
+```json
 "start": "node src/index.js",
 "dev": "nodemon -w src src/index.js"
 ```
@@ -63,7 +86,7 @@ start: ci permette di runnare il server nella modalità normale
 dev: ci permette di runnare il server in modalità nodemon. Utilizziamo `-w src` perchè normalmente qualsiasi file salviamo, anche al di fuori della cartella stessa del server, nodemon mi rirunna il server mentre con questo tag solo ciò che salvo dentro la cartella src mi farà attivare nodemon.
 
 ### 5. import
-Abbiamo deciso di utilizzare l'`import` di ECMAScript-6 (ES6) quindi debbiamo aggiungere sopra l'oggetto scripts di package.json la proprietà:
+Abbiamo deciso di utilizzare l'`import` di ECMAScript-6 (ES6) quindi dobbiamo aggiungere sopra l'oggetto scripts di package.json la proprietà:
 ```
 "type": "module",
 ```
