@@ -1,4 +1,4 @@
-# Node.js v20.2.0 - [download](https://nodejs.org/it/download/current)
+# Node.js v20.2.0 - <sub>[download](https://nodejs.org/it/download/current)</sub>
 ### 1. package.json
 Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili allo sviluppatore sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
@@ -30,7 +30,8 @@ npm install express
     "express": "^4.18.2"
 }
 ```
-In seguito dobbiamo importarlo e renderlo adoperabile all'interno del nostro file index.js che andremo a configurare successivamente:
+In seguito dobbiamo importarlo e renderlo adoperabile[^1] all'interno del nostro file index.js che andremo a configurare successivamente:
+<sub>1. Invochiamo la funzione express() che ci ritorna come assegnameto della variabile app una reference dell'oggetto che contiene l'API di express</sub>
 ```js
 import express from 'express'
 const app = express()
