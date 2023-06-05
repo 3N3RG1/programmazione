@@ -1,4 +1,14 @@
-# Node.js v20.2.0 <sub>Node.js [download](https://nodejs.org/it/download/current)</sub>
+
+<div display:"flex" flex-direction:"row">
+    <h1>Node.js v20.2.0</h1>
+    <h3>[download](https://nodejs.org/it/download/current)</h3>
+</div>
+
+
+# Node.js v20.2.0 [download](https://nodejs.org/it/download/current)
+Node.js è un runtime Javascript ovvero un ambiente di esecuzione che permette di eseguire codice javascript.
+Lavora in single threaded, inviando la risposta ai relativi client in maniera sincrona ovvero in successione.
+Questo non significa che non sia in grado di lavorare su più risposte simultaneamente, infatti javascript utilizza una programmazione asincrona che permettte di eseguire determinate funzioni al di fuori del single-threaded evitando così blocchi dovuti ad elaborazinoi lunghe.
 ## Inizia con il tuo primo server
 ### 1. package.json
 Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili allo sviluppatore sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
@@ -127,7 +137,7 @@ import fs from 'fs'
 ```
 
 Questo modulo presenta due funzioni per sovrascrivere i dati:
-- writeFile: che ha una natura asincrona
+- `**writeFile**`: che ha una natura asincrona
 1. non restiruisce una promise - la risposta avviene prima del completamento di fs
 ```js
 fs.writeFile(path, JSON.stringify(pathName, null, '  '))
@@ -140,7 +150,7 @@ fs.writeFile(path, JSON.stringify(pathName, null, '  '), () => {
     res.status(...)
 })
 ```
-- writeFileSync: che ha una natura sincrona
+- `writeFileSync`: che ha una natura sincrona
 3. Sync blocca l'esecuzioni di js finchè non termina la chiamata
 ```js
 fs.writeFileSync(path, JSON.stringify(pathName, null, '  '))
@@ -198,35 +208,15 @@ const post = async (req, res) => {
 
 ---
 
-INFORMAZIONI AGGIUNTIVE:
+## Informazioni aggiuntive
 
-> package.json:
-è un file che contiene sia i metadata relativi al progetto utili agli sviluppatori, sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare
+### [package-lock.json](https://www.atatus.com/blog/package-json-vs-package-lock-json/)
+Registra la versione esatta di ogni dipendenza installata, incluse le sue sotto-dipendenze e le loro versioni.<br>
+Lo scopo è garantire che le stesse dipendenze vengano installate in modo coerente in ambienti diversi, ad esempio ambienti di sviluppo e produzione.<br>
+Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti blocca la versione specifica di ciascuna dipendenza.<br>
+Ad esempio nel momento di produzione quando uno sviluppatore clona il repository di un altro sviluppatore il package-lock.json evita che vengano copiate versioni di dipendeze superiori a quelle originali evitando così problemi di conflitto.
 
-> package-lock.json: https://www.atatus.com/blog/package-json-vs-package-lock-json/
-Registra la versione esatta di ogni dipendenza installata, incluse le sue sotto-dipendenze e le loro versioni.
-Lo scopo è garantire che le stesse dipendenze vengano installate in modo coerente in ambienti diversi, ad esempio ambienti di sviluppo e produzione. Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti blocca la versione specifica di ciascuna dipendenza.
-Ad esempio nel momento di produzione quando uno sviluppatore clona il repository di un altro sviluppatore ili package-lock.json evita che vengano copiate versioni di dipendeze superiori a quelle originali evitando così problemi di conflitto.
-
-> node_modules:
-La cartella node_modules è come una cache per i moduli esterni da cui dipende il tuo progetto (librerie). Qunado fai npm install vengono scaricati dal Web e copiati nella cartella node_modules.
-Il motivo per il quale non ha senso committare i node_modules è duplice:
-1 - tutte le versioni relative alle dipendenze sono già presenti nel package-lock.json e chunque in qualsiasi momento può installare i node_modules che dipendono direttamente dalle versioni delle dipendenze quindi committarli sarebbe come avere la copia di qualcosa che si ha già, inoltre complicherebbe anche l'aggiornamento ad una versione più recente di tutti i moduli nel caso volessimo aggiornare la nostra applicazione.
-
-> xswpd
-- dmdfmddnfjsd usqdv qsv sdv sif ihg sdiogh psdih suig sdfh skhòksdj gps ii sipf iuhghsp ahdgh g df idf df xv jvnjknvkjsr su sih sg suigh iug ughjeh eug.
-ng iur iu feg fgfiuge gfiugbe eg eug peug erpg nperguihih fugpdufhbdfu duihfbidfnbdfp ih e.
-YUICCUINCUVCEIOHCYB I iuvfisug igherpigsrèg srogi orifh'ug e7gh oih g g iog pdfgh egh eogh oigheuighe puig heiug peg pg ipug hwerèo
-
-# dnvvfvf
-## dsvnsfv
-### sddfairugs
-> dfuirguiergui:
-
-    sdeubig
-=========
-
-scfnvfsnvfuin
-
-
-
+### node_modules
+La cartella node_modules è come una cache per i moduli esterni da cui dipende il tuo progetto (librerie).<br>
+Qunado fai npm install vengono scaricati dal Web e copiati nella cartella node_modules.<br>
+Il motivo per il quale non ha senso committare i node_modules è perchè tutte le versioni relative alle dipendenze sono già presenti nel package-lock.json e chunque in qualsiasi momento può installare i node_modules che dipendono direttamente dalle versioni delle dipendenze quindi committarli sarebbe come avere la copia di qualcosa che si ha già, inoltre complicherebbe anche l'aggiornamento ad una versione più recente di tutti i moduli nel caso volessimo aggiornare la nostra applicazione.
