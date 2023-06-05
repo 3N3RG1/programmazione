@@ -1,9 +1,9 @@
 # Node.js ^20.2.0 / [download](https://nodejs.org/it/download/current)
 Node.js è un **runtime** Javascript ovvero un **ambiente di esecuzione** che permette di eseguire codice javascript.
 
-Lavora in **single-threaded**, inviando la risposta ai relativi client in maniera **sincrona** ovvero in successione.
+Lavora in **single-threaded**, inviando la risposta ai relativi client in maniera **sincrona** ovvero in successione, ma ciò non significa che non sia in grado di lavorare su più risposte simultaneamente.
 
-Questo non significa che non sia in grado di lavorare su più risposte simultaneamente, infatti javascript utilizza una **programmazione asincrona** che permettte di eseguire determinate funzioni al di fuori del single-threaded evitando così blocchi dovuti ad elaborazinoi lunghe.
+Infatti javascript utilizza una **programmazione asincrona** che permettte di eseguire determinate funzioni al di fuori del single-threaded evitando così blocchi dovuti ad elaborazinoi lunghe.
 
 ## Inizia con il tuo primo server
 ### 1. package.json
@@ -43,11 +43,11 @@ In seguito dobbiamo importare express e renderlo adoperabile* all'interno del no
 import express from 'express'
 const app = express() // *
 ```
-Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [`package-lock.json`](md#package-lockjson) e i [`node_modules`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules)
+Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [`package-lock.json`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#package-lockjson) e i [`node_modules`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules)
 
 ### 3. body-parser
-[`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload.<br>
-In particolar modo presenta 4 middleware che sono funzioni che elaborano le richieste in arrivo prima che raggiungano il server di destinazione, senza le quali al server arriverebbe un messaggio che non è in grado di "leggere".
+[`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload, senza la quale al server arriverebbe un messaggio che non è in grado di "leggere".<br>
+In particolar modo presenta 4 middleware che sono funzioni che elaborano le richieste in arrivo prima che raggiungano il server di destinazione.
 
 - Per quanto guarda le versioni `precedenti alla v4.16.0` di express è necessario installare la libreria body-parser.
 ```
@@ -67,13 +67,13 @@ app.use(bodyParser.json())
 ```
 
 - Per quanto riguarda invece le versioni di express `a partire dalla v4.16.0` non è necessario installare la libreria body-parser perchè è stata implementata direttamente da express.<br>
-In questo caso quindi ci basterà utilizzarla nel nostro file index.js che andremo a configurare successivamente:
+In questo caso quindi ci basterà definire che deve parsare il body in ingresso:
 ```
 app.use(express.json())
 ```
 
 ### 4. nodemon
-Installiamo il tool [`nodemon`](https://www.npmjs.com/package/nodemon?activeTab=readme) che ci permetterà ad ogni salvataggio di non dover rirunnare il server perchè proprio il tool lo farà in maniera automatica.
+Installiamo il tool [`nodemon`](https://www.npmjs.com/package/nodemon?activeTab=readme) che ci permette ad ogni salvataggio di non dover rirunnare il server perchè lo fa pr noi in maniera automatica.
 ```
 npm install --save-dev nodemon
 ```
@@ -83,7 +83,7 @@ npm install --save-dev nodemon
     "nodemon": "^2.0.22"
 }
 ```
-Utilizziamo il flag `--save--dev` perchè non vogliamo installare nodemon come dipendenza di funzionamento, le quali servono al server per rispondere in maniera corretta alle chiamate, ma lo installiamo come dev dipendenza ovvero come dipendenza utile allo sviluppatore solo in fase di sviluppo.<br>
+Utilizziamo il flag `--save--dev` perchè non vogliamo installare nodemon come dipendenza di funzionamento ma come dev dipendenza ovvero come dipendenza utile allo sviluppatore solo in fase di sviluppo.<br>
 In aggiunta inseriamo all'interno dell'oggetto scripts del file package.json le proprietà:
 ```json
 "start": "node src/index.js",
@@ -91,7 +91,7 @@ In aggiunta inseriamo all'interno dell'oggetto scripts del file package.json le 
 ```
 > **star**t: ci permette di runnare il server nella modalità di default<br>
 > **dev**: ci permette di runnare il server in modalità nodemon.<br>
-Utilizziamo `-w src` perchè normalmente qualsiasi file salviamo, anche al di fuori della cartella stessa del server, nodemon mi rirunna il server mentre con questo tag solo ciò che salvo dentro la cartella src mi farà attivare nodemon.
+Normalmente quando salviamo un qualsiasi file nodemon rirunna il server in autonomia ma utilizzando il flag `-w src` definiamo che nodemon deve prendere in considerazione solo i file presenti nella cartella src.
 
 ### 5. import
 Abbiamo deciso di utilizzare l'`import` di ECMAScript-6 (ES6) quindi dobbiamo aggiungere sopra l'oggetto scripts di package.json la proprietà:
@@ -105,12 +105,12 @@ Creiamo il file `.gitignore` e inseriamo al suo interno:
 node_modules
 ```
 In questo modo quando andremo a committare e pushare il nostro progetto, git ignorerà la cartella node_modules.
-perchè facciamo questa procedura -> link node_modules
+<sub>Perchè è estremamente importante che git ignori i [node_modules](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules) ?</sub>
 
 ### 7. index.js
-Creiamo la cartella `src` che server a contenere tutti i file relativi a routes e creiamo al suo interno il file `index.js` nel quale scriviamo di default:
+Creiamo la cartella `src` che server a contenere tutti i file relativi a routes e creiamo al suo interno il file `index.js` nel quale inseriamo di default lo script:
 ```js
-const port = 3000                  // porta nella quale hosto localmente il server
+const port = 3000  // porta nella quale hosto localmente il server
 import express from 'express'
 const app = express()
 app.use(express.json())
@@ -123,45 +123,44 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 ```
-*Elementi aggiuntivi utili in un contesto locale:*
+## Elementi aggiuntivi in un contesto locale
 
 ### 8. file system
-Il modulo `fs` di Node.js ci permette di interagire con il nostro file system e quindi sovrascrivere i nostri file locali (database).
-Facendo già parte di Node.js necessita solamente di essere importato:
+Il modulo `fs` di node.js ci permette di interagire con file system e quindi sovrascrivere i nostri file locali (database).<br>
+Facendo già parte di node.js necessita solamente di essere importato:
 ```
 import fs from 'fs'
 ```
 
 Questo modulo presenta due funzioni per sovrascrivere i dati:
-- `**writeFile**`: che ha una natura asincrona
+- **`writeFile`**: di natura asincrona
 1. non restiruisce una promise - la risposta avviene prima del completamento di fs
 ```js
 fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
 ```
-
 2. non restituisce una promise - la risposta (call-back) avviene dopo il completamento di fs
 ```js
 fs.writeFile(path, JSON.stringify(pathName, null, '  '), () => {
     res.status(...)
 })
 ```
-- `writeFileSync`: che ha una natura sincrona
+Per la natura stessa di node.js e da come si può notare nelle didascalie precedenti le funzioni di natura asincrona non restituiscono una promise.
+Ciò significa che non è possibile convertire il funzionamento asincrono di una funzione in un funzionamento sincrono.
+L'unico modo per farlo è convertendo completamente la natura delle funzioni da asincrona a sincrona utilizzando la seconda funzione del modulo fs.
+
+- **`writeFileSync`**: di natura sincrona
 3. Sync blocca l'esecuzioni di js finchè non termina la chiamata
 ```js
 fs.writeFileSync(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
 ```
 
-Nelle didascalie precedenti le funzioni che hanno una natura asincrona in Node.js non restituiscono una promise, ciò significa che non è possibile utilizzre async e await per trasformare il funzionamento asincrono ad esempio di una chiamata ad un endpoint in un funzionamento sincrono.<br>
-L'unico modo per farlo è convertendo completamente la loro natura da asincrona a sincrona utilizzando appunto la seconda funzione del modulo fs.
-
 Per risolvere questa situazione, e quindi permettere alle funzioni asincrone di restituire una promise, bisogna importare il modulo `fs/promises` invece di quello precedente:
 ```
 import fs from 'fs/promises'
 ```
-
-4. asincrona ma con un funzionamento sincrono - restituisce una promise - blocca l'esecuzioni di js finchè non termina la chiamata
+4. asincrona ma con un funzionamento sincrono - blocca l'esecuzioni di js finchè non termina la chiamata
 ```js
 await fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
@@ -170,21 +169,20 @@ res.status(...)
 Perchè preferire async - await se la stessa cosa possiamo farla con Sync ?
 
 ### 9. axios
-Per poter fare la [`fetch`]() di un endpoint possiamo utilizzare di default tutto quello cheh javascript già ci fornisce:
+Per poter fare la [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) di un endpoint possiamo utilizzare tutto quello che javascript già presenta:
 ```js
 // esempio di una post che a sua volta richiede informazioni con una get ad un endpoint
 const post = async (req, res) => {
     const response = await fetch(URL, {
         method: 'GET'
         body: JSON.stringify()
-        // altre informazioni utili
+        // ulteriori informazioni
     })
     const json = response.json()
     ...
 }
 ```
-
-Oppure possiamo usufruire di []`axios`](https://axios-http.com/) che è una libreri che ci permette di semplificare leggermente la sintassi anche se presenta determinati vantaggi-svantaggi:
+Oppure possiamo usufruire di [`axios`](https://axios-http.com/) che è una libreria che permette di semplificare leggermente la sintassi anche se presenta determinati vantaggi-svantaggi:
 ```
 npm install axios
 ```
@@ -194,9 +192,10 @@ import axios from 'axios'
 ```
 E utilizzarlo nel seguente modo:
 ```js
+// esempio di una post che a sua volta richiede informazioni con una get ad un endpoint
 const post = async (req, res) => {
     const response = await axios.get(URL, {
-        // altre informazioni utili
+        // ulteriori informazioni
     })
     ...
 }
