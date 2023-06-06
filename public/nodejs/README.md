@@ -130,7 +130,7 @@ app.listen(port, () => {
 ## Elementi aggiuntivi in un contesto locale
 
 ### 8. file system
-Il modulo [`fs`](https://nodejs.org/api/fs.html#promise-example) di node.js ci permette di interagire con file system e quindi sovrascrivere i nostri file locali (database).<br>
+Il modulo [`'fs'`](https://nodejs.org/api/fs.html#promise-example) di node.js ci permette di interagire con file system e quindi sovrascrivere i nostri file locali (database).<br>
 Facendo già parte di node.js necessita solamente di essere importato:
 ```
 import fs from 'fs'
@@ -149,10 +149,10 @@ fs.writeFile(path, JSON.stringify(pathName, null, '  '), () => {
     res.status(...)
 })
 ```
-Per la natura stessa di node.js e da come si può notare nelle didascalie precedenti le funzioni di natura asincrona non restituiscono una promise.
-Ciò significa che non è possibile convertire il funzionamento asincrono di una funzione in un funzionamento sincrono.
+Per la natura stessa del modulo `'fs'` e da come si può notare dalle didascalie precedenti le funzioni di natura asincrona non restituiscono una promise.
+Ciò significa che non è possibile convertire il funzionamento asincrono di una funzione in un funzionamento sincrono utilizzando async-await.
 
-L'unico modo per farlo è convertendo completamente la natura delle funzioni da asincrona a sincrona utilizzando la seconda funzione del modulo fs.
+L'unico modo per farlo è convertendo completamente la natura asincrona delle funzioni asincrone in sincrona utilizzando la seconda funzione del modulo fs.
 
 - **`writeFileSync`**: di natura sincrona
 3. Sync blocca l'esecuzioni di js finchè non termina la chiamata
@@ -231,10 +231,10 @@ DOMANDE:
 
 .gitignore pattern format: https://git-scm.com/docs/gitignore
 
-1. ma se io volessi fare un fetch come lo faccio se node non restituisce una promise - noi mettiamo await con axios ma non dovrebbe funzionare
-
 2. perchè preferire async-await a Sync
 
 4. devo per forza scrivere README.md
+
+5. come si farebbe la roba senza limport ma con il require
 
 -->
