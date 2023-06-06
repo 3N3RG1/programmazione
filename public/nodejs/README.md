@@ -44,7 +44,7 @@ In seguito dobbiamo importare express e renderlo adoperabile* all'interno del no
 import express from 'express'
 const app = express()  // *
 ```
-Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [`package-lock.json`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#package-lockjson---info) e i `[node_modules](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules)`.
+Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [package-lock.json](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#package-lockjson---info) e i [node_modules](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules).
 
 ### 3. body-parser
 [`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload, senza la quale al server arriverebbe un messaggio che non è in grado di "leggere".
