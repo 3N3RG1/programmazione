@@ -44,7 +44,7 @@ In seguito dobbiamo importare express e renderlo adoperabile* all'interno del no
 import express from 'express'
 const app = express()  // *
 ```
-Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [`package-lock.json`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#package-lockjson) e i [`node_modules`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules).
+Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [`package-lock.json`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#package-lockjson-info) e i [`node_modules`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules).
 
 ### 3. body-parser
 [`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload, senza la quale al server arriverebbe un messaggio che non è in grado di "leggere".
@@ -207,7 +207,7 @@ const post = async (req, res) => {
 
 ## Informazioni aggiuntive
 
-### package-lock.json [(info)](https://www.atatus.com/blog/package-json-vs-package-lock-json/)
+### package-lock.json - [info](https://www.atatus.com/blog/package-json-vs-package-lock-json/)
 **Registra la versione esatta di ogni dipendenza** installata, incluse le sue sotto-dipendenze e le loro versioni.
 
 Lo scopo è garantire che le stesse dipendenze vengano installate in modo **coerente** in ambienti diversi, ad esempio **ambienti di sviluppo e produzione**. Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti **blocca la versione specifica di ciascuna dipendenza**.
