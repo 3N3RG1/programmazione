@@ -47,7 +47,8 @@ const app = express()  // *
 Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [`package-lock.json`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#package-lockjson) e i [`node_modules`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules).
 
 ### 3. body-parser
-[`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload, senza la quale al server arriverebbe un messaggio che non è in grado di "leggere".<br>
+[`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload, senza la quale al server arriverebbe un messaggio che non è in grado di "leggere".
+
 In particolar modo presenta 4 middleware che sono funzioni che elaborano le richieste in arrivo prima che raggiungano il server di destinazione.
 
 - Per quanto guarda le versioni `precedenti alla v4.16.0` di express è necessario installare la libreria body-parser.
@@ -206,14 +207,14 @@ const post = async (req, res) => {
 
 ## Informazioni aggiuntive
 
-### package-lock.json - [](https://www.atatus.com/blog/package-json-vs-package-lock-json/)
+### package-lock.json [(info)](https://www.atatus.com/blog/package-json-vs-package-lock-json/)
 **Registra la versione esatta di ogni dipendenza** installata, incluse le sue sotto-dipendenze e le loro versioni.
 
 Lo scopo è garantire che le stesse dipendenze vengano installate in modo **coerente** in ambienti diversi, ad esempio **ambienti di sviluppo e produzione**. Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti **blocca la versione specifica di ciascuna dipendenza**.
 
 Pensiamo al caso in cui uno sviluppatore clona il repository di un altro sviluppatore, il package.json **evita che vengano copiate versioni di dipendeze superiori a quelle originali** evitando così problemi di conflitto.
 
-### node_modules
+- node_modules
 La cartella node_modules è come una **cache per i moduli esterni** (librearie, ...) da cui dipende il progetto.<br>
 Quando viene eseguito `npm install` vengono scaricati dal Web tutti i moduli relativi alle dipendenze.<br>
 
