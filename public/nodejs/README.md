@@ -6,6 +6,7 @@ Lavora in **single-threaded**, inviando la risposta ai relativi client in manier
 Infatti javascript utilizza una **programmazione asincrona** che permettte di eseguire determinate funzioni al di fuori del single-threaded evitando così blocchi dovuti ad elaborazinoi lunghe.
 
 ## Inizia con il tuo primo server
+
 ### 1. package.json
 Creiamo un `package.json` che contiene sia i metadata relativi al progetto utili allo sviluppatore sia i metadata funzionali come le dipendenze che necessita l'applicazione per funzionare.
 ```
@@ -41,7 +42,7 @@ In seguito dobbiamo importare express e renderlo adoperabile* all'interno del no
 <sub>* Invochiamo la funzione express() che ritorna come assegnameto della variabile app una reference dell'oggetto che contiene l'API di express</sub>
 ```js
 import express from 'express'
-const app = express() // *
+const app = express()  // *
 ```
 Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [`package-lock.json`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#package-lockjson) e i [`node_modules`](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules).
 
@@ -66,8 +67,8 @@ import bodyParser from 'body-parser'
 app.use(bodyParser.json())
 ```
 
-- Per quanto riguarda invece le versioni di express `a partire dalla v4.16.0` non è necessario installare la libreria body-parser perchè è stata implementata direttamente da express; anche se in alcuni case più specifici potrebbe essere ancora necessario.<br>
-In questo caso quindi ci basterà definire che deve parsare il body in ingresso:
+- Per quanto riguarda invece le versioni di express `a partire dalla v4.16.0` non è necessario installare il body-parser perchè è stato implementato direttamente da express; anche se in alcuni casi più specifici potrebbe essere ancora necessario.<br>
+In questo caso quindi ci basta definire che deve parsare il body in ingresso:
 ```
 app.use(express.json())
 ```
@@ -124,6 +125,7 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 ```
+
 ## Elementi aggiuntivi in un contesto locale
 
 ### 8. file system
@@ -147,7 +149,8 @@ fs.writeFile(path, JSON.stringify(pathName, null, '  '), () => {
 })
 ```
 Per la natura stessa di node.js e da come si può notare nelle didascalie precedenti le funzioni di natura asincrona non restituiscono una promise.
-Ciò significa che non è possibile convertire il funzionamento asincrono di una funzione in un funzionamento sincrono.<br>
+Ciò significa che non è possibile convertire il funzionamento asincrono di una funzione in un funzionamento sincrono.
+
 L'unico modo per farlo è convertendo completamente la natura delle funzioni da asincrona a sincrona utilizzando la seconda funzione del modulo fs.
 
 - **`writeFileSync`**: di natura sincrona
@@ -166,7 +169,6 @@ import fs from 'fs/promises'
 await fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
 ```
-
 Perchè preferire async - await se la stessa cosa possiamo farla con Sync ?
 
 ### 9. axios
@@ -183,7 +185,7 @@ const post = async (req, res) => {
     ...
 }
 ```
-Oppure possiamo usufruire di [`axios`](https://axios-http.com/) che è una libreria che permette di semplificare leggermente la sintassi anche se presenta determinati vantaggi-svantaggi:
+Oppure possiamo usufruire di [`axios`](https://axios-http.com/) che è una libreria che permette di semplificare leggermente la sintassi:
 ```
 npm install axios
 ```
@@ -204,19 +206,21 @@ const post = async (req, res) => {
 
 ## Informazioni aggiuntive
 
-### [package-lock.json](https://www.atatus.com/blog/package-json-vs-package-lock-json/)
-Registra la versione esatta di ogni dipendenza installata, incluse le sue sotto-dipendenze e le loro versioni.<br>
-Lo scopo è garantire che le stesse dipendenze vengano installate in modo coerente in ambienti diversi, ad esempio ambienti di sviluppo e produzione.
+### package-lock.json - [](https://www.atatus.com/blog/package-json-vs-package-lock-json/)
+**Registra la versione esatta di ogni dipendenza** installata, incluse le sue sotto-dipendenze e le loro versioni.
 
-Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti blocca la versione specifica di ciascuna dipendenza.<br>
-Pensiamo al caso in cui uno sviluppatore clona il repository di un altro sviluppatore, il package.json evita che vengano copiate versioni di dipendeze superiori a quelle originali evitando così problemi di conflitto.
+Lo scopo è garantire che le stesse dipendenze vengano installate in modo **coerente** in ambienti diversi, ad esempio **ambienti di sviluppo e produzione**. Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti **blocca la versione specifica di ciascuna dipendenza**.
+
+Pensiamo al caso in cui uno sviluppatore clona il repository di un altro sviluppatore, il package.json **evita che vengano copiate versioni di dipendeze superiori a quelle originali** evitando così problemi di conflitto.
 
 ### node_modules
-La cartella node_modules è come una cache per i moduli esterni (librearie, ...) da cui dipende il progetto.<br>
+La cartella node_modules è come una **cache per i moduli esterni** (librearie, ...) da cui dipende il progetto.<br>
 Quando viene eseguito `npm install` vengono scaricati dal Web tutti i moduli relativi alle dipendenze.<br>
 
-Il motivo per il quale non è pratico committare i node_modules è perchè tutte le versioni relative alle dipendenze dei moduli sono già presenti nel package-lock.json e chunque in qualsiasi momento può installare i node_modules che dipendono direttamente dalle versioni delle dipendenze.<br>
-È compito quindi dello sviluppatore definire a git di ignorare i node_modules in questo modo quando un'altro svilppatore necessita di clonare il progetto non deve preoccuparsi di problemi di conflitto tra le versioni relative alle dipendenze.
-___
-Made with passion by 3N3RG1
+Il motivo per il quale non è pratico committare i node_modules è perchè **tutte le versioni relative alle dipendenze dei moduli sono già presenti nel package-lock.json** e chunque in qualsiasi momento può installare i node_modules che dipendono direttamente dalle versioni delle dipendenze.
 
+È compito quindi dello sviluppatore definire a git di ignorare i node_modules in questo modo quando un'altro svilppatore necessita di clonare il progetto **non deve preoccuparsi di problemi di conflitto tra le versioni** relative alle dipendenze.
+
+___
+
+Made with passion by 3N3RG1
