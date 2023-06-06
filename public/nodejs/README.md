@@ -214,7 +214,7 @@ Lo scopo è garantire che le stesse dipendenze vengano installate in modo **coer
 
 Pensiamo al caso in cui uno sviluppatore clona il repository di un altro sviluppatore, il package.json **evita che vengano copiate versioni di dipendeze superiori a quelle originali** evitando così problemi di conflitto.
 
-- node_modules
+### node_modules
 La cartella node_modules è come una **cache per i moduli esterni** (librearie, ...) da cui dipende il progetto.<br>
 Quando viene eseguito `npm install` vengono scaricati dal Web tutti i moduli relativi alle dipendenze.<br>
 
