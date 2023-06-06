@@ -15,7 +15,7 @@ npm init
 > Oggetto presente nel file package.json :
 ```json
 {
-    "name": "server_default",
+    "name": "server_?",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -68,7 +68,7 @@ import bodyParser from 'body-parser'
 app.use(bodyParser.json())
 ```
 
-- Per quanto riguarda invece le versioni di express `a partire dalla v4.16.0` non è necessario installare il body-parser perchè è stato implementato direttamente da express; anche se in alcuni casi più specifici potrebbe essere ancora necessario.<br>
+- Per quanto riguarda invece le versioni di express `a partire dalla v4.16.0` non è necessario installare il body-parser perchè è stato implementato direttamente da express, anche se in alcuni casi particolarmente specifici potrebbe essere ancora necessario.<br>
 In questo caso quindi ci basta definire che deve parsare il body in ingresso:
 ```
 app.use(express.json())
@@ -105,7 +105,7 @@ Abbiamo deciso di utilizzare l'`import` di ECMAScript-6 (ES6) quindi dobbiamo ag
 ### 6. gitignore
 Creiamo il file `.gitignore` e inseriamo al suo interno:
 ```
-node_modules
+node_modules/
 ```
 In questo modo quando andremo a committare e pushare il nostro progetto, git ignorerà la cartella node_modules.<br>
 <sub>Perchè è estremamente importante che git ignori i [node_modules](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules) ?</sub>
@@ -225,3 +225,16 @@ Il motivo per il quale non è pratico committare i node_modules è perchè **tut
 ___
 
 Made with passion by 3N3RG1
+
+<!-- 
+DOMANDE:
+
+.gitignore pattern format: https://git-scm.com/docs/gitignore
+
+1. ma se io volessi fare un fetch come lo faccio se node non restituisce una promise - noi mettiamo await con axios ma non dovrebbe funzionare
+
+2. perchè preferire async-await a Sync
+
+4. devo per forza scrivere README.md
+
+-->

@@ -2,9 +2,8 @@ import express from 'express'
 const app = express()
 const port = 3000
 
-    // import bodyParser from 'body-parser'
-    app.use(express.json())
-    app.use(bodyParser.json())
+import bodyParser from 'body-parser'
+app.use(bodyParser.json())
 
 import * as impiccato from './impiccato-routes.mjs'
 import bodyParser from 'body-parser'

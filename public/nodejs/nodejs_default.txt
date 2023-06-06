@@ -39,18 +39,13 @@ DOMANDE:
 - perchè preferire aync await a Sync
 
 
-ALTRE INFORMAZIONI UTILI:
-
-- axios:
-import axios from 'axios'
-
 async function call() {
     const res = await axios.post('http://localhost:3000/case-cinematografiche', {
         name: "Universal Pictures",
         fondazione: 1990,
         stato: "Stati Uniti"
     })
-    console.log(res.status)
+    console.log(res.statusCode)
 }
 call()
 

@@ -1,0 +1,65 @@
+1. perchè scriviamo i file con mjs
+
+2. link degli import: https://www.geeksforgeeks.org/how-to-use-an-es6-import-in-node-js/
+
+3. come scrivere le path correttamente
+
+4. query
+
+5. file db perchè assert { json }
+
+6. cosa sono req e res
+
+7. eseguire lo script di un file locale node path
+
+8. fetch invece di axios:
+async function call() {
+    const res = await fetch('http://localhost:3000/case-cinematografiche', {
+        method: 'POST',
+        body: JSON.stringify({
+            name: "Universal Pictures",
+            fondazione: 1990,
+            stato: "Stati Uniti"
+        })
+    })
+    return await res.json()
+}
+call()
+
+9.
+.end()
+.send({
+    data: {},
+    error : true,
+    message : "todo not found"
+})
+
+10. req.params.qualcosa
+    req.query.qualcosa
+
+11. res.status
+    res.data
+
+12. process.argv[2] // scripts terzo server
+let [a, b, ...params] = process.argv // decostructoring?
+// let params = process.argv.splice(2)
+
+13. session / cookie
+app.use(
+    session({
+        // It holds the secret key for session
+        secret: "How the fuck it works",
+        // Forces the session to be saved (if true) back to the session store
+        resave: false,
+        // Forces a session that is "uninitialized" to be saved to the store
+        saveUninitialized: false,
+        cookie: {
+            // Session expires after 1 min of inactivity
+            expires: 15000
+        }
+    })
+)
+req.session.mySessionData = 'session started'
+
+headers: 
+req.headers.key !== 'token

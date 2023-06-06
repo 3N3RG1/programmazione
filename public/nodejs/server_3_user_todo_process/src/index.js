@@ -10,7 +10,7 @@ import * as todo from './todo-routes.mjs'
 import * as todoUser from './routes-user-todo.mjs'
 
 app.get('/', (req, res) => {
-    res.send('server_3_user_todo_process.argv')
+    res.send('server_3_user_todo_process')
 })
 
 app.get('/users', user.getAll)
