@@ -1,5 +1,4 @@
 # Node.js ^20.2.0 / [download](https://nodejs.org/it/download/current)
-[!download](https://nodejs.org/it/download/current)
 Node.js è un **runtime** Javascript ovvero un **ambiente di esecuzione** che permette di eseguire codice javascript.
 
 Lavora in **single-threaded**, inviando la risposta ai relativi client in maniera **sincrona** ovvero in successione, ma ciò non significa che non sia in grado di lavorare su più risposte simultaneamente.
@@ -225,7 +224,18 @@ Il motivo per il quale non è pratico committare i node_modules è perchè **tut
 
 ___
 
-Made with U+2764 by 3N3RG1 ❤️
+Made with ❤️ by 3N3RG1
+
+- titolo
+> p1<br>
+ciao
+
+> p3
+
+- titolo
+> p1
+>
+> p2
 
 <!-- 
 DOMANDE:
