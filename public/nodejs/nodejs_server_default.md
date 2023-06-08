@@ -44,7 +44,7 @@ In seguito dobbiamo importare express e renderlo adoperabile* all'interno del no
 import express from 'express'
 const app = express()  // *
 ```
-Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [package-lock.json](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#package-lockjson---info) e i [node_modules](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules).
+Visto che abbiamo installato una dependence andranno a crearsi in maniera automatica anche il [package-lock.json](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/nodejs_server_default.md#package-lockjson-info) e i [node_modules](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/nodejs_server_default.md#node_modules).
 
 ### 3. body-parser
 [`body-parser`](https://expressjs.com/it/api.html) è una libreria che ci permette di parsare nel formato json il body delle chiamate post e update, che ci forniscono un payload, senza la quale al server arriverebbe un messaggio che non è in grado di "leggere".
@@ -92,7 +92,7 @@ In aggiunta inseriamo all'interno dell'oggetto scripts del file package.json le 
 "start": "node src/index.js",
 "dev": "nodemon -w src src/index.js"
 ```
-> **star**t: ci permette di runnare il server nella modalità di default<br>
+> **star**t: ci permette di runnare il server nella modalità di default
 > **dev**: ci permette di runnare il server in modalità nodemon.<br>
 Normalmente quando salviamo un qualsiasi file nodemon rirunna il server in maniera automatica ma utilizzando il flag `-w src` definiamo che nodemon deve prendere in considerazione solo i file presenti nella cartella src.
 
@@ -108,7 +108,7 @@ Creiamo il file `.gitignore` e inseriamo al suo interno:
 node_modules/
 ```
 In questo modo quando andremo a committare e pushare il nostro progetto, git ignorerà la cartella node_modules.<br>
-<sub>Perchè è estremamente importante che git ignori i [node_modules](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/README.md#node_modules) ?</sub>
+<sub>Perchè è estremamente importante che git ignori i [node_modules](https://github.com/3N3RG1/programmazione/blob/main/public/nodejs/nodejs_server_default.md#node_modules) ?</sub>
 
 ### 7. index.js
 Creiamo la cartella `src` che serve a contenere tutti i file relativi a routes e creiamo al suo interno il file `index.js` nel quale inseriamo di default lo script:
@@ -138,12 +138,12 @@ import fs from 'fs'
 
 Questo modulo presenta due funzioni per sovrascrivere i dati:
 - **`writeFile`**: di natura asincrona
-1. non restiruisce una promise - la risposta avviene prima del completamento di fs
+> 1. non restiruisce una promise - la risposta avviene prima del completamento di fs
 ```js
 fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
 ```
-2. non restituisce una promise - la risposta (call-back) avviene dopo il completamento di fs
+> 2. non restituisce una promise - la risposta (call-back) avviene dopo il completamento di fs
 ```js
 fs.writeFile(path, JSON.stringify(pathName, null, '  '), () => {
     res.status(...)
@@ -155,7 +155,7 @@ Ciò significa che non è possibile convertire il funzionamento asincrono di una
 L'unico modo per farlo è convertendo completamente la natura asincrona delle funzioni asincrone in sincrona utilizzando la seconda funzione del modulo fs.
 
 - **`writeFileSync`**: di natura sincrona
-3. Sync blocca l'esecuzioni di js finchè non termina la chiamata
+> 3. Sync blocca l'esecuzioni di js finchè non termina la chiamata
 ```js
 fs.writeFileSync(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
@@ -165,7 +165,7 @@ Per risolvere questa situazione, e quindi permettere alle funzioni asincrone di 
 ```
 import fs from 'fs/promises'
 ```
-4. asincrona ma con un funzionamento sincrono
+> 4. asincrona ma con un funzionamento sincrono
 ```js
 await fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
@@ -174,14 +174,13 @@ res.status(...)
 ### 9. axios
 Per poter fare la [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) di un endpoint possiamo utilizzare tutto quello che javascript già presenta:
 ```js
-// esempio di una post che a sua volta richiede informazioni ad un endpoint
-const post = async (req, res) => {
-    const response = await fetch(URL, {
+async function call() {
+    const res = await fetch(URL, {
         method: 'GET'
         body: JSON.stringify()
         // ulteriori informazioni
     })
-    const json = response.json()
+    let json = await res.json()
     ...
 }
 ```
@@ -195,9 +194,8 @@ import axios from 'axios'
 ```
 E utilizzarlo nel seguente modo:
 ```js
-// esempio di una post che a sua volta richiede informazioni ad un endpoint
-const post = async (req, res) => {
-    const response = await axios.get(URL, {
+async function call() {
+    const res = await axios.get(URL, {
         // ulteriori informazioni
     })
     ...
