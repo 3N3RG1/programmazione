@@ -93,6 +93,7 @@ In aggiunta inseriamo all'interno dell'oggetto scripts del file package.json le 
 "dev": "nodemon -w src src/index.js"
 ```
 > **star**t: ci permette di runnare il server nella modalità di default
+
 > **dev**: ci permette di runnare il server in modalità nodemon.<br>
 Normalmente quando salviamo un qualsiasi file nodemon rirunna il server in maniera automatica ma utilizzando il flag `-w src` definiamo che nodemon deve prendere in considerazione solo i file presenti nella cartella src.
 
