@@ -1,27 +1,116 @@
-node js è un database che lavora in single threaded, ovvero aspetta che la corrente richiesta da parte di un client venga terminata prima di partire con un'altra richiesta, per questo motivo l'efficienza lato database è importantissima e si preferisce l'efficienza dell'algoritmo rispetto alla sua leggibilità sempre nel minomo comprensibile.
+Node.js è un database che lavora in single threaded, ovvero aspetta che la corrente richiesta da parte di un client venga terminata prima di partire con un'altra richiesta, per questo motivo l'efficienza lato database è importantissima e si preferisce l'efficienza dell'algoritmo rispetto alla sua leggibilità sempre nel minImo comprensibile.
 
 SEMVER: semantic versioning
-Il semver ci permette di capire quando siamo ad un determinata versione di capire le differenze della nostra versione piuttosto di un'altra
-2.30.0 > major 2 - minor 30 - patch 0
-quando c'è un bug di piccola importanza ma che vogliomo che abbiano tutti aumentiamo la patch di uno
-Mettiamo che troviamo un problema con una funzione che da una soluzione sbagliata a causa di x motivazioni allora aumentiamo il minor di uno per definire che c'è stato un cambio di una certa entità
-Mettiamo che abbiamo rivisto totalmente la libreria e abbiamo spaccato un sacco di cose non permettendo più la retrocompatibilità allora modifichiamo la semver a 3.0.0
+Il semver permette di comprendere la determinata versione di un modulo.
+2.30.0 > major 2 - minor 30 - patch 0 | 2 > major 2 - minor 0 - patch 0
+- Quando viene risolto un bug di piccola importanza ma utile a tutti gli utenti viene aumentata la patch.
+- Mettiamo che viene trovato un problema con una funzione che per qualche motivo da una soluzione sbagliata allora viene aumentato il minor per definire che c'è stato un cambio di una certa entità.
+- Mettiamo che è stata rivista totalmente una libreria e sono state modificate moltissime cose che non permettono più la retrocompatibilità allora la versione verrà modificata alla 3.0.0
 
-Rest: è una specifica (insieme di regole) tramite le quali esponi le operazioni di crud su una risorsa
-
-CRUD: create - read - update - delete
-Quando una persona fa una richiesta get relativa ad un URL utilizza la parte read del crud perchè vuole "leggere" tutto ciò che è presente all'interno dell'url specificato
+REST API (Representational State Transfer): è una specifica (insieme di regole) tramite le quali esponi le operazioni di crud su una risorsa.
+Rest richiede che un client effettui una richiesta al server per recuperare o modificare i dati sul server.
+Una richiesta generalmente consiste in:
+- un verbo HTTP che definisce il tipo di operazione del CRUD da eseguire, i verbi sono 4:
+    - CREATE (post): crea una nuova risorsa
+    - READ (get): recupera una risorsa specifica
+    - UPDATE (put): aggiorna una risorsa specififa
+    - DELETE (delete): rimuove una risorsa specifica
+- un percorso verso una risorsa
+- un headers che consente al client di trasmettere informazioni sulla richiesta
+- un body del messaggio facoltativo contenente dati
 
 Status Code: è un numero che rappresenta un concetto
 200 -> risposta avvenuta con successo da parte del server ad una richiesta del client
 404 -> errore da parte del client nella richiesta perchè ha richiesto al server un endpoint (risorsa) che non esiste
 500 -> errore da parte del server, il programmatore non ha previsto la gestione di quella determinata richiesta da parte del client
 
-"type": "module" (da mettere in package.json) -> To load an ES module, set "type": "module" in the package.json or use the .mjs extension
+----------
 
-import bodyParser from 'body-parser' // serve a prendere e gestire il body di una request put(update) e post(create) -> link: https://expressjs.com/en/5x/api.html#req.body
-app.use(bodyParser.json()) // una volta preso il body ce lo restituisce secondo il costrutto json
+app.listen(port, () => {}): definisce la porta alla quale collegare il tunnel server-client, possono essere specificate molte altre cose come l'Host, Backlog, ...
 
-axios è una libreria di node (anche del front-end) e mi permette di utilizzare i verbi put - post - delete che non sono esprimibili attraverso il browser (la stessa cosa che facevamo con post-man)
+REQUEST: è un oggetto che contiene diverse proprietà che sono informazioni riguardante la richiesta HTTP da parte del client. Tra queste proprietà abbiamo:
+- .body: informazioni riguardanti eventuali post e update
+- .params: il parametro (solitamente :id) inserito nell'URL
+- .query: le relative coppie chiave-valore passate dal client
+- .headers: contenente le coppie chiave-valore utilizzate come "token di accesso"
 
-.end(): termina la comunicazione client-server ovvero chiude iil "tubo" e non permette più il passaggio delle informazioni ma non termina l'esecuzione della funzione che una volta terminata la chiamata potrebbe continuare a svolgere altri lavori
+RESPONSE: è un oggetto che comprende tutte le informazioni che il server ci passa in base alla richiesta in aggiunta di informazioni di default.
+Proprità che solitamente vengono passate dal server:
+- .status(...): lo status code che lo sviluppatore decide di inviare al client in relazione alla chiamata
+- .send(...): l'oggetto che viene passato
+    Solitamente se lo status è 404 viene inviato un oggetto del genere:
+    .send({
+        data: {}, -> per definire che non esiste o non è stato trovato
+        error : true, -> ?
+        message : "todo not found" -> un messaggio più esplicato per far comprendere maggiormente al client di che errore si tratta
+    })
+Proprietà che solitamente il client è in grado di visualizzare:
+- .status: lo stato passato come res.status
+- .data: l'oggetto passato come res.send
+
+PROCESS: è un oggetto globale di Node.js a cui si può accedere da qualsiasi file senza doverlo importare e fornisce diverse informazioni riguardo il runtime del programma. Tra le sue proprietà abbiamo:
+- .argv: è un array che presenta due elementi di default più tutti gli altri che gli passiamo dal terminale:
+    - dove risiede il programma dal quale abbiamo lanciato lo script -> \\Program Files\\nodejs\\node.exe
+    - la path dal quale stiamo eseguendo lo script -> \\Users\\danie\\Desktop\\...
+    - tutto ciò che passiamo dopo che lanciamo lo script dal nostro terminale -> es. node script 5 ciao ...
+2 metodi per prendere process.arg[2]:
+- const [a, b, ...params] = process.argv
+- const params = process.argv.splice(2)
+
+EXPORT(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+IMPORT(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+Sono stati realizzati nel 2015 con l'uscita dell'ES6 che ha portato anche all'introduzione in javascript dei file come moduli.
+Ogni file rappresenta un modulo dal quale è possibile estrarre funzioni, oggetti, ... ed importarli in altri moduli dove se ne ha necessità.
+Node.js non supporta direttamente l'import-export dell'ES6 ma presenta una funzionalià sperimentale che permette di integrare l'import-export ma è necessario aggiungere al package.json la proprietà "type": "module".
+Inoltre è stata introdotta una nuova estensione ai file .js ovvero .cjs e .mjs; .cjs definisce che stiamo trattando quel file come modulo CommonJs mentre .mjs definisce che stiamo trattando quei file come modulo ECMAScript.
+Node.js tratterà i file .js in base al sistema di moduli definito ovvero di default CommonJS ma se specifichiamo nel package.json: "type": "module" tratterà i file come moduli ECMAScript.
+Concetto fondamentale è che quando si vuole importare un modulo per un'utilità di side-effect bisogna importarlo nel seguente modo:
+    import 'path/modulo.name'
+Il path rappresenta il percorso non per raggiungere il suddetto file dal file nel quale ci troviamo ma prendendo come punto di riferimento la cartella dalla quale abbiamo lanciati l'eseguibile.
+
+ASSERT:
+A partire dalla versione 16.14.0 di node.js è stata introdotta la necessità di aggiungere: assert { type: 'json' } quando un file json veniva importato.
+È stato introdotta questa minor per migliorare la sicurezza nell'importazione di moduli json.
+Nel marzo del 2023 questa funzionalità è stata sostituita dallo script: with { type: 'json' } ma quella precedente è ancora supportata perchè non tutti i browser hanno avuto ancora il tempo di adattarsi.
+
+---
+session / cookie
+app.use(
+    session({
+        // It holds the secret key for session
+        secret: "How the fuck it works",
+        // Forces the session to be saved (if true) back to the session store
+        resave: false,
+        // Forces a session that is "uninitialized" to be saved to the store
+        saveUninitialized: false,
+        cookie: {
+            // Session expires after 1 min of inactivity
+            expires: 15000
+        }
+    })
+)
+req.session.mySessionData = 'session started'
+---
+
+---
+cors:
+npm install cors
+import cors from 'cors'
+app.use(cors())
+https://expressjs.com/en/resources/middleware/cors.html
+-
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*') <- questo è un middleware
+  next()
+})
+---
+
+DB CHE TIENE MEMORIA DI ALTRI DUE DB:
+{
+    "3-1": {
+      "idu": "3",
+      "idt": "1",
+      "completed": true
+    },
+    ...
+}

@@ -5,7 +5,7 @@ async function call() {
         name: 'John',
         surname: 'Smith'
     })
-    console.log(res.status, res.data) // da dove vengono presi?
+    console.log(res.status, res.data)
 }
 
 call()

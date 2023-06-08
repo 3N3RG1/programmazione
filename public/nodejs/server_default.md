@@ -1,4 +1,5 @@
 # Node.js ^20.2.0 / [download](https://nodejs.org/it/download/current)
+[!download](https://nodejs.org/it/download/current)
 Node.js è un **runtime** Javascript ovvero un **ambiente di esecuzione** che permette di eseguire codice javascript.
 
 Lavora in **single-threaded**, inviando la risposta ai relativi client in maniera **sincrona** ovvero in successione, ma ciò non significa che non sia in grado di lavorare su più risposte simultaneamente.
@@ -224,17 +225,38 @@ Il motivo per il quale non è pratico committare i node_modules è perchè **tut
 
 ___
 
-Made with passion by 3N3RG1
+Made with U+2764 by 3N3RG1 ❤️
 
 <!-- 
 DOMANDE:
 
-.gitignore pattern format: https://git-scm.com/docs/gitignore
-
-2. perchè preferire async-await a Sync
-
-4. devo per forza scrivere README.md
-
-5. come si farebbe la roba senza limport ma con il require
-
+1. perchè preferire async-await a Sync
+2. una volta non esistevano le promise come cavolo si faceva
 -->
+
+
+<!-- async function function2(url) {
+    await fs.writefile(url, json...)
+    return
+}
+
+async function call(url) {
+    await function2(url)
+    return
+}
+
+call(url)
+
+---
+
+function function2(url) {
+    fs.writefileSync(url, json...)
+    return
+}
+
+function call(url) {
+    function2(url)
+    return
+}
+
+call(url) -->

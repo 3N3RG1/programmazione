@@ -1,65 +1,48 @@
-1. perchè scriviamo i file con mjs
+1. new Promise
 
-2. link degli import: https://www.geeksforgeeks.org/how-to-use-an-es6-import-in-node-js/
+2.
+AXIOS:
+.then
+.finally
 
-3. come scrivere le path correttamente
+.try
+.catch
 
-4. query
+.all
+.spread
 
-5. file db perchè assert { json }
+3. cosa sono le altre richieste HTTP:
+- patch
+... le trovi su postman
 
-6. cosa sono req e res
+-----------
 
-7. eseguire lo script di un file locale node path
+React:
+1. npx create-react-app
 
-8. fetch invece di axios:
-async function call() {
-    const res = await fetch('http://localhost:3000/case-cinematografiche', {
-        method: 'POST',
-        body: JSON.stringify({
-            name: "Universal Pictures",
-            fondazione: 1990,
-            stato: "Stati Uniti"
-        })
-    })
-    return await res.json()
-}
-call()
+per clonare un repo nel terminale:
+git clone url
 
-9.
-.end()
-.send({
-    data: {},
-    error : true,
-    message : "todo not found"
-})
 
-10. req.params.qualcosa
-    req.query.qualcosa
+PROMISE (https://medium.com/webeetle/la-programmazione-asincrona-in-node-js-le-promises-98c9707c10c4):
+Una promise è semplicemente un oggetto che può produrre un risultato, o un errore, di una operazione asincrona in un determinato momento nel futuro.
 
-11. res.status
-    res.data
+Una promise può trovarsi in quattro stati possibili:
+- Pending: quando l’operazione asincrona non è ancora terminata
+- Respinta: quando l’operazione asincrona è terminata con un errore. La funzione onRejected() viene invocata
+- Risolta: quando l’operazione asincrona è terminata con un esito positivo. La funzione onFulfilled() viene invocata
+- Saldata: quando l’operazione asincrona non è in pending (con un errore o con successo)
 
-12. process.argv[2] // scripts terzo server
-let [a, b, ...params] = process.argv // decostructoring?
-// let params = process.argv.splice(2)
+Le promises devono seguire una serie di regole ben definite, quali:
+- una promise è un oggetto che fornisce un metodo .then() conforme allo standard
+- una promise in pending può passare a uno stato risolta o respinta
+- una promise risolta o respinta è saldata e non deve passare in nessun altro stato
+- una promise una volta saldata deve avere un valore (che può essere undefined) e quel valore non deve cambiare
 
-13. session / cookie
-app.use(
-    session({
-        // It holds the secret key for session
-        secret: "How the fuck it works",
-        // Forces the session to be saved (if true) back to the session store
-        resave: false,
-        // Forces a session that is "uninitialized" to be saved to the store
-        saveUninitialized: false,
-        cookie: {
-            // Session expires after 1 min of inactivity
-            expires: 15000
-        }
-    })
-)
-req.session.mySessionData = 'session started'
+Il costruttore new Promise crea un'istanza che viene risolta o respinta in base alla funzione che viene fornita come argomento.
+La funzione fornita al costruttore riceverà due argomenti:
+    new Promise((resolve, reject) => {})
 
-headers: 
-req.headers.key !== 'token
+SE UNA FUNZIONE è ASINCRONA E NON RESTITUISCE UNA PROMISE NON è POSSIBILE CONVERTIRE IL SUO FUNZIONAMENTO IN SINCRONO MA SI PUò SOLO CONVERTIRE LA SUA NATURA
+
+FETCH

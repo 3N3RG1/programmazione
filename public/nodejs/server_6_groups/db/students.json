@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Gabriele",
+        "surname": "Notonica",
+        "secret": "Forza Inter!"
+    },
+    {
+        "name": "Cristian",
+        "surname": "Di Napoli",
+        "secret": "Forza Napoli!"
+        },
+    {
+        "name": "Alberto",
+        "surname": "Zaccagni",
+        "secret": "Forza Milan!"
+    },
+    
+    {
+        "name": "Alessandro",
+        "surname": "Gradi",
+        "secret": "Forza Viola!"
+    },
+    {
+        "name": "Morena",
+        "surname": "Masala",
+        "secret": "Life finds a way"
+    }
+]
