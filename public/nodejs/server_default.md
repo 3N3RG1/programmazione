@@ -215,30 +215,16 @@ const post = async (req, res) => {
 >Pensiamo al caso in cui uno sviluppatore clona il repository di un altro sviluppatore, il package.json **evita che vengano copiate versioni di dipendeze superiori a quelle originali** evitando così problemi di conflitto.
 
 ### node_modules
-La cartella node_modules è come una **cache per i moduli esterni** (librearie, ...) da cui dipende il progetto.<br>
+>La cartella node_modules è come una **cache per i moduli esterni** (librearie, ...) da cui dipende il progetto.<br>
 Quando viene eseguito `npm install` vengono scaricati dal Web tutti i moduli relativi alle dipendenze.<br>
 
-Il motivo per il quale non è pratico committare i node_modules è perchè **tutte le versioni relative alle dipendenze dei moduli sono già presenti nel package-lock.json** e chunque in qualsiasi momento può installare i node_modules che dipendono direttamente dalle versioni delle dipendenze.
+>Il motivo per il quale non è pratico committare i node_modules è perchè **tutte le versioni relative alle dipendenze dei moduli sono già presenti nel package-lock.json** e chunque in qualsiasi momento può installare i node_modules che dipendono direttamente dalle versioni delle dipendenze.
 
-È compito quindi dello sviluppatore definire a git di ignorare i node_modules in questo modo quando un'altro svilppatore necessita di clonare il progetto **non deve preoccuparsi di problemi di conflitto tra le versioni** relative alle dipendenze.
+>È compito quindi dello sviluppatore definire a git di ignorare i node_modules in questo modo quando un'altro svilppatore necessita di clonare il progetto **non deve preoccuparsi di problemi di conflitto tra le versioni** relative alle dipendenze.
 
 ___
 
 Made with ❤️ by 3N3RG1
-
-### titolo
-> p1<br>
-ciao
-
-> p3
-
-- titolo
-> p1
->
-> p2
-
-###### 6
-##### 5
 <!-- 
 DOMANDE:
 
