@@ -24,9 +24,14 @@ Status Code: è un numero che rappresenta un concetto
 404 -> errore da parte del client nella richiesta perchè ha richiesto al server un endpoint (risorsa) che non esiste
 500 -> errore da parte del server, il programmatore non ha previsto la gestione di quella determinata richiesta da parte del client
 
-----------
-
 app.listen(port, () => {}): definisce la porta alla quale collegare il tunnel server-client, possono essere specificate molte altre cose come l'Host, Backlog, ...
+
+----------
+FETCH:
+
+PROMISE:
+
+NEW PROMISE:
 
 REQUEST: è un oggetto che contiene diverse proprietà che sono informazioni riguardante la richiesta HTTP da parte del client. Tra queste proprietà abbiamo:
 - .body: informazioni riguardanti eventuali post e update
@@ -57,8 +62,8 @@ PROCESS: è un oggetto globale di Node.js a cui si può accedere da qualsiasi fi
 - const [a, b, ...params] = process.argv
 - const params = process.argv.splice(2)
 
-EXPORT(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
-IMPORT(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+EXPORT: (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+IMPORT: (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 Sono stati realizzati nel 2015 con l'uscita dell'ES6 che ha portato anche all'introduzione in javascript dei file come moduli.
 Ogni file rappresenta un modulo dal quale è possibile estrarre funzioni, oggetti, ... ed importarli in altri moduli dove se ne ha necessità.
 Node.js non supporta direttamente l'import-export dell'ES6 ma presenta una funzionalià sperimentale che permette di integrare l'import-export ma è necessario aggiungere al package.json la proprietà "type": "module".

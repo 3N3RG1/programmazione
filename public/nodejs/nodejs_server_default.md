@@ -165,12 +165,11 @@ Per risolvere questa situazione, e quindi permettere alle funzioni asincrone di 
 ```
 import fs from 'fs/promises'
 ```
-4. asincrona ma con un funzionamento sincrono - blocca l'esecuzioni di js finchè non termina la chiamata
+4. asincrona ma con un funzionamento sincrono
 ```js
 await fs.writeFile(path, JSON.stringify(pathName, null, '  '))
 res.status(...)
 ```
-Perchè preferire async - await se la stessa cosa possiamo farla con Sync ?
 
 ### 9. axios
 Per poter fare la [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) di un endpoint possiamo utilizzare tutto quello che javascript già presenta:
@@ -207,15 +206,15 @@ const post = async (req, res) => {
 
 ## Informazioni aggiuntive
 
-### package-lock.json - [info](https://www.atatus.com/blog/package-json-vs-package-lock-json/)
+### package-lock.json ([info](https://www.atatus.com/blog/package-json-vs-package-lock-json/))
 > **Registra la versione esatta di ogni dipendenza** installata, incluse le sue sotto-dipendenze e le loro versioni.
->
+
 >Lo scopo è garantire che le stesse dipendenze vengano installate in modo **coerente** in ambienti diversi, ad esempio **ambienti di sviluppo e produzione**. Aiuta anche a prevenire problemi con l'installazione di diverse versioni del pacchetto, che possono portare a conflitti ed errori, infatti **blocca la versione specifica di ciascuna dipendenza**.
->
+
 >Pensiamo al caso in cui uno sviluppatore clona il repository di un altro sviluppatore, il package.json **evita che vengano copiate versioni di dipendeze superiori a quelle originali** evitando così problemi di conflitto.
 
 ### node_modules
->La cartella node_modules è come una **cache per i moduli esterni** (librearie, ...) da cui dipende il progetto.<br>
+>La cartella node_modules è come una **cache per i moduli esterni** (librerie, ...) da cui dipende il progetto.<br>
 Quando viene eseguito `npm install` vengono scaricati dal Web tutti i moduli relativi alle dipendenze.<br>
 
 >Il motivo per il quale non è pratico committare i node_modules è perchè **tutte le versioni relative alle dipendenze dei moduli sono già presenti nel package-lock.json** e chunque in qualsiasi momento può installare i node_modules che dipendono direttamente dalle versioni delle dipendenze.
@@ -225,36 +224,3 @@ Quando viene eseguito `npm install` vengono scaricati dal Web tutti i moduli rel
 ___
 
 Made with ❤️ by 3N3RG1
-<!-- 
-DOMANDE:
-
-1. perchè preferire async-await a Sync
-2. una volta non esistevano le promise come cavolo si faceva
--->
-
-
-<!-- async function function2(url) {
-    await fs.writefile(url, json...)
-    return
-}
-
-async function call(url) {
-    await function2(url)
-    return
-}
-
-call(url)
-
----
-
-function function2(url) {
-    fs.writefileSync(url, json...)
-    return
-}
-
-function call(url) {
-    function2(url)
-    return
-}
-
-call(url) -->
