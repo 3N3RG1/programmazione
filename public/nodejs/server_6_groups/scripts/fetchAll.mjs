@@ -28,7 +28,7 @@ export const fetchAll = () => {
         )
         .then(
             axios.spread((...responses) => {
-                let allResponses = responses.map((response) => response.data);
+                let allResponses = responses.map((response) => response.data)
                 return allResponses.flat()
             })
         )

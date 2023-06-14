@@ -27,11 +27,12 @@ Status Code: è un numero che rappresenta un concetto
 app.listen(port, () => {}): definisce la porta alla quale collegare il tunnel server-client, possono essere specificate molte altre cose come l'Host, Backlog, ...
 
 ----------
-FETCH:
 
+ASYNC-AWAIT:
+- https://www.freecodecamp.org/italian/news/async-await-javascript-tutorial-come-attendere-il-completamento-di-una-funzione-in-js/
 PROMISE:
-
 NEW PROMISE:
+FETCH:
 
 REQUEST: è un oggetto che contiene diverse proprietà che sono informazioni riguardante la richiesta HTTP da parte del client. Tra queste proprietà abbiamo:
 - .body: informazioni riguardanti eventuali post e update

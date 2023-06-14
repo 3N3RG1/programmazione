@@ -27,16 +27,18 @@ git clone url
 ===============================================
 
 FETCH:
-La fetch è una funzione globale che incomincia il processo di fetching verso una risorsa e ritorna una promise che viene soddisfatta una volta che la risposta è disponibile (presumo che sia saldata).
+La fetch è una funzione globale che incomincia il processo di fetching verso una risorsa e ritorna una promise che viene soddisfatta una volta che la risposta è disponibile (saldata).
 
-PROMISE: (https://medium.com/webeetle/la-programmazione-asincrona-in-node-js-le-promises-98c9707c10c4)
+PROMISE:
+- https://medium.com/webeetle/la-programmazione-asincrona-in-node-js-le-promises-98c9707c10c4
+-
 Una promise è semplicemente un oggetto che può produrre un risultato, o un errore, di una operazione asincrona in un determinato momento nel futuro.
 
 Una promise può trovarsi in quattro stati possibili:
 - Pending: quando l’operazione asincrona non è ancora terminata
-- Respinta: quando l’operazione asincrona è terminata con un errore. La funzione onRejected() viene invocata
-- Risolta: quando l’operazione asincrona è terminata con un esito positivo. La funzione onFulfilled() viene invocata
-- Saldata: quando l’operazione asincrona non è in pending (con un errore o con successo)
+- Rejected: quando l’operazione asincrona è terminata con un errore. La funzione onRejected() viene invocata
+- Fulfilled: quando l’operazione asincrona è terminata con un esito positivo. La funzione onFulfilled() viene invocata
+- Settled: quando l’operazione asincrona non è in pending (con un errore o con successo)
 
 Le promises devono seguire una serie di regole ben definite, quali:
 - una promise è un oggetto che fornisce un metodo .then() conforme allo standard
@@ -50,39 +52,57 @@ La funzione fornita al costruttore riceverà due argomenti:
 
 NEW PROMISE:
 
- - SE UNA FUNZIONE è ASINCRONA E NON RESTITUISCE UNA PROMISE NON è POSSIBILE CONVERTIRE IL SUO FUNZIONAMENTO IN SINCRONO MA SI PUò SOLO CONVERTIRE LA SUA NATURA
+ - SE UNA FUNZIONE è ASINCRONA E NON RESTITUISCE UNA PROMISE NON è POSSIBILE CONVERTIRE IL SUO FUNZIONAMENTO IN SINCRONO MA SI PUò SOLO CONVERTIRE LA SUA NATURA OPPURE WRAPPARLO IN UNA PROMISE
 
-<!-- 
-DOMANDE:
-
-1. perchè preferire async-await a Sync
-
-2. una volta non esistevano le promise come cavolo si faceva
--->
-
-
-<!-- async function function2(url) {
-    await fs.writefile(url, json...)
-    return
+async function f1() {
+    const res = await fetch(URL/json)
+    const json1 = await res.json() // mettiamo mi restituisce un obj con 1M di proprietà
+    console.log(json1)
 }
 
-async function call(url) {
-    await function2(url)
-    return
+async function f2() {
+    const res = await fetch(URL)
+    const json2 = await res.json() // mi restituisce { n: '1' }
+    console.log(json2)
+    await f3(json2) // se tolgo await blabla viene stampato prima di json3
+    // console.log('blabla')
 }
 
-call(url)
-
----
-
-function function2(url) {
-    fs.writefileSync(url, json...)
-    return
+async function f3(json2) {
+    const res = await fetch(URL/json2)
+    const json3 = await res.json()
+    console.log(json3)
 }
 
-function call(url) {
-    function2(url)
-    return
-}
+f1()
+f2()
+console.log('ciao')
 
-call(url) -->
+// ------------- //
+
+1) in ordine sono:
+
+console.log('ciao')
+console.log(json1)
+console.log(json2)
+console.log(json3)
+
+2) oppure:
+
+console.log(json1)
+console.log(json2)
+console.log(json3)
+console.log('ciao')
+
+3) oppure:
+ 
+qualcos'altro
+
+// ==================== //
+
+validateStatus:
+const res = await axios.get(url, {
+    validateStatus: function (status) {
+        return status < 500  // Resolve only if the status code is less than 500
+    }
+})
