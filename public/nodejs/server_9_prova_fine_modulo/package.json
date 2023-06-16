@@ -1,5 +1,5 @@
 {
-  "name": "server_8_db",
+  "name": "server_9_prova_fine_modulo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,11 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.4.0",
-    "dotenv": "^16.1.4",
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "mongodb": "^5.6.0"
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"

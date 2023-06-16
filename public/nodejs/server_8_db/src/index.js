@@ -10,6 +10,12 @@ app.use(session({
     cookie: { maxAge: 60000 }
 }))
 
+// npm install dotenv: per supportare file che contengono variabili d'ambiente
+// importiamo la possibilità di supportare questi file che non node non sarebbe in grado di leggere (.env)
+// stiamo importando ciò che viene esportato dal modulo config dentro la cartella dotenv
+import 'dotenv/config'
+import { insertUser } from './mongodb.mjs'
+
 // per leggere la rotta relativa all'html
 // app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -39,6 +45,13 @@ function sessionChecked(req, res, next) {
 
 app.get('/', (req, res) => {
     res.send('server_8_db')
+})
+
+// signup
+app.post('/users/signup', (req, res) => {
+    let user = req.body
+    insertUser(user)
+    res.status(201)
 })
 
 // login

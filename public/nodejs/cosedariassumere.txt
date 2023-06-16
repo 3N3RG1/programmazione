@@ -1,104 +1,3 @@
-1. new Promise
-
-2.
-AXIOS:
-.then
-.finally
-
-.try
-.catch
-
-.all
-.spread
-
-3. cosa sono le altre richieste HTTP:
-- patch
-... le trovi su postman
-
------------
-
-React:
-1. npx create-react-app
-
-per clonare un repo nel terminale:
-git clone url
-
--------------------------------------------------------------------------------------
-===============================================
-
-FETCH:
-La fetch è una funzione globale che incomincia il processo di fetching verso una risorsa e ritorna una promise che viene soddisfatta una volta che la risposta è disponibile (saldata).
-
-PROMISE:
-- https://medium.com/webeetle/la-programmazione-asincrona-in-node-js-le-promises-98c9707c10c4
--
-Una promise è semplicemente un oggetto che può produrre un risultato, o un errore, di una operazione asincrona in un determinato momento nel futuro.
-
-Una promise può trovarsi in quattro stati possibili:
-- Pending: quando l’operazione asincrona non è ancora terminata
-- Rejected: quando l’operazione asincrona è terminata con un errore. La funzione onRejected() viene invocata
-- Fulfilled: quando l’operazione asincrona è terminata con un esito positivo. La funzione onFulfilled() viene invocata
-- Settled: quando l’operazione asincrona non è in pending (con un errore o con successo)
-
-Le promises devono seguire una serie di regole ben definite, quali:
-- una promise è un oggetto che fornisce un metodo .then() conforme allo standard
-- una promise in pending può passare a uno stato risolta o respinta
-- una promise risolta o respinta è saldata e non deve passare in nessun altro stato
-- una promise una volta saldata deve avere un valore (che può essere undefined) e quel valore non deve cambiare
-
-Il costruttore new Promise crea un'istanza che viene risolta o respinta in base alla funzione che viene fornita come argomento.
-La funzione fornita al costruttore riceverà due argomenti:
-    new Promise((resolve, reject) => {})
-
-NEW PROMISE:
-
- - SE UNA FUNZIONE è ASINCRONA E NON RESTITUISCE UNA PROMISE NON è POSSIBILE CONVERTIRE IL SUO FUNZIONAMENTO IN SINCRONO MA SI PUò SOLO CONVERTIRE LA SUA NATURA OPPURE WRAPPARLO IN UNA PROMISE
-
-async function f1() {
-    const res = await fetch(URL/json)
-    const json1 = await res.json() // mettiamo mi restituisce un obj con 1M di proprietà
-    console.log(json1)
-}
-
-async function f2() {
-    const res = await fetch(URL)
-    const json2 = await res.json() // mi restituisce { n: '1' }
-    console.log(json2)
-    await f3(json2) // se tolgo await blabla viene stampato prima di json3
-    // console.log('blabla')
-}
-
-async function f3(json2) {
-    const res = await fetch(URL/json2)
-    const json3 = await res.json()
-    console.log(json3)
-}
-
-f1()
-f2()
-console.log('ciao')
-
-// ------------- //
-
-1) in ordine sono:
-
-console.log('ciao')
-console.log(json1)
-console.log(json2)
-console.log(json3)
-
-2) oppure:
-
-console.log(json1)
-console.log(json2)
-console.log(json3)
-console.log('ciao')
-
-3) oppure:
- 
-qualcos'altro
-
-// ==================== //
 
 validateStatus:
 const res = await axios.get(url, {
@@ -106,3 +5,33 @@ const res = await axios.get(url, {
         return status < 500  // Resolve only if the status code is less than 500
     }
 })
+
+AXIOS:
+.then
+.catch
+
+// ------------- //
+
+React:
+1. npx create-react-app
+
+// ------------- //
+
+Git:
+per clonare un repo nel terminale:
+git clone url
+
+// ------------- //
+
+MONGODB:
+Mongoose è una libreria che ci permette di collegarci all'hosting di database MongoDB.
+
+- variabili d'ambiente:
+    ninstallazione: npm install dotenv
+    importarle: import 'dotenv/config'
+
+- come connettiamo il server hostato su atlas a vscode
+    scegliamo di utilizzare i drivers
+    installiamo i drivers di MongoDB: npm install mongodb
+
+Un documento in un db NOSQL è un oggetto con degli attributi

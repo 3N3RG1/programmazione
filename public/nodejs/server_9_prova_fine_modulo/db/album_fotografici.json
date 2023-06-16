@@ -1,0 +1,48 @@
+{
+  "1": {
+    "nome": "album1",
+    "fotografie": [
+      {
+        "nome": "",
+        "creazione": "",
+        "ultimaModifica": "",
+        "hashtags": []
+      },
+      {
+        "nome": "",
+        "creazione": "",
+        "ultimaModifica": "",
+        "hashtags": []
+      }
+    ],
+    "hashtags": [
+      "#mare",
+      "#studioghibli",
+      "lisp"
+    ],
+    "creazione": "",
+    "ultimaModifica": ""
+  },
+  "4": {
+    "nome": "albumqualcosa",
+    "hashtags": [
+      "qualcosa"
+    ],
+    "fotografie": [
+      {
+        "nome": "",
+        "hashtags": [],
+        "creazione": "2023-06-16T10:14:15.896Z",
+        "ultimaModifica": "2023-06-16T10:14:15.896Z"
+      },
+      {
+        "nome": "qualcosgdsfa",
+        "hashtags": [],
+        "creazione": "2023-06-16T12:59:14.146Z",
+        "ultimaModifica": "2023-06-16T12:59:14.146Z"
+      }
+    ],
+    "creazione": "2023-06-16T10:14:15.896Z",
+    "ultimaModifica": "2023-06-16T12:59:52.833Z"
+  }
+}
