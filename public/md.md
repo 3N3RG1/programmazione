@@ -72,8 +72,8 @@ You should probably combine it with
   👆 Use the toggle above to add the plugin.
 </blockquote>
 
-<div style="display: flex; border: 1px solid blue; padding: 10px; background-color: yellow; justify-content: space-between">
-    <div>1</div>
+<div style="color: red">
+    <div style="background-color: silver">1</div>
     <div>2</div>
 </div>
 
