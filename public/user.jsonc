@@ -1,0 +1,30 @@
+{
+    "gianluigi_qualcosa" : { // nome univoco di ogni utente che sarà anche quello relativo al path - deve essere scritto tutto in minuscolo, accetta numeri e altri simboli > da fare con le reject
+        "name": "Gianlo12", // nome visualizzato non univoco - accetta qualsiasi carattere
+        "password": "Quacosa_1234", // penso che debba essere univoca per ogni utente ma non bisogna comunicarla all'utente - magari dicendo la password non è sufficientemente sicura
+        // "email": -> ma non mi serve tanto anche perchè mi servirebbe aggiungere altra roba
+        "public": {
+            "cartella1": {
+                "foglio1": {
+                    "text": "tutto il testo scritto normalmente",
+                    "state": "public"
+                },
+                "foglio2": {
+                    "text": "tutto il testo",
+                    "state": "public"
+                },
+                "foglio3": {
+                    "text": "tutto il testo",
+                    "state": "private"
+                }
+            },
+            "cartella2": {},
+            "cartella3": {}
+        },
+        "private": {
+            "cartella1": {},
+            "cartella2": {},
+            "cartella3": {}
+        }
+    }
+}
