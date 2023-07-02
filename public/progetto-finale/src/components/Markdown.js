@@ -9,31 +9,33 @@ export default function Markdown() {
     const [content, setContent] = useState('scrivi qualcosa')
 
     // const onContentChange = useCallback(evt => {
-    //     setContent(evt.currentTarget.innerHTML)
-    // }, [])
-
-    const onContentChange = useCallback(evt => {
-		const sanitizeConf = {
-			allowedTags: ["br"], // ctrl+b: bold, ctrl+i: alternative (emp), ctrl+a: seleziona tutto, ctrl+p: stamp
-			// allowedAttributes: { a: ["href"] }
-		}
-		setContent(sanitizeHtml(evt.currentTarget.innerHTML, sanitizeConf))
-	}, [])
+	// 	const sanitizeConf = {
+	// 		allowedTags: ["picture", "source", "img", "details", "summary", "sup", "sub", "br" ], // tag che accetta GFM
+	// 		allowedAttributes: { source: ["media", "srcset"], img: ["src", "alt"], details: ["opens"] }
+	// 	}
+	// 	setContent(sanitizeHtml(evt.currentTarget.innerHTML, sanitizeConf))
+	// }, [])
 
     return (
         <div style={{display: 'flex', width: '100%', height: '100%'}}>
-            <Left content={content} onContentChange={onContentChange} setContent={setContent}/>
+            <Left content={content} setContent={setContent}/>
             <Right content={content}/>
         </div>
     )
 }
 
-function Left({content, onContentChange, setContent}) {
+function Left({content, setContent}) {
+    const sanitizeConf = {
+        allowedTags: ["picture", "source", "img", "details", "summary", "sup", "sub", "br" ],
+        allowedAttributes: { source: ["media", "srcset"], img: ["src", "alt"], details: ["open"] }
+    }
+
     return (
         <textarea
             style={{width: '100%', height: '100%', backgroundColor: 'white', color: 'blue', overflowY: "scroll"}}
+            // onChange={e => setContent(sanitizeHtml(e.target.value, sanitizeConf))}
+            // onFocus={e => setContent(sanitizeHtml(e.target.value, sanitizeConf))}
             onChange={e => setContent(e.target.value)}
-            onFocus={e => setContent(e.target.value)}
         >
             {content}
         </textarea>
@@ -51,7 +53,18 @@ function Left({content, onContentChange, setContent}) {
 function Right({content}) {
     return (
         <div style={{width: '100%', height: '100%', backgroundColor: 'silver', color: 'white', overflowY: "scroll"}}>
-            <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+            <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                // rehypePlugins={[rehypeRaw]}
+                components={{
+                    
+
+
+                    em: ({node, ...props}) => <i style={{color: 'red'}} {...props} />,
+                    h1: ({node, ...props}) => <h1 style={{borderBottom: '1px solid blue', color: 'red'}} {...props} />,
+                    code: ({node, ...props}) => <code style={{backgroundColor: 'lime', color: 'purple'}} {...props} />
+                }}
+            >
                 {content}
             </ReactMarkdown>
         </div>

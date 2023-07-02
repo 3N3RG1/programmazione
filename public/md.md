@@ -1,112 +1,124 @@
-# A demo of `react-markdown`
+# ciao
+## ciao
+### ciao
+#### ciao
+##### ciao
+###### ciao
 
-`react-markdown` is a markdown component for React.
+**bold**
 
-👉 Changes are re-rendered as you type.
+*italic*
 
-👈 Try writing some markdown on the left.
+~~Strikethrough~~
 
-## Overview
+***bold and italic***
 
-* Follows [CommonMark](https://commonmark.org)
-* Optionally follows [GitHub Flavored Markdown](https://github.github.com/gfm/)
-* Renders actual React elements instead of using `dangerouslySetInnerHTML`
-* Lets you define your own components (to render `MyHeading` instead of `h1`)
-* Has a lot of plugins
+<sub>sub</sub>
 
-## Table of contents
+<sup>sup</sup>
 
-Here is an example of a plugin in action
-([`remark-toc`](https://github.com/remarkjs/remark-toc)).
-This section is replaced by an actual table of contents.
+> quote
 
-## Syntax highlighting
-
-Here is an example of a plugin to highlight code:
-[`rehype-highlight`](https://github.com/rehypejs/rehype-highlight).
-
-```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import ReactMarkdown from 'react-markdown'
-import rehypeHighlight from 'rehype-highlight'
-
-ReactDOM.render(
-  <ReactMarkdown rehypePlugins={[rehypeHighlight]}>{'# Your markdown here'}</ReactMarkdown>,
-  document.querySelector('#content')
-)
+```
+code
 ```
 
-Pretty neat, eh?
+````
+```
+Look! You can see my backticks.
+```
+````
 
-## GitHub flavored markdown (GFM)
+`code`
 
-For GFM, you can *also* use a plugin:
-[`remark-gfm`](https://github.com/remarkjs/react-markdown#use).
-It adds support for GitHub-specific extensions to the language:
-tables, strikethrough, tasklists, and literal URLs.
+The background color is `#ffffff` for light mode and `hsl(212, 92%, 45%)` for dark mode
 
-These features **do not work by default**.
-👆 Use the toggle above to add the plugin.
+[Links](https://pages.github.com/)
 
-| Feature    | Support              |
-| ---------: | :------------------- |
-| CommonMark | 100%                 |
-| GFM        | 100% w/ `remark-gfm` |
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
 
-~~strikethrough~~
+- unordered list
+* list
+    - indentazione 2
+        - indentazione 3
+            - indentazione 4
 
-* [ ] task list
-* [x] checked item
+1. ordered list
+1. James Monroe
 
-https://example.com
+- [x] #739
+- [ ] task list
+- [ ] \(Optional) Open a followup issue
 
-## HTML in markdown
+@octocat :+1: emoji si mattono tra i due punti :shipit:
 
-⚠️ HTML in markdown is quite unsafe, but if you want to support it, you can
-use [`rehype-raw`](https://github.com/rehypejs/rehype-raw).
-You should probably combine it with
-[`rehype-sanitize`](https://github.com/rehypejs/rehype-sanitize).
+Here is a simple footnote[^1].\
+A footnote can also have multiple lines[^2].
 
-<blockquote>
-  👆 Use the toggle above to add the plugin.
-</blockquote>
+[^1]: My reference.
+[^2]: To add line breaks within a footnote, prefix new lines with 2 spaces.
 
-<div style="color: red">
-    <div style="background-color: silver">1</div>
-    <div>2</div>
-</div>
+<!-- This content will not appear in the rendered Markdown -->
 
-## Components
+Let's rename \*ignorando la formattazione MK\* to \*our-old-project\*.
 
-You can pass components to change things:
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
-```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import ReactMarkdown from 'react-markdown'
-import MyFancyRule from './components/my-fancy-rule.js'
+<details open>
+<summary>Tips for collapsed sections</summary>
 
-ReactDOM.render(
-  <ReactMarkdown
-    components={{
-      // Use h2s instead of h1s
-      h1: 'h2',
-      // Use a component instead of hrs
-      hr: ({node, ...props}) => <MyFancyRule {...props} />
-    }}
-  >
-    # Your markdown here
-  </ReactMarkdown>,
-  document.querySelector('#content')
-)
+### You can add a header
+
+You can add text within a collapsed section. 
+
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
 ```
 
-## More info?
+</details>
 
-Much more info is available in the
-[readme on GitHub](https://github.com/remarkjs/react-markdown)!
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 
-***
-
-A component by [Espen Hovlandsdal](https://espen.codes/)
+```stl
+solid cube_corner
+  facet normal 0.0 -1.0 0.0
+    outer loop
+      vertex 0.0 0.0 0.0
+      vertex 1.0 0.0 0.0
+      vertex 0.0 0.0 1.0
+    endloop
+  endfacet
+  facet normal 0.0 0.0 -1.0
+    outer loop
+      vertex 0.0 0.0 0.0
+      vertex 0.0 1.0 0.0
+      vertex 1.0 0.0 0.0
+    endloop
+  endfacet
+  facet normal -1.0 0.0 0.0
+    outer loop
+      vertex 0.0 0.0 0.0
+      vertex 0.0 0.0 1.0
+      vertex 0.0 1.0 0.0
+    endloop
+  endfacet
+  facet normal 0.577 0.577 0.577
+    outer loop
+      vertex 1.0 0.0 0.0
+      vertex 0.0 1.0 0.0
+      vertex 0.0 0.0 1.0
+    endloop
+  endfacet
+endsolid
+```
